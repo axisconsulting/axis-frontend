@@ -92,46 +92,6 @@ bun clean:deps   # remove dependency dirs
 bun clean:all    # remove all of the above
 ```
 <!-- =========================== -->
-## Project Structure
-
-```
-axis-frontend/
-├── public/              # Static assets
-│   ├── images/         # Images and media
-│   └── favicon.ico     # Favicon
-├── src/                # Source code
-│   ├── components/     # Reusable components
-│   ├── pages/          # Page components
-│   ├── styles/         # CSS/SCSS files
-│   ├── utils/          # Utility functions
-│   ├── hooks/          # Custom React hooks
-│   ├── store/          # State management
-│   └── main.jsx        # Entry point
-├── docs/               # Documentation
-├── tests/              # Test files
-├── .env.example        # Environment variables template
-├── package.json        # Dependencies and scripts
-└── README.md          # This file
-```
-
-<!-- =========================== -->
-## Contributing
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Standards
-- Follow the existing code style
-- Write meaningful commit messages
-- Add comments for complex logic
-- Test your changes before submitting
-- Update documentation if needed
-
-<!-- =========================== -->
 ## Deployment
 
 ### Automatic Deployment
@@ -139,27 +99,14 @@ axis-frontend/
 - **Staging**: Automatically deploys from `develop` branch
 - **Preview**: Every PR gets a preview deployment
 
-### Manual Deployment
-```bash
-# Build the project
-npm run build
-
-# Deploy to hosting platform
-npm run deploy
-```
-
 ## Resources & Links
 
 ### Development Resources
-- **Documentation**: [Link to detailed docs]
-- **API Documentation**: [Link to API docs]
 - **Project Board**: [Trello](https://trello.com/b/lEsaeAWz/axis-website)
 
 ### Learning Resources
 - [React Documentation](https://react.dev/)
 - [CSS-Tricks](https://css-tricks.com/)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [npm Documentation](https://docs.npmjs.com/)
 - [Google Web Fundamentals](https://developers.google.com/web/fundamentals)
 - [Conventional Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13)
 
@@ -173,9 +120,5 @@ npm run deploy
 [![Website](https://img.shields.io/badge/Website-Visit-blue)]([https://your-website.com](https://www.sfuaxisconsulting.com))
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-1DA1F2)](https://www.instagram.com/sfuaxisconsulting/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5)](https://www.linkedin.com/company/sfuaxisconsulting)
-
-**Made with ❤️ by SFU Axis Consulting Development Team**n](https://img.shields.io/badge/LinkedIn-Connect-0077B5)](https://www.linkedin.com/company/sfuaxisconsulting)
-
-**Made with ❤️ by SFU Axis Consulting Development Team**n](https://img.shields.io/badge/LinkedIn-Connect-0077B5)](https://www.linkedin.com/company/sfuaxisconsulting)
 
 **Made with ❤️ by SFU Axis Consulting Development Team**
