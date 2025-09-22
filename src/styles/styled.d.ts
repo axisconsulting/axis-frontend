@@ -3,9 +3,6 @@ import type { AppTheme } from "./theme";
 
 // makes theme fully typed in styled-components
 declare module "styled-components" {
-   export type DefaultTheme = AppTheme;
+   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+   export interface DefaultTheme extends AppTheme {}
 }
-
-// declare module "styled-components" {
-//    export interface DefaultTheme extends AppTheme {}
-// }

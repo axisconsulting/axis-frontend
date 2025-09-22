@@ -27,6 +27,7 @@ Axis Consulting is a student-led pro-bono consultancy part of Simon Fraser Unive
 - **Styling**: [Styled Components](https://styled-components.com/)
 - **Build Tool**: [Vite](https://vite.dev/)
 - **Package Manager**: [bun](https://bun.com/)
+- **Testing**: [Playwright](http://playwright.dev/docs)
 
 ### Deployment & Hosting
 - **Hosting**: [Vercel](https://vercel.com)

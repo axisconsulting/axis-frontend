@@ -1,21 +1,19 @@
-const AXIS_BLUE = "#0933FF";
-const STARLIGHT_WHITE = "#E6E1DB";
-const VOID_BLACK = "#010001";
-const STARDUST_GRAY = "#59565C";
-
 export const palette = {
-   AXIS_BLUE,
-   STARLIGHT_WHITE,
-   VOID_BLACK,
-   STARDUST_GRAY,
+   AXIS_DARK_BLUE: "#0933FF",
+   AXIS_BLUE: "#366CFF",
+   STARLIGHT_WHITE: "#E6E1DB",
+   WHITE: "#FFFFFF",
+   STARDUST_GRAY: "#59565C",
+   BACKGROUND_DARK: "#151515",
 } as const;
 
-// Semantic color roles for the app (single default theme for now)
+// Semantic roles (single default theme for now)
 export const colors = {
-   primary: STARLIGHT_WHITE, // primary foreground (text on dark bg)
-   secondary: STARDUST_GRAY, // muted text, captions
-   accent: AXIS_BLUE, // links, buttons, highlights
-   background: VOID_BLACK, // page background
+   background: palette.BACKGROUND_DARK,
+   text: palette.WHITE, // or STARLIGHT_WHITE if you want warmer text
+   textMuted: palette.STARDUST_GRAY,
+   accent: palette.AXIS_BLUE, // main action/link color
+   accentHover: palette.AXIS_DARK_BLUE, // hover/active state
 } as const;
 
 export type AppColors = typeof colors;
@@ -37,9 +35,3 @@ export function withAlpha(hex: string, alpha: number) {
    const b = bigint & 255;
    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
-
-// Colors from old site (not used)
-// "my-blue": "#366CFF",
-// "my-light-blue": "#366CFF",
-// "my-gray": "#939393",
-// "my-light-gray": "#1A1A1A",
