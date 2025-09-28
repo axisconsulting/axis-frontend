@@ -1,5 +1,5 @@
-import { DemoCard } from "../components/DemoCard";
-import { FontDemo } from "../components/FontDemo";
+// import { DemoCard } from "../components/demo/DemoCard";
+// import { FontDemo } from "../components/demo/FontDemo";
 
 export default function Home() {
    return (
@@ -8,8 +8,8 @@ export default function Home() {
          <p>
             Axis Consulting is a student-led pro-bono consultancy part of Simon Fraser University.
          </p>
-         <DemoCard />
-         <FontDemo />
+         {/* <DemoCard />
+         <FontDemo /> */}
          <br />
       </div>
    );

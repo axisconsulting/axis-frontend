@@ -40,7 +40,7 @@ Axis Consulting is a student-led pro-bono consultancy part of Simon Fraser Unive
 ### Prerequisites
 
 Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (v22 or higher)
+- [Node.js](https://nodejs.org/) (v24 or higher)
 - [bun](https://bun.com/) or [npm](https://www.npmjs.com/)
 - [Git](https://git-scm.com/)
 

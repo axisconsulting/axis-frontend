@@ -1,14 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
    return (
-      <div style={{ padding: 24 }}>
-         {/* NAVBAR WILL GO HERE */}
-         <nav style={{ display: "flex", gap: 12 }}>
-            <Link to="/">Home</Link>
-            <Link to="/about/test">About</Link>
-         </nav>
-         <Outlet />
+      <div>
+         <Navbar />
+         <div style={{ paddingTop: "5rem", padding: "5rem 24px 24px 24px" }}>
+            <Outlet />
+         </div>
       </div>
    );
 }
