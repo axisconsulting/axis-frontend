@@ -13,9 +13,9 @@ import {
    NavLinks,
    NavLink,
 } from "./navbar.styled";
-import { ROUTE_STRINGS } from "../../constants/strings";
+import { ROUTE_STRINGS } from "../../constants/route-strings";
 
-function Navbar() {
+export default function Navbar() {
    const [isOpen, setIsOpen] = useState(false);
 
    const toggleNavbar = () => {
@@ -47,5 +47,3 @@ function Navbar() {
       </NavbarContainer>
    );
 }
-
-export default Navbar;

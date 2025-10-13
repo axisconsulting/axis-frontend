@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const NavbarContainer = styled.div<{ $isOpen: boolean }>`
+export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    position: fixed;
    top: 0;
    left: 0;
@@ -25,7 +25,7 @@ export const NavbarContainer = styled.div<{ $isOpen: boolean }>`
    }
 `;
 
-export const NavbarContent = styled.div`
+export const NavbarContent = styled.nav`
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -66,7 +66,7 @@ export const LogoAccent = styled.span`
    color: ${({ theme }) => theme.colors.accent};
    transition: color 0.3s ease-in-out;
 
-   ${Logo}:hover & {
+   ${Logo}:hover &, ${Logo}:focus-within & {
       color: ${({ theme }) => theme.colors.text};
    }
 `;
@@ -75,7 +75,7 @@ export const LogoText = styled.span`
    color: ${({ theme }) => theme.colors.text};
    transition: color 0.3s ease-in-out;
 
-   ${Logo}:hover & {
+   ${Logo}:hover &, ${Logo}:focus-within & {
       color: ${({ theme }) => theme.colors.accent};
    }
 `;
@@ -130,7 +130,8 @@ export const NavLink = styled(Link)`
    transition: color 0.3s ease-in-out;
    padding: 0.5rem 0;
 
-   &:hover {
+   &:hover,
+   &:focus {
       color: ${({ theme }) => theme.colors.accent};
    }
 

@@ -8,7 +8,8 @@ export const Card = styled.div`
    border-radius: 12px;
    padding: 16px;
 
-   &:hover {
+   &:hover,
+   &:focus {
       background: var(--color-surface-hover);
    }
 `;
@@ -17,7 +18,8 @@ export const Card = styled.div`
 export const Button = styled.button`
    background: ${({ theme }) => theme.colors.accent};
    color: ${({ theme }) => theme.palette.WHITE};
-   &:hover {
+   &:hover,
+   &:focus {
       background: ${({ theme }) => theme.colors.accentHover};
    }
 `;
