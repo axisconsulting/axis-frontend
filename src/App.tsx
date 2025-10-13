@@ -1,18 +1,36 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import styled from "styled-components";
+import { BREAKPOINTS } from "./constants/breakpoints";
+
+const RootWrapper = styled.div`
+   margin: 0 1rem;
+
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
+      margin: 0 1.5rem;
+   }
+
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
+      margin: 0 2rem;
+   }
+`;
+
+const ChildWrapper = styled.div`
+   padding-top: 6rem;
+`;
 
 /*
  * This is the main App component that includes the Navbar, an Outlet for rendering child routes, and the footer
  */
 export default function App() {
    return (
-      <div>
+      <RootWrapper>
          <Navbar />
-         <div style={{ paddingTop: "5rem", padding: "5rem 24px 24px 24px" }}>
+         <ChildWrapper>
             <Outlet />
-         </div>
+         </ChildWrapper>
          <Footer />
-      </div>
+      </RootWrapper>
    );
 }

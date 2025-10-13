@@ -3,7 +3,6 @@ import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 // import { MdOutlineEmail } from "react-icons/md";
 import Hyperlink from "../hyperlink/Hyperlink";
 import {
-   Wrapper,
    TopNav,
    AddressDesktop,
    RightCols,
@@ -20,7 +19,7 @@ const currentYear: number = new Date().getFullYear();
 
 export default function Footer() {
    return (
-      <Wrapper>
+      <>
          <TopNav>
             <AddressDesktop>
                <h6>Axis Consulting</h6>
@@ -89,6 +88,6 @@ export default function Footer() {
                </div>
             </AddressMobile>
          </BottomBar>
-      </Wrapper>
+      </>
    );
 }

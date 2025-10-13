@@ -2,10 +2,6 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../constants/breakpoints";
 
-export const Wrapper = styled.footer`
-   margin: 0 2rem;
-`;
-
 export const TopNav = styled.nav`
    padding-top: 5rem;
    display: flex;

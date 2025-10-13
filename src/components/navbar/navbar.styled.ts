@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { BREAKPOINTS } from "../../constants/breakpoints";
 
 export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    position: fixed;
@@ -14,11 +15,11 @@ export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    height: fit-content;
    width: 100%;
    background: ${({ $isOpen, theme }) => ($isOpen ? theme.tokens.navBg : "transparent")};
-   box-shadow: ${({ $isOpen }) => ($isOpen ? "0 10px 15px -3px rgba(0, 0, 0, 0.1)" : "none")};
+   box-shadow: ${({ $isOpen }) => ($isOpen ? "0 10px 15px -3px rgba(0,0,0,.1)" : "none")};
    border-radius: ${({ $isOpen }) => ($isOpen ? "0" : "1rem")};
    transition: all 0.2s ease-in-out;
 
-   @media (min-width: 1024px) {
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
       background: transparent;
       box-shadow: none;
       border-radius: 0;
@@ -29,15 +30,19 @@ export const NavbarContent = styled.nav`
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   padding: 0 5%;
    background: transparent;
    width: 100%;
-   margin: 1rem 0;
 
-   @media (min-width: 1024px) {
+   /* Padding to match root wrapper */
+   padding: 0.5rem 1rem;
+
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
+      padding: 0.5rem 1.5rem;
+   }
+
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
+      padding: 1rem 2rem;
       flex-direction: row;
-      padding: 1% 5%;
-      margin: 0;
    }
 `;
 
@@ -90,7 +95,7 @@ export const MobileMenuButton = styled.button`
    cursor: pointer;
    padding: 0.5rem;
 
-   @media (min-width: 1024px) {
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
       display: none;
    }
 
@@ -107,18 +112,18 @@ export const NavLinks = styled.div<{ $isOpen: boolean }>`
    width: 100%;
    white-space: nowrap;
    border-top: 1px solid ${({ theme }) => theme.colors.text};
-   padding-top: 1rem;
+   padding: 1rem 0;
    margin-top: ${({ $isOpen }) => ($isOpen ? "1rem" : "-25rem")};
    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
    transition: all 0.3s ease-in-out;
 
-   @media (min-width: 1024px) {
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
       flex-direction: row;
       justify-content: flex-end;
+      align-items: center;
       gap: 2rem;
       width: fit-content;
       border-top: none;
-      padding-top: 0;
       margin-top: 0;
       opacity: 1;
    }
@@ -131,11 +136,25 @@ export const NavLink = styled(Link)`
    padding: 0.5rem 0;
 
    &:hover,
-   &:focus {
+   &:focus-visible {
       color: ${({ theme }) => theme.colors.accent};
    }
 
-   @media (min-width: 1024px) {
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
       padding: 0;
+   }
+`;
+
+/* NEW: Backdrop under the navbar (z-index 40), only on mobile */
+export const Backdrop = styled.div`
+   position: fixed;
+   inset: 0;
+   z-index: 40;
+   background: rgba(0, 0, 0, 0.35);
+   backdrop-filter: saturate(150%) blur(1px);
+   transition: opacity 0.2s ease-in-out;
+
+   @media (min-width: ${BREAKPOINTS.LARGE}) {
+      display: none;
    }
 `;
