@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BREAKPOINTS } from "../../constants/breakpoints";
+import { BREAKPOINTS } from "$constants/breakpoints";
 
 export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    position: fixed;

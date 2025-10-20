@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { ROUTES } from "../../constants/routes";
-import { ROUTE_STRINGS } from "../../constants/route-strings";
+
+import { ROUTES } from "$constants/routes";
+import { ROUTE_STRINGS } from "$constants/route-strings";
+import { BREAKPOINTS } from "$constants/breakpoints";
 import {
    NavbarContainer,
    NavbarContent,
@@ -15,7 +17,6 @@ import {
    NavLink,
    Backdrop,
 } from "./navbar.styled";
-import { BREAKPOINTS } from "../../constants/breakpoints";
 
 export default function Navbar() {
    const [isOpen, setIsOpen] = useState(false);

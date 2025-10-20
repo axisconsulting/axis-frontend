@@ -1,7 +1,6 @@
 // Footer.tsx
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
-// import { MdOutlineEmail } from "react-icons/md";
-import Hyperlink from "../hyperlink/Hyperlink";
+import Hyperlink from "$components/text_based/hyperlink/Hyperlink";
 import {
    TopNav,
    AddressDesktop,
@@ -12,8 +11,9 @@ import {
    SocialLink,
    AddressMobile,
 } from "./footer.styled";
-import { ROUTES } from "../../constants/routes";
-import { AXIS_LINKS, SOCIAL_LINKS } from "../../constants/links";
+
+import { ROUTES } from "$constants/routes";
+import { AXIS_LINKS, SOCIAL_LINKS } from "$constants/links";
 
 const currentYear: number = new Date().getFullYear();
 

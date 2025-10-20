@@ -26,8 +26,8 @@ export const theme = {
       surfaceHover: withAlpha(colors.text, 0.08),
 
       // optional app-specific tokens:
-      navBg: "#1A1A1A", // your old "my-light-gray" (navbar background)
-      footerText: "#939393", // your old "my-gray" for footer address
+      navBg: "#1A1A1A", // old "my-light-gray" (navbar background)
+      footerText: "#939393", // old "my-gray" for footer address
    },
 } as const;
 

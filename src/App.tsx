@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
 import styled from "styled-components";
-import { BREAKPOINTS } from "./constants/breakpoints";
+
+import Navbar from "$components/core/navbar/Navbar";
+import Footer from "$components/core/footer/Footer";
+import { BREAKPOINTS } from "$constants/breakpoints";
 
 const RootWrapper = styled.div`
    margin: 0 1rem;

@@ -1,6 +1,6 @@
 // footer.styled.ts
 import styled from "styled-components";
-import { BREAKPOINTS } from "../../constants/breakpoints";
+import { BREAKPOINTS } from "$constants/breakpoints";
 
 export const TopNav = styled.nav`
    padding-top: 5rem;
