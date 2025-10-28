@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Inner, IconWrapper, TextEl, ClickableWrapper } from "./icon.styled";
+import { Container, Inner, IconWrapper, TextEl, ClickableWrapper } from "./Icon.styled";
 
 export interface IconContainerProps {
    Icon: React.ElementType;

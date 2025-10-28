@@ -5,20 +5,12 @@ import { BsPaperclip } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegStickyNote } from "react-icons/fa";
 
-import {
-   Page,
-   Container,
-   StatsGrid,
-   StatColumn,
-   Section,
-   CenterStack,
-   EngagementRow,
-} from "./home.styled";
+import { Page, Container, StatsGrid, StatColumn, CenterStack, EngagementRow } from "./Home.styled";
 
-import Title from "$components/text_based/title/Title";
-import Icon from "$components/containers/icon/Icon";
-import Image from "$components/containers/image/Image";
-import ImageContent from "$components/containers/image_content/ImageContent";
+import Title from "$components/Title/Title";
+import Icon from "$components/Icon/Icon";
+import Image from "$components/Image/Image";
+import ImageContent from "$components/ImageContent/ImageContent";
 import { ROUTES } from "$constants/routes";
 
 export default function Home() {

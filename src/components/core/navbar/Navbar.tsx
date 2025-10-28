@@ -16,7 +16,7 @@ import {
    NavLinks,
    NavLink,
    Backdrop,
-} from "./navbar.styled";
+} from "./Navbar.styled";
 
 export default function Navbar() {
    const [isOpen, setIsOpen] = useState(false);

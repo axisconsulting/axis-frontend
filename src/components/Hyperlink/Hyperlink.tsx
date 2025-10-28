@@ -2,7 +2,7 @@
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link as RouterLink } from "react-router-dom";
-import { HyperlinkWrapper, StyledAnchor, Arrow } from "./hyperlink.styled";
+import { HyperlinkWrapper, StyledAnchor, Arrow } from "./Hyperlink.styled";
 
 export interface HyperlinkProps {
    text: string;

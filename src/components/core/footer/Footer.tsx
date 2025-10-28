@@ -1,7 +1,8 @@
 // Footer.tsx
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
-import Hyperlink from "$components/text_based/hyperlink/Hyperlink";
+import Hyperlink from "$components/Hyperlink/Hyperlink";
 import {
+   Wrapper,
    TopNav,
    AddressDesktop,
    RightCols,
@@ -10,7 +11,7 @@ import {
    Socials,
    SocialLink,
    AddressMobile,
-} from "./footer.styled";
+} from "./Footer.styled";
 
 import { ROUTES } from "$constants/routes";
 import { AXIS_LINKS, SOCIAL_LINKS } from "$constants/links";
@@ -19,7 +20,7 @@ const currentYear: number = new Date().getFullYear();
 
 export default function Footer() {
    return (
-      <>
+      <Wrapper>
          <TopNav>
             <AddressDesktop>
                <h6>Axis Consulting</h6>
@@ -88,6 +89,6 @@ export default function Footer() {
                </div>
             </AddressMobile>
          </BottomBar>
-      </>
+      </Wrapper>
    );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper, Heading, HeadingAccent, BodyText } from "./title.styled";
+import { Wrapper, Heading, HeadingAccent, BodyText } from "./Title.styled";
 
 export interface TitleProps {
    Header: string;

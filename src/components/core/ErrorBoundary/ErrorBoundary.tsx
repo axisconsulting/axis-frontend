@@ -1,6 +1,6 @@
 import { Link, useRouteError } from "react-router-dom";
 import { ROUTES } from "$constants/routes";
-import { Page } from "./errorBoundary.styled";
+import { Page } from "./ErrorBoundary.styled";
 
 export default function ErrorBoundary() {
    const error = useRouteError() as Error;

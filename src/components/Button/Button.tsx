@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "./button.styled";
+import { StyledButton } from "./Button.styled";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
    /** Visual style of the button */

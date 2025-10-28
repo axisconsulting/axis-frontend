@@ -1,6 +1,30 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BREAKPOINTS } from "$constants/breakpoints";
+import { BREAKPOINTS, up } from "$constants/breakpoints";
+
+// export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    right: 0;
+//    z-index: 50;
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//    margin: 0 auto;
+//    height: fit-content;
+//    width: 100%;
+//    background: ${({ $isOpen, theme }) => ($isOpen ? theme.tokens.navBg : "transparent")};
+//    box-shadow: ${({ $isOpen }) => ($isOpen ? "0 10px 15px -3px rgba(0,0,0,.1)" : "none")};
+//    border-radius: ${({ $isOpen }) => ($isOpen ? "0" : "1rem")};
+//    transition: all 0.2s ease-in-out;
+
+//    /* @media (min-width: ${BREAKPOINTS.LARGE}) {
+//       background: transparent;
+//       box-shadow: none;
+//       border-radius: 0;
+//    } */
+// `;
 
 export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    position: fixed;
@@ -11,19 +35,22 @@ export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin: 0 auto;
-   height: fit-content;
    width: 100%;
+   height: fit-content;
+   margin: 0 auto;
+
+   /* Always have a background — semi-opaque so it sits on top of content */
+
    background: ${({ $isOpen, theme }) => ($isOpen ? theme.tokens.navBg : "transparent")};
    box-shadow: ${({ $isOpen }) => ($isOpen ? "0 10px 15px -3px rgba(0,0,0,.1)" : "none")};
-   border-radius: ${({ $isOpen }) => ($isOpen ? "0" : "1rem")};
-   transition: all 0.2s ease-in-out;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+   backdrop-filter: saturate(180%) blur(10px);
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
-      background: transparent;
-      box-shadow: none;
-      border-radius: 0;
+   ${up("MEDIUM")} {
+      background: ${({ theme }) => theme.tokens.navBg};
    }
+
+   transition: all 0.2s ease-in-out;
 `;
 
 export const NavbarContent = styled.nav`
@@ -40,7 +67,7 @@ export const NavbarContent = styled.nav`
       padding: 0.5rem 1.5rem;
    }
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
       padding: 1rem 2rem;
       flex-direction: row;
    }
@@ -95,7 +122,7 @@ export const MobileMenuButton = styled.button`
    cursor: pointer;
    padding: 0.5rem;
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
       display: none;
    }
 
@@ -117,7 +144,7 @@ export const NavLinks = styled.div<{ $isOpen: boolean }>`
    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
    transition: all 0.3s ease-in-out;
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
@@ -140,7 +167,7 @@ export const NavLink = styled(Link)`
       color: ${({ theme }) => theme.colors.accent};
    }
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
       padding: 0;
    }
 `;
@@ -154,7 +181,7 @@ export const Backdrop = styled.div`
    backdrop-filter: saturate(150%) blur(1px);
    transition: opacity 0.2s ease-in-out;
 
-   @media (min-width: ${BREAKPOINTS.LARGE}) {
+   @media (min-width: ${BREAKPOINTS.MEDIUM}) {
       display: none;
    }
 `;

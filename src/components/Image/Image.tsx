@@ -10,7 +10,7 @@ import {
    CTAArrow,
    MediaBox,
    MediaImg,
-} from "./image.styled";
+} from "./Image.styled";
 import image_not_found from "$assets/image_not_found.jpg";
 
 export interface ImageContainerProps {

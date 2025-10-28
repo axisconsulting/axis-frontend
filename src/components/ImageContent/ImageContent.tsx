@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Wrapper, BgImage, Overlay, Inner, Heading, BodyText, CTABox } from "./imageContent.styled";
+import { Wrapper, BgImage, Overlay, Inner, Heading, BodyText, CTABox } from "./ImageContent.styled";
 import image_not_found from "$assets/image_not_found.jpg";
-import Button from "$components/interactive/button/Button";
+import Button from "$components/Button/Button";
 
 export interface ImageContentProps {
    Header: string;
