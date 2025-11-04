@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Inner, IconWrapper, TextEl, ClickableWrapper } from "./Icon.styled";
+import { Container, Inner, IconWrapper, TextEl, ClickableWrapper } from "./IconContainer.styled";
 
 export interface IconContainerProps {
    Icon: React.ElementType;
@@ -7,7 +7,7 @@ export interface IconContainerProps {
    clickTo?: string;
 }
 
-const Icon: React.FC<IconContainerProps> = ({ Icon, Text, clickTo = "" }) => {
+const IconContainer: React.FC<IconContainerProps> = ({ Icon, Text, clickTo = "" }) => {
    const isClickable = clickTo.trim() !== "";
 
    const content = (
@@ -28,4 +28,4 @@ const Icon: React.FC<IconContainerProps> = ({ Icon, Text, clickTo = "" }) => {
    );
 };
 
-export default Icon;
+export default IconContainer;

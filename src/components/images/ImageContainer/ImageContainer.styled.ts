@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { up } from "$constants/breakpoints";
+import { withAlpha } from "$styles/colors";
 
 export const Wrapper = styled.div`
+   border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.2)};
    position: relative;
    width: 100%;
    height: auto;
@@ -42,16 +44,9 @@ export const BodyText = styled.p`
    color: ${({ theme }) => theme.tokens.fg};
 `;
 
-export const CTAAnchor = styled.a`
-   position: relative;
-   display: inline-block;
-   text-decoration: none;
-   color: inherit;
-`;
-
 export const CTAInline = styled.div`
    position: absolute;
-   bottom: 10;
+   bottom: 10px; /* fixed unit */
    display: flex;
    align-items: center;
    margin-bottom: 1rem;
@@ -96,6 +91,7 @@ export const CTAArrow = styled.div`
 `;
 
 export const MediaBox = styled.div`
+   position: relative; /* needed for loader overlay */
    height: 20rem;
    border-radius: 0.25rem;
    overflow: hidden;
@@ -106,13 +102,24 @@ export const MediaBox = styled.div`
    }
 `;
 
-export const MediaImg = styled.img`
+/**
+ * Use $visible for fade-in after load while preserving your
+ * brightness/scale hover transitions.
+ */
+export const MediaImg = styled.img<{ $visible: boolean }>`
    width: 100%;
    height: 100%;
    object-fit: cover;
+
+   /* existing effects */
    filter: brightness(0.25);
    transform: scale(1);
-   transition: filter 0.5s ease, transform 0.5s ease;
+
+   /* fade-in control */
+   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+
+   /* combine transitions (opacity + your existing ones) */
+   transition: opacity 240ms ease-in-out, filter 0.5s ease, transform 0.5s ease;
 
    ${Wrapper}:hover & {
       filter: brightness(0.15);
@@ -122,4 +129,16 @@ export const MediaImg = styled.img`
    ${up("LARGE")} {
       height: 40rem;
    }
+`;
+
+/** Full-bleed overlay used for both loading and error states */
+export const LoaderLayer = styled.div`
+   position: absolute;
+   inset: 0;
+   z-index: 1;
+   pointer-events: none;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
 `;

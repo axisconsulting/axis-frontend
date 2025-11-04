@@ -5,19 +5,19 @@ import { BsPaperclip } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegStickyNote } from "react-icons/fa";
 
-import { Page, Container, StatsGrid, StatColumn, CenterStack, EngagementRow } from "./Home.styled";
+import { Container, StatsGrid, StatColumn, CenterStack, EngagementRow } from "./Home.styled";
 
 import Title from "$components/Title/Title";
-import Icon from "$components/Icon/Icon";
-import Image from "$components/Image/Image";
-import ImageContent from "$components/ImageContent/ImageContent";
+import Icon from "$components/icons/IconContainer/IconContainer";
 import { ROUTES } from "$constants/routes";
+import ImageContainer from "$components/images/ImageContainer/ImageContainer";
+import ImageContent from "$components/images/ImageContent/ImageContent";
 
 export default function Home() {
    const TEMP_URL = "https://fakeimage.com/400x300.png";
 
    return (
-      <Page>
+      <>
          <Container>
             <Title
                Header="Personal Growth,"
@@ -28,15 +28,15 @@ export default function Home() {
 
             <StatsGrid>
                <StatColumn>
-                  <Icon Icon={IoIosCheckmark} Text="70+ Projects" clickTo="" />
-                  <Icon Icon={MdOutlinePeopleAlt} Text="268 Alumni" clickTo="" />
-                  <Icon Icon={IoMdStarOutline} Text="4.5/5 Rating" clickTo="" />
+                  <Icon Icon={IoIosCheckmark} Text="70+ Projects" />
+                  <Icon Icon={MdOutlinePeopleAlt} Text="268 Alumni" />
+                  <Icon Icon={IoMdStarOutline} Text="4.5/5 Rating" />
                </StatColumn>
 
                <StatColumn>
-                  <Icon Icon={BsPaperclip} Text="200+ Students Engaged" clickTo="" />
-                  <Icon Icon={FaRegHeart} Text="96% Satisfaction" clickTo="" />
-                  <Icon Icon={FaRegStickyNote} Text="98% Implementation" clickTo="" />
+                  <Icon Icon={BsPaperclip} Text="200+ Students Engaged" />
+                  <Icon Icon={FaRegHeart} Text="96% Satisfaction" />
+                  <Icon Icon={FaRegStickyNote} Text="98% Implementation" />
                </StatColumn>
             </StatsGrid>
 
@@ -44,7 +44,7 @@ export default function Home() {
                <CenterStack>
                   <h1>Our Engagements</h1>
                   <EngagementRow>
-                     <Image
+                     <ImageContainer
                         Header="Visier"
                         Body="Market research on the field of HR analytics, market trends in HR and finance interactions."
                         CTA="More information on the client"
@@ -52,7 +52,7 @@ export default function Home() {
                         clickTo={TEMP_URL}
                         loading="lazy"
                      />
-                     <Image
+                     <ImageContainer
                         Header="West Coast Kids Cancer Foundation"
                         Body="Analysis on the supply chain, bottleneck identification, and recommendation of a just-in-time inventory system"
                         CTA="More information on the client"
@@ -68,12 +68,11 @@ export default function Home() {
                Header="Ready to Soar?"
                Body="Join the team, come to events, and expand horizons within the field of consulting"
                ButtonText="Get Involved"
-               Image={TEMP_URL}
+               ImageSrc={TEMP_URL}
                AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
                clickTo={ROUTES.GET_INVOLVED}
-               loading="lazy"
             />
          </Container>
-      </Page>
+      </>
    );
 }

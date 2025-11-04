@@ -1,40 +1,53 @@
+// ImageContent.styled.ts
 import styled, { css } from "styled-components";
 import { up } from "$constants/breakpoints";
+import { withAlpha } from "$styles/colors";
 
 export const Wrapper = styled.div`
+   border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.2)};
    position: relative;
-   height: 50vh; /* was h-[50vh] on small */
+   height: 50vh;
    overflow: hidden;
-   border-radius: 0.375rem; /* rounded-md */
+   border-radius: 0.375rem;
    text-align: center;
+   isolation: isolate;
 
    ${up("LARGE")} {
-      width: 100%; /* lg:w-[100%] */
-      height: auto; /* lg:h-fit */
+      width: 100%;
    }
 `;
 
-export const BgImage = styled.img`
+export const BgImage = styled.img<{ $visible?: boolean }>`
+   position: absolute;
+   inset: 0;
    width: 100%;
    height: 100%;
    object-fit: cover;
-
-   /* Tailwind: brightness-[0.25] + group-hover:scale-[1.03] */
    filter: brightness(0.25);
    transform: scale(1);
-   transition: transform 0.5s ease, filter 0.5s ease;
+   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+   transition: transform 0.5s ease, filter 0.5s ease, opacity 300ms ease;
 
    ${Wrapper}:hover & {
       transform: scale(1.03);
-      /* brightness stays at 0.25 in your original; keep it unless you want darker on hover */
+   }
+
+   @media (prefers-reduced-motion: reduce) {
+      transition: opacity 200ms linear;
+      transform: none;
+
+      ${Wrapper}:hover & {
+         transform: none;
+      }
    }
 `;
 
 export const Overlay = styled.div`
    position: absolute;
-   top: 40%; /* top-[40%] */
+   top: 40%;
    left: 0;
    width: 100%;
+   z-index: 2;
 `;
 
 export const Inner = styled.div`
@@ -43,10 +56,10 @@ export const Inner = styled.div`
    max-width: 100%;
    display: flex;
    flex-direction: column;
-   gap: 3vh; /* Tailwind used 3lvh; using 3vh for broad support */
+   gap: 3vh;
 
    ${up("LARGE")} {
-      max-width: 33%; /* lg:max-w-[33%] */
+      max-width: 33%;
    }
 `;
 
@@ -61,9 +74,8 @@ export const Heading = styled.h2`
 export const BodyText = styled.p`
    margin: 0;
    transition: margin-top 0.5s ease;
-
-   /* small: mt-[1%]; lg:mt-[1.5%]; hover → 0% */
    margin-top: 1%;
+
    ${up("LARGE")} {
       margin-top: 1.5%;
    }
@@ -80,8 +92,6 @@ export const BodyText = styled.p`
 export const CTABox = styled.div`
    position: relative;
    transition: margin-top 0.65s ease, opacity 0.65s ease;
-
-   /* small: visible; lg: hidden until hover */
    opacity: 1;
    margin-top: 2%;
 

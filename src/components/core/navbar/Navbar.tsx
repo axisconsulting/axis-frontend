@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 
 import { ROUTES } from "$constants/routes";
-import { ROUTE_STRINGS } from "$constants/route-strings";
+import { ROUTE_STRINGS } from "$constants/routeStrings";
 import { BREAKPOINTS } from "$constants/breakpoints";
 import {
    NavbarContainer,
@@ -89,21 +89,25 @@ export default function Navbar() {
                </NavbarHeader>
 
                <NavLinks id="mobile-nav-links" $isOpen={isOpen} role="menu">
-                  <NavLink to={ROUTES.RESOURCES} onClick={onNavClick} role="menuitem">
-                     {ROUTE_STRINGS.RESOURCES}
-                  </NavLink>
-                  <NavLink to={ROUTES.ABOUT} onClick={onNavClick} role="menuitem">
-                     {ROUTE_STRINGS.ABOUT}
-                  </NavLink>
-                  <NavLink to={ROUTES.CLIENTS} onClick={onNavClick} role="menuitem">
-                     {ROUTE_STRINGS.CLIENTS}
-                  </NavLink>
-                  <NavLink to={ROUTES.SPONSORS} onClick={onNavClick} role="menuitem">
-                     {ROUTE_STRINGS.SPONSORS}
-                  </NavLink>
-                  <NavLink to={ROUTES.GET_INVOLVED} onClick={onNavClick} role="menuitem">
-                     {ROUTE_STRINGS.GET_INVOLVED}
-                  </NavLink>
+                  <div>
+                     <ul>
+                        <NavLink to={ROUTES.RESOURCES} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.RESOURCES}
+                        </NavLink>
+                        <NavLink to={ROUTES.ABOUT} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.ABOUT}
+                        </NavLink>
+                        <NavLink to={ROUTES.CLIENTS} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.CLIENTS}
+                        </NavLink>
+                        <NavLink to={ROUTES.SPONSORS} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.SPONSORS}
+                        </NavLink>
+                        <NavLink to={ROUTES.GET_INVOLVED} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.GET_INVOLVED}
+                        </NavLink>
+                     </ul>
+                  </div>
                </NavLinks>
             </NavbarContent>
          </NavbarContainer>

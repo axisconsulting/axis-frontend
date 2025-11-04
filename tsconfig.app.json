@@ -19,7 +19,6 @@
       "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
-      "erasableSyntaxOnly": true,
       "noFallthroughCasesInSwitch": true,
       "noUncheckedSideEffectImports": true,
 
@@ -27,7 +26,8 @@
       "paths": {
          "$constants/*": ["src/constants/*"],
          "$components/*": ["src/components/*"],
-         "$assets/*": ["src/assets/*"]
+         "$assets/*": ["src/assets/*"],
+         "$styles/*": ["src/styles/*"]
       }
    },
    "include": ["src"]

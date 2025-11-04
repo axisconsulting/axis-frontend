@@ -15,8 +15,7 @@ import {
 
 import { ROUTES } from "$constants/routes";
 import { AXIS_LINKS, SOCIAL_LINKS } from "$constants/links";
-
-const currentYear: number = new Date().getFullYear();
+import { currentYear } from "$constants/utils";
 
 export default function Footer() {
    return (

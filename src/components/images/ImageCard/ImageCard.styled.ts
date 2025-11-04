@@ -1,23 +1,15 @@
 import styled, { css } from "styled-components";
 import { up } from "$constants/breakpoints";
+import { withAlpha } from "$styles/colors";
 
 /**
  * Outer wrapper. Always block-level so you can drop these in a flex row.
  */
 export const CardOuter = styled.div`
-   position: relative;
-   height: fit-content;
+   border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.1)};
+   border-radius: 8px;
    display: block;
    color: ${({ theme }) => theme.tokens.fg};
-`;
-
-/**
- * Optional link wrapper. We keep styling neutral so hover state still applies.
- */
-export const ClickWrapper = styled.a`
-   text-decoration: none;
-   color: inherit;
-   display: block;
 `;
 
 /**
@@ -25,8 +17,7 @@ export const ClickWrapper = styled.a`
  */
 export const CardInner = styled.div`
    position: relative;
-   height: fit-content;
-   cursor: pointer;
+   width: 100%;
 `;
 
 /**
@@ -270,4 +261,30 @@ export const SkeletonOverlay = styled.div`
          transform: translateX(100%);
       }
    }
+`;
+
+/** Fade-in image (mirrors ImageContent’s BgImage opacity transition) */
+export const BgImage = styled.img<{ $visible?: boolean }>`
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+
+   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+   transition: opacity 300ms ease;
+
+   @media (prefers-reduced-motion: reduce) {
+      transition: opacity 200ms linear;
+   }
+`;
+
+/** Layer to center loader/placeholder over the image area */
+export const LoaderLayer = styled.div`
+   position: absolute;
+   inset: 0;
+   z-index: 2;
+
+   display: grid;
+   place-items: center;
 `;

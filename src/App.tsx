@@ -18,6 +18,9 @@ const RootWrapper = styled.div`
 `;
 
 const ChildWrapper = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
    padding-top: 6rem;
 `;
 

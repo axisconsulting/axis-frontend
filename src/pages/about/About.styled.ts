@@ -16,13 +16,25 @@ export const PageWrapper = styled.div`
    }
 `;
 
+// About.styled.ts
 export const ValuesRow = styled.div`
    display: flex;
    flex-direction: column;
    gap: 1rem;
 
+   /* Make direct children flexible */
+   & > * {
+      flex: 1 1 100%;
+      min-width: 0; /* prevent overflow from long text */
+   }
+
    ${up("LARGE")} {
       flex-direction: row;
+
+      /* three equal columns on large screens */
+      & > * {
+         flex: 1 1 0;
+      }
    }
 `;
 

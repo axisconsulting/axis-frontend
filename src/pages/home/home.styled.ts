@@ -2,11 +2,9 @@
 import styled from "styled-components";
 import { up } from "$constants/breakpoints";
 
-export const Page = styled.div``;
-
 export const Container = styled.div`
    /* Tailwind: lg:w-[70%] w-[88%] m-auto py-[5%] flex flex-col gap-[5rem] lg:gap-[10rem] */
-   width: 88%;
+   width: 90%;
    margin: 0 auto;
    padding: 5% 0;
    display: flex;
@@ -14,7 +12,7 @@ export const Container = styled.div`
    gap: 5rem;
 
    ${up("LARGE")} {
-      width: 70%;
+      width: 80%;
       gap: 10rem;
    }
 `;

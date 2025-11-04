@@ -1,5 +1,4 @@
 // src/components/About/About.tsx
-import React from "react";
 import {
    PageWrapper,
    ValuesRow,
@@ -11,7 +10,7 @@ import {
 } from "./About.styled";
 
 import Title from "$components/Title/Title";
-import ImageCard from "$components/ImageCard/ImageCard";
+import ImageCard from "$components/images/ImageCard/ImageCard";
 
 import {
    MANAGING_DIRECTORS,
@@ -30,6 +29,7 @@ import {
    TEAM_ECLIPSE,
    type Member,
 } from "$constants/members";
+import { currentYear } from "$constants/utils";
 
 const TEMP_URL = "https://fakeimage.com/400x300.png";
 
@@ -62,7 +62,7 @@ const consultingTeams = [
 function TeamRow({
    people,
    teamTitle = "",
-   teamSubtitle = "2025–2026",
+   teamSubtitle = `${currentYear}-${currentYear + 1}`,
 }: {
    people: Member[];
    teamTitle?: string;
@@ -108,7 +108,7 @@ function TeamRow({
    );
 }
 
-const About: React.FC = () => {
+export default function About() {
    return (
       <PageWrapper>
          {/* Intro block */}
@@ -118,20 +118,18 @@ const About: React.FC = () => {
          />
 
          {/* Top hero cards: Values / Mission / Vision */}
-         <>
-            <ValuesRow>
-               {featureBlocks.map((block, i) => (
-                  <ImageCard
-                     key={i}
-                     variant="feature"
-                     header={block.header}
-                     body={block.body}
-                     img={block.img}
-                     loading="lazy"
-                  />
-               ))}
-            </ValuesRow>
-         </>
+         <ValuesRow>
+            {featureBlocks.map((block, i) => (
+               <ImageCard
+                  key={i}
+                  variant="feature"
+                  header={block.header}
+                  body={block.body}
+                  img={block.img}
+                  loading="lazy"
+               />
+            ))}
+         </ValuesRow>
 
          {/* Managing Directors */}
          <TeamSection>
@@ -243,6 +241,4 @@ const About: React.FC = () => {
          </TeamSection>
       </PageWrapper>
    );
-};
-
-export default About;
+}
