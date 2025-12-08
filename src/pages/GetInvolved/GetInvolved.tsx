@@ -16,6 +16,7 @@ import { TEMP_URL } from "$constants/utils";
 import { EVENT_LINKS, RECRUITMENT } from "$constants/links";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import TestimonialsCarousel from "$components/testimonials/TestimonialsCarousel/TestimonialsCarousel";
+import FAQSection from "$components/pages/FAQSection/FAQSection";
 
 const GetInvolved: FC = () => {
    return (
@@ -75,6 +76,8 @@ const GetInvolved: FC = () => {
                loading="lazy"
             />
          </CalloutWrapper>
+
+         <FAQSection />
       </PageWrapper>
    );
 };

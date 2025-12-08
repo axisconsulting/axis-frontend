@@ -1,6 +1,6 @@
 # SFU Axis Consulting - Official Website
 
-[![Website Status](https://img.shields.io/website?url=https://www.sfuaxisconsulting.com/)](https://your-club-website.com)
+[![Website Status](https://img.shields.io/website?url=https://www.sfuaxisconsulting.com/)](https://www.sfuaxisconsulting.com/)
 [![Contributors](https://img.shields.io/github/contributors/axisconsulting/axis-frontend.svg)](https://github.com/axisconsulting/axis-frontend)
 
 <!-- Please update this for visibility -->

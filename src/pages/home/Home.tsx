@@ -13,6 +13,7 @@ import { ROUTES } from "$constants/routes";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { TEMP_URL } from "$constants/utils";
+import { CLIENT_LOGOS_BY_KEY } from "$constants/clients";
 
 export default function Home() {
    return (
@@ -47,16 +48,16 @@ export default function Home() {
                         Header="Visier"
                         Body="Market research on the field of HR analytics, market trends in HR and finance interactions."
                         CTA="More information on the client"
-                        Image={TEMP_URL}
-                        clickTo={TEMP_URL}
+                        Image={CLIENT_LOGOS_BY_KEY.visier.logoSrc}
+                        clickTo={CLIENT_LOGOS_BY_KEY.visier.website}
                         loading="lazy"
                      />
                      <ImageContainer
                         Header="West Coast Kids Cancer Foundation"
                         Body="Analysis on the supply chain, bottleneck identification, and recommendation of a just-in-time inventory system"
                         CTA="More information on the client"
-                        Image={TEMP_URL}
-                        clickTo={TEMP_URL}
+                        Image={CLIENT_LOGOS_BY_KEY.wck.logoSrc}
+                        clickTo={CLIENT_LOGOS_BY_KEY.wck.website}
                         loading="lazy"
                      />
                   </EngagementRow>
