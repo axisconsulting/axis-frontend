@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { CLIENT_LOGOS, type ClientLogo } from "$constants/clients";
 import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
+import { ImageState } from "$constants/imageState";
 
 import {
    GridWrapper,
@@ -13,6 +14,8 @@ import {
    LogoItemImage,
    LogoItemLabel,
 } from "./ClientLogoGrid.styled";
+import { LoaderLayer } from "$styles/constants/LoaderLayer";
+import { SheenLoader } from "$styles/constants/Animation";
 
 type ClientLogoGridProps = {
    clients?: ClientLogo[]; // optional override; defaults to all CLIENT_LOGOS
@@ -25,26 +28,40 @@ type ClientLogoItemProps = {
 };
 
 const ClientLogoItem: FC<ClientLogoItemProps> = ({ logo, showLabel }) => {
-   const [isLoaded, setIsLoaded] = useState(false);
-   const [hasError, setHasError] = useState(false);
+   const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
 
-   const showPlaceholder = !isLoaded || hasError;
+   const isLoading = imageState === ImageState.LOADING;
+   const isError = imageState === ImageState.ERROR;
 
    return (
       <LogoItem>
          <LogoItemImageWrapper>
-            {showPlaceholder && <GlossyPlaceholder showNotFound={hasError} label={logo.name} />}
+            {/* Loading shimmer */}
+            {isLoading && (
+               <LoaderLayer>
+                  <SheenLoader role="status" aria-live="polite" aria-label="loading logo" />
+               </LoaderLayer>
+            )}
 
-            {!hasError && (
+            {/* Error fallback */}
+            {isError && (
+               <LoaderLayer>
+                  <GlossyPlaceholder
+                     showNotFound
+                     label={logo.name}
+                     aria-label="logo failed to load"
+                  />
+               </LoaderLayer>
+            )}
+
+            {/* Image (hidden only when in hard error state) */}
+            {!isError && (
                <LogoItemImage
                   src={logo.logoSrc}
                   alt={`${logo.name} logo`}
                   loading="lazy"
-                  onLoad={() => setIsLoaded(true)}
-                  onError={() => {
-                     setHasError(true);
-                     setIsLoaded(false);
-                  }}
+                  onLoad={() => setImageState(ImageState.LOADED)}
+                  onError={() => setImageState(ImageState.ERROR)}
                />
             )}
          </LogoItemImageWrapper>

@@ -1,4 +1,4 @@
-// src/components/ClientBlock/ClientBlock.styled.tsx
+// src/components/CompanyBlock/CompanyBlock.styled.ts
 import styled from "styled-components";
 import { up } from "$styles/constants/breakpoints";
 
