@@ -11,7 +11,7 @@ export const palette = {
 export const colors = {
    background: palette.BACKGROUND_DARK,
    text: palette.WHITE, // or STARLIGHT_WHITE if you want warmer text
-   textMuted: palette.STARDUST_GRAY,
+   textMuted: palette.STARLIGHT_WHITE,
    accent: palette.AXIS_BLUE, // main action/link color
    accentHover: palette.AXIS_DARK_BLUE, // hover/active state
 } as const;

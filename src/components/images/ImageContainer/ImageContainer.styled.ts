@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { up } from "$constants/breakpoints";
+import { up } from "$styles/constants/breakpoints";
 import { withAlpha } from "$styles/colors";
 
 export const Wrapper = styled.div`

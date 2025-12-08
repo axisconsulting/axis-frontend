@@ -1,6 +1,6 @@
 // footer.styled.ts
 import styled from "styled-components";
-import { BREAKPOINTS } from "$constants/breakpoints";
+import { BREAKPOINTS } from "$styles/constants/breakpoints";
 
 export const Wrapper = styled.footer`
    padding-top: 5rem;

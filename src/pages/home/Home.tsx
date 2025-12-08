@@ -12,10 +12,9 @@ import Icon from "$components/icons/IconContainer/IconContainer";
 import { ROUTES } from "$constants/routes";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
+import { TEMP_URL } from "$constants/utils";
 
 export default function Home() {
-   const TEMP_URL = "https://fakeimage.com/400x300.png";
-
    return (
       <>
          <Container>

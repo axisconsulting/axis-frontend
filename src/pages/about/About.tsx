@@ -29,9 +29,7 @@ import {
    TEAM_ECLIPSE,
    type Member,
 } from "$constants/members";
-import { currentYear } from "$constants/utils";
-
-const TEMP_URL = "https://fakeimage.com/400x300.png";
+import { currentYear, TEMP_URL } from "$constants/utils";
 
 // hero section content
 const featureBlocks = [

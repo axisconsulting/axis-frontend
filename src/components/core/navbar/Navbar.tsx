@@ -4,7 +4,7 @@ import { IoMenu } from "react-icons/io5";
 
 import { ROUTES } from "$constants/routes";
 import { ROUTE_STRINGS } from "$constants/routeStrings";
-import { BREAKPOINTS } from "$constants/breakpoints";
+import { BREAKPOINTS } from "$styles/constants/breakpoints";
 import {
    NavbarContainer,
    NavbarContent,

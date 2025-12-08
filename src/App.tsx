@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Navbar from "$components/core/Navbar/Navbar";
 import Footer from "$components/core/Footer/Footer";
-import { BREAKPOINTS } from "$constants/breakpoints";
+import { BREAKPOINTS } from "$styles/constants/breakpoints";
 
 const RootWrapper = styled.div`
    margin: 0 1rem;

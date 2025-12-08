@@ -1,6 +1,6 @@
 // About.styled.ts
 import styled, { css } from "styled-components";
-import { up } from "$constants/breakpoints";
+import { up } from "$styles/constants/breakpoints";
 
 export const PageWrapper = styled.div`
    width: 90%;

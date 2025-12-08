@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { withAlpha } from "$styles/colors";
-import { up } from "$constants/breakpoints";
+import { up } from "$styles/constants/breakpoints";
 
 export const NavbarContainer = styled.header<{ $isOpen: boolean }>`
    position: fixed;

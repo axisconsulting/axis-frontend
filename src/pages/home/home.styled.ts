@@ -1,6 +1,6 @@
 // home.styled.ts
 import styled from "styled-components";
-import { up } from "$constants/breakpoints";
+import { up } from "$styles/constants/breakpoints";
 
 export const Container = styled.div`
    /* Tailwind: lg:w-[70%] w-[88%] m-auto py-[5%] flex flex-col gap-[5rem] lg:gap-[10rem] */
