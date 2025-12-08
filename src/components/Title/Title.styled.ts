@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
-import { BREAKPOINTS } from "$styles/constants/breakpoints";
-
-const up = (key: keyof typeof BREAKPOINTS) => `@media (min-width: ${BREAKPOINTS[key]})`;
+import { up } from "$styles/constants/breakpoints";
 
 export const Wrapper = styled.div`
    display: grid;

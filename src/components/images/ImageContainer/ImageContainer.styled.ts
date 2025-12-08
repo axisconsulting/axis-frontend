@@ -1,3 +1,4 @@
+// ImageContainer.styled.ts
 import styled from "styled-components";
 import { up } from "$styles/constants/breakpoints";
 import { withAlpha } from "$styles/colors";
@@ -6,11 +7,15 @@ export const Wrapper = styled.div`
    border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.2)};
    position: relative;
    width: 100%;
-   height: auto;
+   height: 100%; /* allow wrapper to fill its grid cell */
    overflow: hidden;
    border-radius: 0.25rem;
+
+   display: flex;
+   flex-direction: column;
 `;
 
+// Overlay stays the same
 export const Overlay = styled.div`
    position: absolute;
    bottom: 0;
@@ -46,7 +51,7 @@ export const BodyText = styled.p`
 
 export const CTAInline = styled.div`
    position: absolute;
-   bottom: 10px; /* fixed unit */
+   bottom: 10px;
    display: flex;
    align-items: center;
    margin-bottom: 1rem;
@@ -90,48 +95,42 @@ export const CTAArrow = styled.div`
    }
 `;
 
+// ✅ Key change: let the grid cell control height
 export const MediaBox = styled.div`
-   position: relative; /* needed for loader overlay */
-   height: 20rem;
+   position: relative;
+   width: 100%;
+   flex: 1 1 auto; /* take available vertical space in Wrapper */
+   min-height: 16rem; /* reasonable minimum so it’s not tiny */
+
    border-radius: 0.25rem;
    overflow: hidden;
-   width: 100%;
 
    ${up("LARGE")} {
-      min-height: 40rem;
+      min-height: 18rem; /* slightly taller on desktop, but not forced 40rem */
    }
 `;
 
 /**
- * Use $visible for fade-in after load while preserving your
- * brightness/scale hover transitions.
+ * Background image fills whatever height the MediaBox/grid cell decides.
  */
 export const MediaImg = styled.img<{ $visible: boolean }>`
    width: 100%;
    height: 100%;
    object-fit: cover;
 
-   /* existing effects */
    filter: brightness(0.25);
    transform: scale(1);
 
-   /* fade-in control */
    opacity: ${({ $visible }) => ($visible ? 1 : 0)};
-
-   /* combine transitions (opacity + your existing ones) */
    transition: opacity 240ms ease-in-out, filter 0.5s ease, transform 0.5s ease;
 
    ${Wrapper}:hover & {
       filter: brightness(0.15);
       transform: scale(1.03);
    }
-
-   ${up("LARGE")} {
-      height: 40rem;
-   }
 `;
 
-/** Full-bleed overlay used for both loading and error states */
+/** Optional: if you still use this for overlays */
 export const LoaderLayer = styled.div`
    position: absolute;
    inset: 0;

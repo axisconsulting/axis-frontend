@@ -9,13 +9,9 @@ import { AXIS_LINKS } from "$constants/links";
 import { CLIENT_LOGOS_BY_KEY, CLIENT_LOGOS, FEATURED_CLIENT_KEYS } from "$constants/clients";
 import { TEMP_URL } from "$constants/utils";
 
-import {
-   PageWrapper,
-   ClientsListSection,
-   ClientsLogosSection,
-   CalloutWrapper,
-} from "./Clients.styled";
+import { ClientsListSection, ClientsLogosSection, CalloutWrapper } from "./Clients.styled";
 import CompanyBlock from "$components/pages/CompanyBlock/CompanyBlock";
+import { PageWrapper } from "$styles/constants/PageWrapper";
 
 const Clients: FC = () => {
    // All logos except the ones featured

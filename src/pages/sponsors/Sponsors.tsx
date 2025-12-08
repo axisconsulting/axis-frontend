@@ -7,9 +7,10 @@ import ImageContent from "$components/images/ImageContent/ImageContent";
 import { AXIS_LINKS } from "$constants/links";
 import { TEMP_URL } from "$constants/utils";
 
-import { CalloutWrapper, SponsorsListSection, PageWrapper } from "./Sponsors.styled";
+import { CalloutWrapper, SponsorsListSection } from "./Sponsors.styled";
 import { SPONSOR_LOGOS_BY_KEY } from "$constants/sponsors";
 import CompanyBlock from "$components/pages/CompanyBlock/CompanyBlock";
+import { PageWrapper } from "$styles/constants/PageWrapper";
 
 const Sponsors: FC = () => {
    return (
