@@ -14,7 +14,7 @@ import {
 } from "./Footer.styled";
 
 import { ROUTES } from "$constants/routes";
-import { AXIS_LINKS, SOCIAL_LINKS } from "$constants/links";
+import { AXIS_LINKS, RECRUITMENT, SOCIAL_LINKS } from "$constants/links";
 import { currentYear } from "$constants/utils";
 
 export default function Footer() {
@@ -35,7 +35,8 @@ export default function Footer() {
                   <h6>Our Resources</h6>
                   <Hyperlink text="Resources" clickTo={ROUTES.RESOURCES} />
                   <Hyperlink text="Email" mailto={AXIS_LINKS.EMAIL} />
-                  <Hyperlink text="Recruitment Package" clickTo={AXIS_LINKS.RECRUITMENT_PACKAGE} />
+                  <Hyperlink text="Impact Report" clickTo={AXIS_LINKS.IMPACT_REPORT} />
+                  <Hyperlink text="Recruitment Package" clickTo={RECRUITMENT.COORDINATOR_PACKAGE} />
                </LinkGroup>
                <LinkGroup>
                   <h6>Discover</h6>

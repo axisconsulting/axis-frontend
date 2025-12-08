@@ -11,7 +11,7 @@ import {
    SlideContainer,
 } from "./TestimonialsCarousel.styled";
 import { TESTIMONIALS } from "$constants/testimonials";
-import Testimonial from "../Testamonial/Testimonial";
+import Testimonial from "../Testimonial/Testimonial";
 
 type TestimonialsCarouselProps = {
    autoPlay?: boolean;

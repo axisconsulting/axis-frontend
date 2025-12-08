@@ -13,9 +13,9 @@ import {
 } from "./GetInvolved.styled";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { TEMP_URL } from "$constants/utils";
-import { AXIS_LINKS } from "$constants/links";
+import { EVENT_LINKS, RECRUITMENT } from "$constants/links";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
-import TestimonialsCarousel from "$components/testamonials/TestimonialsCarousel/TestimonialsCarousel";
+import TestimonialsCarousel from "$components/testimonials/TestimonialsCarousel/TestimonialsCarousel";
 
 const GetInvolved: FC = () => {
    return (
@@ -32,7 +32,7 @@ const GetInvolved: FC = () => {
                   Body=""
                   CTA="Applications are currently closed."
                   Image={TEMP_URL}
-                  clickTo={TEMP_URL}
+                  clickTo={RECRUITMENT.COORDINATOR_PACKAGE}
                   loading="lazy"
                />
             </JoinTeamItem>
@@ -43,7 +43,7 @@ const GetInvolved: FC = () => {
                   Body=""
                   CTA="Registration is currently closed."
                   Image={TEMP_URL}
-                  clickTo={TEMP_URL}
+                  clickTo={EVENT_LINKS.ODYSSEY}
                   loading="lazy"
                />
             </OdysseyItem>
@@ -54,7 +54,7 @@ const GetInvolved: FC = () => {
                   Body=""
                   CTA="Registration is currently closed."
                   Image={TEMP_URL}
-                  clickTo={TEMP_URL}
+                  clickTo={EVENT_LINKS.FIRESIDE}
                   loading="lazy"
                />
             </FiresideItem>
@@ -70,7 +70,7 @@ const GetInvolved: FC = () => {
                Body="View Application Package"
                ButtonText="Apply Now"
                ImageSrc={TEMP_URL}
-               clickTo={AXIS_LINKS.RECRUITMENT_PACKAGE}
+               clickTo={RECRUITMENT.APPLICATION_FORM}
                AltText="The Axis Consulting Organization Group Photo"
                loading="lazy"
             />

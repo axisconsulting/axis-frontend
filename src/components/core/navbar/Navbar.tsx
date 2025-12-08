@@ -91,9 +91,6 @@ export default function Navbar() {
                <NavLinks id="mobile-nav-links" $isOpen={isOpen} role="menu">
                   <div>
                      <ul>
-                        <NavLink to={ROUTES.RESOURCES} onClick={onNavClick} role="menuitem">
-                           {ROUTE_STRINGS.RESOURCES}
-                        </NavLink>
                         <NavLink to={ROUTES.ABOUT} onClick={onNavClick} role="menuitem">
                            {ROUTE_STRINGS.ABOUT}
                         </NavLink>
@@ -105,6 +102,9 @@ export default function Navbar() {
                         </NavLink>
                         <NavLink to={ROUTES.GET_INVOLVED} onClick={onNavClick} role="menuitem">
                            {ROUTE_STRINGS.GET_INVOLVED}
+                        </NavLink>
+                        <NavLink to={ROUTES.RESOURCES} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.RESOURCES}
                         </NavLink>
                      </ul>
                   </div>
