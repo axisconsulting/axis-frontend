@@ -1,16 +1,16 @@
 import type { RouteObject } from "react-router-dom";
 import App from "./App";
-import ErrorBoundary from "$components/core/ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "$components/core/error/ErrorBoundary";
 import { ROUTES } from "$constants/routes";
 
 // Direct imports for instant navigation
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 import About from "./pages/about/About";
-import GetInvolved from "./pages/GetInvolved/GetInvolved";
-import Clients from "./pages/Clients/Clients";
-import Sponsors from "./pages/Sponsors/Sponsors";
-import Resources from "./pages/Resources/Resources";
-import NotFound from "./pages/NotFound/NotFound";
+import GetInvolved from "./pages/getInvolved/GetInvolved";
+import Clients from "./pages/clients/Clients";
+import Sponsors from "./pages/sponsors/Sponsors";
+import Resources from "./pages/resources/Resources";
+import NotFound from "./pages/notFound/NotFound";
 
 // Remove leading slashes from child route paths
 function stripLeadingSlash(path: string) {
