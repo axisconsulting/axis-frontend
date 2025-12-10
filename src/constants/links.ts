@@ -1,5 +1,6 @@
 // TODO: replace once links are finalized
-const AXIS_NOT_FOUND_LINK = "https://www.sfuaxisconsulting.com/notfound";
+const BASE_URL = window.location.origin; // Get the base URL of the current site
+const AXIS_NOT_FOUND_LINK = `${BASE_URL}/notfound`;
 
 export const SOCIAL_LINKS = {
    LINKEDIN: "https://www.linkedin.com/company/sfuaxisconsulting/",
@@ -8,7 +9,7 @@ export const SOCIAL_LINKS = {
 } as const;
 
 export const AXIS_LINKS = {
-   WEBSITE: "https://www.sfuaxisconsulting.com/",
+   DOMAIN: "https://www.sfuaxisconsulting.com/",
    EMAIL: "axismd@sfu.ca",
    IMPACT_REPORT: "https://drive.google.com/file/d/1NurcvvOy8DUCYgc11QRXQB-QbTkSctZG/view",
    CONSULTING_101:
