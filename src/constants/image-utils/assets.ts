@@ -1,5 +1,5 @@
 // src/constants/assets.ts
-const RAW_BASE = import.meta.env.VITE_ASSETS_BASE_URL ?? "";
+const RAW_BASE = "https://assets.sfuaxisconsulting.com";
 const BASE = RAW_BASE.replace(/\/+$/, ""); // trim trailing slash
 
 /**
