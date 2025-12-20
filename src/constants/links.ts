@@ -14,7 +14,7 @@ export const AXIS_LINKS = {
    IMPACT_REPORT: "https://drive.google.com/file/d/1NurcvvOy8DUCYgc11QRXQB-QbTkSctZG/view",
    CONSULTING_101:
       "https://forms.office.com/Pages/ResponsePage.aspx?id=fmfoBInJuUeGGdg9Wl9sZ6JsHL5n-8JLl38GgQsZ96JUQUJaMUs0NkxUSTROQTVBN0YzUzBNUVBOSC4u",
-   MAILING_LIST: AXIS_NOT_FOUND_LINK,
+   MAILING_LIST: "https://forms.office.com/r/vQxSPj9Sxf",
 } as const;
 
 export const RECRUITMENT = {

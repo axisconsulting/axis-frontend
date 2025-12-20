@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type JSX } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ import { assetUrl } from "$constants/image-utils/assets";
 
 export interface ImageContainerProps {
    Header: string;
-   Body: string;
+   Body: string | JSX.Element;
    CTA: string;
 
    /** R2 path only, e.g. "home-page/Visier.webp" */

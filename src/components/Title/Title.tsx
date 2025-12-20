@@ -4,7 +4,7 @@ import { Wrapper, Heading, HeadingAccent, BodyText } from "./Title.styled";
 export interface TitleProps {
    Header: string;
    Header2?: string;
-   Body: string;
+   Body?: string;
    className?: string;
 }
 
@@ -15,7 +15,7 @@ const Title: React.FC<TitleProps> = ({ Header, Header2, Body, className }) => {
          className={className}>
          <Heading>{Header}</Heading>
          {Header2 && <HeadingAccent>{Header2}</HeadingAccent>}
-         <BodyText>{Body}</BodyText>
+         {Body && <BodyText>{Body}</BodyText>}
       </Wrapper>
    );
 };

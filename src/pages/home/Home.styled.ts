@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { up } from "$styles/constants/breakpoints";
 
 export const Container = styled.div`
-   /* Tailwind: lg:w-[70%] w-[88%] m-auto py-[5%] flex flex-col gap-[5rem] lg:gap-[10rem] */
    width: 90%;
    margin: 0 auto;
    padding: 5% 0;
@@ -18,7 +17,6 @@ export const Container = styled.div`
 `;
 
 export const StatsGrid = styled.section`
-   /* Tailwind: grid lg:grid-cols-2 gap-[0.8rem] */
    display: grid;
    grid-template-columns: 1fr;
    gap: 0.8rem;
@@ -29,15 +27,24 @@ export const StatsGrid = styled.section`
 `;
 
 export const StatColumn = styled.div`
-   /* Tailwind: grid-rows-3 grid gap-[0.8rem] min-w-fit */
    display: grid;
    grid-auto-rows: 1fr;
    gap: 0.8rem;
    min-width: fit-content;
 `;
 
-export const CenterStack = styled.div`
-   /* Tailwind: w-[100%] m-auto text-center flex flex-col gap-[1rem] lg:gap-[3rem] */
+export const SpotlightSection = styled.section`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   h3 {
+      margin: 0;
+      color: ${({ theme }) => theme.palette.AXIS_BLUE};
+   }
+`;
+
+export const CenterStack = styled.section`
    width: 100%;
    margin: 0 auto;
    text-align: center;
@@ -51,7 +58,6 @@ export const CenterStack = styled.div`
 `;
 
 export const EngagementRow = styled.div`
-   /* Tailwind: flex flex-col lg:flex-row gap-[1rem] */
    display: flex;
    flex-direction: column;
    gap: 1rem;

@@ -5,7 +5,14 @@ import { BsPaperclip } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FaRegStickyNote } from "react-icons/fa";
 
-import { Container, StatsGrid, StatColumn, CenterStack, EngagementRow } from "./Home.styled";
+import {
+   Container,
+   StatsGrid,
+   StatColumn,
+   CenterStack,
+   EngagementRow,
+   SpotlightSection,
+} from "./Home.styled";
 
 import Title from "$components/Title/Title";
 import Icon from "$components/icons/IconContainer/IconContainer";
@@ -14,6 +21,7 @@ import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { CLIENT_LOGOS_BY_KEY } from "$constants/pages/clients";
 import { HOME_URLS } from "$constants/pages/home";
+import Odyssey from "$components/pages/Spotlight/Odyssey/Odyssey";
 
 export default function Home() {
    return (
@@ -40,29 +48,33 @@ export default function Home() {
                </StatColumn>
             </StatsGrid>
 
-            <section>
-               <CenterStack>
-                  <h1>Our Engagements</h1>
-                  <EngagementRow>
-                     <ImageContainer
-                        Header="Visier"
-                        Body="Market research on the field of HR analytics, market trends in HR and finance interactions"
-                        CTA="More information on the client"
-                        Image={HOME_URLS.visier_card}
-                        clickTo={CLIENT_LOGOS_BY_KEY.visier.website}
-                        loading="lazy"
-                     />
-                     <ImageContainer
-                        Header="West Coast Kids Cancer Foundation"
-                        Body="Analysis on the supply chain, bottleneck identification, and recommendation of a just-in-time inventory system"
-                        CTA="More information on the client"
-                        Image={HOME_URLS.wck_card}
-                        clickTo={CLIENT_LOGOS_BY_KEY.wck.website}
-                        loading="lazy"
-                     />
-                  </EngagementRow>
-               </CenterStack>
-            </section>
+            {/* Update Spotlight Section as needed */}
+            <SpotlightSection>
+               <h3>Spotlight</h3>
+               <Odyssey />
+            </SpotlightSection>
+
+            <CenterStack>
+               <h1>Our Engagements</h1>
+               <EngagementRow>
+                  <ImageContainer
+                     Header="Visier"
+                     Body="Market research on the field of HR analytics, market trends in HR and finance interactions"
+                     CTA="More information on the client"
+                     Image={HOME_URLS.visier_card}
+                     clickTo={CLIENT_LOGOS_BY_KEY.visier.website}
+                     loading="lazy"
+                  />
+                  <ImageContainer
+                     Header="West Coast Kids Cancer Foundation"
+                     Body="Analysis on the supply chain, bottleneck identification, and recommendation of a just-in-time inventory system"
+                     CTA="More information on the client"
+                     Image={HOME_URLS.wck_card}
+                     clickTo={CLIENT_LOGOS_BY_KEY.wck.website}
+                     loading="lazy"
+                  />
+               </EngagementRow>
+            </CenterStack>
 
             <ImageContent
                Header="Ready to Soar?"
