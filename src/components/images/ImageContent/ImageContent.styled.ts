@@ -57,6 +57,7 @@ export const Inner = styled.div`
    display: flex;
    flex-direction: column;
    gap: 3vh;
+   padding: 8px;
 
    ${up("LARGE")} {
       max-width: 33%;
@@ -75,9 +76,11 @@ export const BodyText = styled.p`
    margin: 0;
    transition: margin-top 0.5s ease;
    margin-top: 1%;
+   font-size: ${({ theme }) => theme.fontSizes.small};
 
    ${up("LARGE")} {
       margin-top: 1.5%;
+      font-size: ${({ theme }) => theme.fontSizes.body};
    }
 
    ${Wrapper}:hover & {

@@ -40,13 +40,19 @@ export const Overlay = styled.div`
 
 export const Heading = styled.h2`
    margin: 0;
+   font-size: ${({ theme }) => theme.fontSizes.h3};
    font-family: ${({ theme }) => theme.fonts?.heading};
    color: ${({ theme }) => theme.tokens.fg};
 `;
 
 export const BodyText = styled.p`
    margin: 0;
+   font-size: ${({ theme }) => theme.fontSizes.small};
    color: ${({ theme }) => theme.tokens.fg};
+
+   ${up("LARGE")} {
+      font-size: ${({ theme }) => theme.fontSizes.body};
+   }
 `;
 
 export const CTAInline = styled.div`
@@ -57,8 +63,10 @@ export const CTAInline = styled.div`
    margin-bottom: 1rem;
    transition: margin-bottom 0.65s ease, opacity 0.65s ease, color 0.65s ease;
    opacity: 1;
+   font-size: ${({ theme }) => theme.fontSizes.small};
 
    ${up("LARGE")} {
+      font-size: ${({ theme }) => theme.fontSizes.body};
       opacity: 0;
       ${Wrapper}:hover & {
          opacity: 1;

@@ -9,6 +9,7 @@ import {
    DotsRow,
    Dot,
    SlideContainer,
+   Controls,
 } from "./TestimonialsCarousel.styled";
 import { TESTIMONIALS } from "$constants/testimonials";
 import Testimonial from "../Testimonial/Testimonial";
@@ -65,7 +66,7 @@ const TestimonialsCarousel: FC<TestimonialsCarouselProps> = ({
          </CarouselInner>
 
          {count > 1 && (
-            <>
+            <Controls>
                <ControlsRow>
                   <NavButton type="button" onClick={handlePrev} aria-label="Previous testimonial">
                      ‹
@@ -86,7 +87,7 @@ const TestimonialsCarousel: FC<TestimonialsCarouselProps> = ({
                      />
                   ))}
                </DotsRow>
-            </>
+            </Controls>
          )}
       </CarouselWrapper>
    );

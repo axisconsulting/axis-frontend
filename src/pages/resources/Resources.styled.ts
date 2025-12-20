@@ -3,16 +3,21 @@ import { up } from "$styles/constants/breakpoints";
 
 export const Container = styled.section`
    display: flex;
+   flex-direction: column;
    justify-content: space-between;
    align-items: center;
    width: 100%;
    gap: 1.6rem;
+
+   ${up("LARGE")} {
+      flex-direction: row;
+   }
 `;
 
 export const StatsGrid = styled.section`
    display: grid;
    width: 100%;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 1fr;
    gap: 0.8rem;
 
    ${up("LARGE")} {

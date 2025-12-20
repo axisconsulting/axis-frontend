@@ -72,7 +72,9 @@ const ImageContent = ({
                      <Link to={clickTo}>
                         <Button>{ButtonText}</Button>
                      </Link>
-                  ) : null}
+                  ) : (
+                     <Button variant="ghost">{ButtonText}</Button>
+                  )}
                </CTABox>
             </Inner>
          </Overlay>

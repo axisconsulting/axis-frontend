@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Navbar from "$components/core/navbar/Navbar";
 import Footer from "$components/core/footer/Footer";
 import { BREAKPOINTS } from "$styles/constants/breakpoints";
+import ScrollToTop from "$components/ScrollToTop";
 
 const RootWrapper = styled.div`
    margin: 0 1rem;
@@ -30,6 +31,7 @@ const ChildWrapper = styled.div`
 export default function App() {
    return (
       <RootWrapper>
+         <ScrollToTop />
          <Navbar />
          <ChildWrapper>
             <Outlet />

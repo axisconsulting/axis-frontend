@@ -3,14 +3,7 @@ import type { FC } from "react";
 import Title from "$components/Title/Title";
 
 import { PageWrapper } from "$styles/constants/PageWrapper";
-import {
-   CalloutWrapper,
-   FiresideItem,
-   GridSection,
-   JoinTeamItem,
-   OdysseyItem,
-   TestimonialWrapper,
-} from "./GetInvolved.styled";
+import { CalloutWrapper, GridSection, TestimonialWrapper } from "./GetInvolved.styled";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { AXIS_LINKS, EVENT_LINKS, RECRUITMENT } from "$constants/links";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
@@ -26,39 +19,36 @@ const GetInvolved: FC = () => {
             Body="Become a part of the Axis community by coming to events, joining our programs, and applying to be a part of our team when recruitment season begins"
          />
 
+         <CalloutWrapper>
+            <ImageContent
+               Header="Join our Team!"
+               Body="Become a member of Axis Consulting and contribute to meaningful projects while developing your skills today"
+               ButtonText="Applications are Closed"
+               ImageSrc={GET_INVOLVED_URLS.join_team_card}
+               clickTo={RECRUITMENT.COORDINATOR_PACKAGE}
+               AltText="a gif with text that says what is new at axis consulting"
+               loading="lazy"
+            />
+         </CalloutWrapper>
+
          <GridSection>
-            <JoinTeamItem>
-               <ImageContainer
-                  Header="Join our Team!"
-                  Body="Become a member of Axis Consulting and contribute to meaningful projects while developing your skills today"
-                  CTA="Applications are currently closed"
-                  Image={GET_INVOLVED_URLS.join_team_card}
-                  clickTo={RECRUITMENT.COORDINATOR_PACKAGE}
-                  loading="lazy"
-               />
-            </JoinTeamItem>
+            <ImageContainer
+               Header="Odyssey Mentorship Program"
+               Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
+               CTA="Registration is currently closed"
+               Image={GET_INVOLVED_URLS.odyssey_card}
+               clickTo={EVENT_LINKS.ODYSSEY}
+               loading="lazy"
+            />
 
-            <OdysseyItem>
-               <ImageContainer
-                  Header="Odyssey Mentorship Program"
-                  Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
-                  CTA="Registration is currently closed"
-                  Image={GET_INVOLVED_URLS.odyssey_card}
-                  clickTo={EVENT_LINKS.ODYSSEY}
-                  loading="lazy"
-               />
-            </OdysseyItem>
-
-            <FiresideItem>
-               <ImageContainer
-                  Header="Revolve"
-                  Body="Consulting Conference that brings students and industry leaders together for panels, workshops, and networking"
-                  CTA="Registration is currently closed"
-                  Image={GET_INVOLVED_URLS.revolve_card}
-                  clickTo={EVENT_LINKS.REVOLVE}
-                  loading="lazy"
-               />
-            </FiresideItem>
+            <ImageContainer
+               Header="Revolve"
+               Body="Consulting Conference that brings students and industry leaders together for panels, workshops, and networking"
+               CTA="Registration is currently closed"
+               Image={GET_INVOLVED_URLS.revolve_card}
+               clickTo={EVENT_LINKS.REVOLVE}
+               loading="lazy"
+            />
          </GridSection>
 
          <TestimonialWrapper>

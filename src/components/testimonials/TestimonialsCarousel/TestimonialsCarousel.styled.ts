@@ -8,12 +8,17 @@ export const CarouselWrapper = styled.div`
    align-items: center;
    gap: 1.5rem;
 
+   /* IMPORTANT: needs a height to have a "bottom" */
+   height: 100%;
+
    ${up("LARGE")} {
       gap: 2rem;
    }
 `;
 
 export const CarouselInner = styled.div`
+   /*  Push content to the bottom of container */
+   margin-top: auto;
    width: 100%;
    display: flex;
    justify-content: center;
@@ -48,6 +53,13 @@ export const SlideContainer = styled.div<{ $direction: "left" | "right" }>`
    justify-content: center;
    animation: ${({ $direction }) => ($direction === "right" ? slideInFromRight : slideInFromLeft)}
       1s ease-out;
+`;
+
+export const Controls = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
 `;
 
 export const ControlsRow = styled.div`

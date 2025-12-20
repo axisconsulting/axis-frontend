@@ -30,7 +30,7 @@ const Resources: FC = () => {
                loading="lazy"
             />
             <ImageContainer
-               Header="Interested in our upcoming events? Sign up to get updates."
+               Header="Interested in our upcoming events?"
                Body="Be the first to receive packages, learn about events, and get exclusive access to our resources"
                CTA="Join our Mailing List"
                Image={RESOURCES_URLS.mailing_list_card}
