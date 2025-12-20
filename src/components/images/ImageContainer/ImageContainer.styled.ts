@@ -95,11 +95,12 @@ export const CTAArrow = styled.div`
    }
 `;
 
-// ✅ Key change: let the grid cell control height
+// Key change: let the grid cell control height
 export const MediaBox = styled.div`
    position: relative;
    width: 100%;
    flex: 1 1 auto; /* take available vertical space in Wrapper */
+   aspect-ratio: 16 / 10;
    min-height: 16rem; /* reasonable minimum so it’s not tiny */
 
    border-radius: 0.25rem;

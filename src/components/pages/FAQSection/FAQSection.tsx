@@ -21,7 +21,7 @@ type FAQItem = {
 
 const FAQ_ITEMS: FAQItem[] = [
    {
-      question: "What is Axis?",
+      question: "What is Axis Consulting?",
       answer:
          "Axis is a student-led pro bono organization in SFU, providing clients with innovative solutions.",
    },

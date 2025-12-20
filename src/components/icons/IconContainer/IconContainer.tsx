@@ -5,15 +5,21 @@ export interface IconContainerProps {
    Icon: React.ElementType;
    Text: string;
    clickTo?: string;
+   sizePercent?: number;
 }
 
-const IconContainer: React.FC<IconContainerProps> = ({ Icon, Text, clickTo = "" }) => {
+const IconContainer: React.FC<IconContainerProps> = ({
+   Icon,
+   Text,
+   clickTo = "",
+   sizePercent = 70,
+}) => {
    const isClickable = clickTo.trim() !== "";
 
    const content = (
       <Inner clickable={isClickable}>
          <IconWrapper>
-            <Icon size="70%" />
+            <Icon size={`${sizePercent}%`} />
          </IconWrapper>
          <TextEl>{Text}</TextEl>
       </Inner>

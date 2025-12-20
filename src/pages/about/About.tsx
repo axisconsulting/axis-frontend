@@ -12,6 +12,7 @@ import {
 import Title from "$components/Title/Title";
 import ImageCard from "$components/images/ImageCard/ImageCard";
 
+// Consulting teams handled in constants/pages/about.ts
 import {
    MANAGING_DIRECTORS,
    DIRECTORS,
@@ -23,48 +24,22 @@ import {
    FINANCE_TEAM,
    WEB_DEV_TEAM,
    CONSULTING_TEAM_LEADS,
-   TEAM_NEBULA,
-   TEAM_NOVA,
-   TEAM_POLARIS,
-   TEAM_ECLIPSE,
    type Member,
 } from "$constants/members";
 import { currentYear, TEMP_URL } from "$constants/utils";
-
-// hero section content
-const featureBlocks = [
-   {
-      header: "Our Values",
-      body: "We aim to create a platform for students of all perspectives to experience real-world consulting.",
-      img: TEMP_URL,
-   },
-   {
-      header: "Our Mission",
-      body: "To support undergraduate students in understanding and preparing for careers in consulting through experiential learning opportunities.",
-      img: TEMP_URL,
-   },
-   {
-      header: "Our Vision",
-      body: "Empowering undergraduate students to excel in consulting careers through hands-on learning and real-world client engagements.",
-      img: TEMP_URL,
-   },
-];
-
-const consultingTeams = [
-   { name: "Team Nebula", members: TEAM_NEBULA },
-   { name: "Team Nova", members: TEAM_NOVA },
-   { name: "Team Polaris", members: TEAM_POLARIS },
-   { name: "Team Eclipse", members: TEAM_ECLIPSE },
-];
+import { TEAM_MEMBERS_URLS } from "$constants/image-utils/image-urls";
+import { consultingTeams, featureBlocks } from "$constants/pages/about";
 
 function TeamRow({
    people,
    teamTitle = "",
    teamSubtitle = `${currentYear}-${currentYear + 1}`,
+   teamImgSrc = TEMP_URL,
 }: {
    people: Member[];
    teamTitle?: string;
    teamSubtitle?: string;
+   teamImgSrc?: string;
 }) {
    // total cards that will render:
    const hasBanner = Boolean(teamTitle && teamSubtitle);
@@ -82,7 +57,7 @@ function TeamRow({
                      variant="bannerProfile"
                      title={teamTitle}
                      subtitle={teamSubtitle}
-                     img={TEMP_URL}
+                     img={teamImgSrc}
                      size="team" // makes banner wider at lg
                      loading="lazy"
                   />
@@ -111,8 +86,8 @@ export default function About() {
       <PageWrapper>
          {/* Intro block */}
          <Title
-            Header="Who are we"
-            Body="Discover more about our values, mission and vision for Axis Consulting. Meet the current team and some of our 212 alumni since 2012."
+            Header="Who We Are"
+            Body="Discover more about our values, mission and vision for Axis Consulting. Meet the current team and some of our 212 alumni since 2012"
          />
 
          {/* Top hero cards: Values / Mission / Vision */}
@@ -134,7 +109,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Managing Directors</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={MANAGING_DIRECTORS} teamTitle="Managing Directors" />
+            <TeamRow
+               people={MANAGING_DIRECTORS}
+               teamTitle="Managing Directors"
+               teamImgSrc={TEAM_MEMBERS_URLS.managing_directors}
+            />
          </TeamSection>
 
          {/* Directors */}
@@ -142,7 +121,7 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Executive Team</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={DIRECTORS} />
+            <TeamRow people={DIRECTORS} teamImgSrc={TEAM_MEMBERS_URLS.executive_team} />
          </TeamSection>
 
          {/* Consulting Leads */}
@@ -150,7 +129,7 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Consulting Team Leads</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={CONSULTING_TEAM_LEADS} />
+            <TeamRow people={CONSULTING_TEAM_LEADS} teamImgSrc={TEAM_MEMBERS_URLS.team_leads} />
          </TeamSection>
 
          {/* Consulting Teams */}
@@ -158,28 +137,44 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>{consultingTeams[0].name}</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={consultingTeams[0].members} teamTitle={consultingTeams[0].name} />
+            <TeamRow
+               people={consultingTeams[0].members}
+               teamTitle={consultingTeams[0].name}
+               teamImgSrc={consultingTeams[0].teamImgSrc}
+            />
          </TeamSection>
 
          <TeamSection>
             <TeamSectionHeaderRow>
                <h2>{consultingTeams[1].name}</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={consultingTeams[1].members} teamTitle={consultingTeams[1].name} />
+            <TeamRow
+               people={consultingTeams[1].members}
+               teamTitle={consultingTeams[1].name}
+               teamImgSrc={consultingTeams[1].teamImgSrc}
+            />
          </TeamSection>
 
          <TeamSection>
             <TeamSectionHeaderRow>
                <h2>{consultingTeams[2].name}</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={consultingTeams[2].members} teamTitle={consultingTeams[2].name} />
+            <TeamRow
+               people={consultingTeams[2].members}
+               teamTitle={consultingTeams[2].name}
+               teamImgSrc={consultingTeams[2].teamImgSrc}
+            />
          </TeamSection>
 
          <TeamSection>
             <TeamSectionHeaderRow>
                <h2>{consultingTeams[3].name}</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={consultingTeams[3].members} teamTitle={consultingTeams[3].name} />
+            <TeamRow
+               people={consultingTeams[3].members}
+               teamTitle={consultingTeams[3].name}
+               teamImgSrc={consultingTeams[3].teamImgSrc}
+            />
          </TeamSection>
 
          {/* Internal Team */}
@@ -187,7 +182,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Internal Team</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={INTERNAL_TEAM} teamTitle="Internal Team" />
+            <TeamRow
+               people={INTERNAL_TEAM}
+               teamTitle="Internal Team"
+               teamImgSrc={TEAM_MEMBERS_URLS.internal_team}
+            />
          </TeamSection>
 
          {/* External Team */}
@@ -195,7 +194,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>External Team</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={EXTERNAL_TEAM} teamTitle="External Team" />
+            <TeamRow
+               people={EXTERNAL_TEAM}
+               teamTitle="External Team"
+               teamImgSrc={TEAM_MEMBERS_URLS.external_team}
+            />
          </TeamSection>
 
          {/* Strategy Team */}
@@ -203,7 +206,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Strategy Team</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={STRATEGY_TEAM} teamTitle="Strategy Team" />
+            <TeamRow
+               people={STRATEGY_TEAM}
+               teamTitle="Strategy Team"
+               teamImgSrc={TEAM_MEMBERS_URLS.strategy_team}
+            />
          </TeamSection>
 
          {/* Marketing Strategy */}
@@ -211,7 +218,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Marketing Strategy</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={MARKETING_STRATEGY_TEAM} teamTitle="Marketing Strategy" />
+            <TeamRow
+               people={MARKETING_STRATEGY_TEAM}
+               teamTitle="Marketing Strategy"
+               teamImgSrc={TEAM_MEMBERS_URLS.marketing_strategy_team}
+            />
          </TeamSection>
 
          {/* Marketing Design */}
@@ -219,7 +230,11 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Marketing Design</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={MARKETING_DESIGN_TEAM} teamTitle="Marketing Design" />
+            <TeamRow
+               people={MARKETING_DESIGN_TEAM}
+               teamTitle="Marketing Design"
+               teamImgSrc={TEAM_MEMBERS_URLS.marketing_design_team}
+            />
          </TeamSection>
 
          {/* Finance */}

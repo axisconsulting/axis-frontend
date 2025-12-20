@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -15,57 +15,48 @@ import {
 
 import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
 import { SheenLoader } from "$styles/constants/Animation";
-import { ImageState, MAX_IMAGE_LOAD_RETRIES } from "$constants/utils";
+import { ImageState } from "$constants/utils";
+import { assetUrl } from "$constants/image-utils/assets";
 
 export interface ImageContainerProps {
    Header: string;
    Body: string;
    CTA: string;
+
+   /** R2 path only, e.g. "home-page/Visier.webp" */
    Image: string;
-   clickTo: string;
+
+   clickTo?: string;
    className?: string;
    loading?: "eager" | "lazy";
 }
 
-const ImageContainer: React.FC<ImageContainerProps> = ({
+const ImageContainer = ({
    Header,
    Body,
    CTA,
-   Image: srcProp,
+   Image: imagePath,
    clickTo,
    className,
    loading = "lazy",
-}) => {
+}: ImageContainerProps) => {
    const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
-   const [attempt, setAttempt] = useState(0);
-
-   // Build src with a cache-busting retry param (mirrors ImageContent)
-   const currentSrc = useMemo(
-      () => (attempt > 0 ? `${srcProp}?retry=${attempt}` : srcProp),
-      [srcProp, attempt]
-   );
-
-   // Reset when image source changes
-   useEffect(() => {
-      if (!srcProp) {
-         setImageState(ImageState.ERROR);
-         return;
-      }
-      setAttempt(0);
-      setImageState(ImageState.LOADING);
-   }, [srcProp]);
 
    const hasLink = Boolean((clickTo ?? "").trim().length);
+   const src = assetUrl(imagePath);
 
-   const onLoad = () => setImageState(ImageState.LOADED);
+   const renderCTA = () => {
+      const content = (
+         <CTAInline>
+            <span>{CTA}</span>
+            <CTAArrow>
+               <MdArrowOutward />
+            </CTAArrow>
+         </CTAInline>
+      );
 
-   const onError = () => {
-      if (attempt < MAX_IMAGE_LOAD_RETRIES) {
-         setAttempt((a) => a + 1);
-         setImageState(ImageState.LOADING);
-      } else {
-         setImageState(ImageState.ERROR);
-      }
+      if (!hasLink) return content;
+      return <Link to={clickTo ? clickTo : ""}>{content}</Link>;
    };
 
    return (
@@ -73,25 +64,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
          <Overlay>
             <Heading>{Header}</Heading>
             <BodyText>{Body}</BodyText>
-
-            {hasLink ? (
-               <Link to={clickTo}>
-                  <CTAInline>
-                     <span>{CTA}</span>
-                     <CTAArrow>
-                        <MdArrowOutward />
-                     </CTAArrow>
-                  </CTAInline>
-               </Link>
-            ) : (
-               // keeps the “text + arrow” styling even without a link
-               <CTAInline>
-                  <span>{CTA}</span>
-                  <CTAArrow>
-                     <MdArrowOutward />
-                  </CTAArrow>
-               </CTAInline>
-            )}
+            {renderCTA()}
          </Overlay>
 
          <MediaBox>
@@ -103,17 +76,15 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
                <GlossyPlaceholder aria-label="image failed to load" />
             )}
 
-            {srcProp && (
-               <MediaImg
-                  key={currentSrc}
-                  src={currentSrc}
-                  alt={Header}
-                  loading={loading}
-                  $visible={imageState === ImageState.LOADED}
-                  onLoad={onLoad}
-                  onError={onError}
-               />
-            )}
+            <MediaImg
+               key={src}
+               src={src}
+               alt={Header}
+               loading={loading}
+               $visible={imageState === ImageState.LOADED}
+               onLoad={() => setImageState(ImageState.LOADED)}
+               onError={() => setImageState(ImageState.ERROR)}
+            />
          </MediaBox>
       </Wrapper>
    );

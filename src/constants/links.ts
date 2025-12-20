@@ -26,5 +26,5 @@ export const RECRUITMENT = {
 
 export const EVENT_LINKS = {
    ODYSSEY: AXIS_NOT_FOUND_LINK,
-   FIRESIDE: AXIS_NOT_FOUND_LINK,
+   REVOLVE: AXIS_NOT_FOUND_LINK,
 } as const;

@@ -10,34 +10,49 @@ export const BlockInner = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   gap: 1rem;
 
    ${up("LARGE")} {
       flex-direction: row;
+      align-items: center;
+      gap: 2rem;
    }
 `;
 
 export const ImageWrapper = styled.div`
-   position: relative; /* Required for GlossyPlaceholder overlay */
+   position: relative;
    width: 100%;
-   max-height: 20vh;
-   min-height: 180px;
+
+   /* Key: make the container shrink/grow smoothly */
+   height: clamp(120px, 18vw, 180px);
+
    display: flex;
    align-items: center;
    justify-content: center;
    overflow: hidden;
    border-radius: 0.75rem;
-   background: ${({ theme }) => theme.tokens.surface};
+   background: ${({ theme }) => theme.tokens.bg};
    margin-bottom: 1rem;
 
    ${up("LARGE")} {
-      max-width: 50%;
-      margin-bottom: 0rem;
+      /* Don’t let image area take half the page on desktop */
+      width: min(44%, 520px);
+      margin-bottom: 0;
+      height: clamp(140px, 10vw, 220px);
    }
 `;
 
 export const StyledImage = styled.img`
-   width: fit-content;
+   width: 100%;
+   height: 100%;
    object-fit: contain;
+
+   /* Smaller padding on small screens, larger on big screens */
+   padding: 0 8px;
+
+   ${up("LARGE")} {
+      padding: 0 14px;
+   }
 `;
 
 export const TextWrapper = styled.div`
@@ -48,7 +63,7 @@ export const TextWrapper = styled.div`
    text-align: center;
 
    ${up("LARGE")} {
-      max-width: 40%;
+      max-width: 52%;
       text-align: left;
    }
 `;

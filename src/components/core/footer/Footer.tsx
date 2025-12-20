@@ -1,5 +1,5 @@
 // Footer.tsx
-import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import Hyperlink from "$components/Hyperlink/Hyperlink";
 import {
    Wrapper,
@@ -14,7 +14,7 @@ import {
 } from "./Footer.styled";
 
 import { ROUTES } from "$constants/routes";
-import { AXIS_LINKS, RECRUITMENT, SOCIAL_LINKS } from "$constants/links";
+import { AXIS_LINKS, SOCIAL_LINKS } from "$constants/links";
 import { currentYear } from "$constants/utils";
 
 export default function Footer() {
@@ -36,7 +36,6 @@ export default function Footer() {
                   <Hyperlink text="Resources" clickTo={ROUTES.RESOURCES} />
                   <Hyperlink text="Email" mailto={AXIS_LINKS.EMAIL} />
                   <Hyperlink text="Impact Report" clickTo={AXIS_LINKS.IMPACT_REPORT} />
-                  <Hyperlink text="Recruitment Package" clickTo={RECRUITMENT.COORDINATOR_PACKAGE} />
                </LinkGroup>
                <LinkGroup>
                   <h6>Discover</h6>
@@ -68,15 +67,6 @@ export default function Footer() {
                   aria-label="Instagram"
                   title="Instagram">
                   <FaInstagram />
-               </SocialLink>
-
-               <SocialLink
-                  href={SOCIAL_LINKS.FACEBOOK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  title="Facebook">
-                  <FaFacebookF />
                </SocialLink>
             </Socials>
 

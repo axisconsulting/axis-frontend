@@ -1,5 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+// src/components/images/ImageCard/ImageCard.tsx
+import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import {
    CardOuter,
@@ -8,16 +10,17 @@ import {
    OverlayProfile,
    OverlayFeature,
    FeatureCTAWrapper,
-   BgImage, // NEW: fade-in image (mirrors ImageContent)
-   LoaderLayer, // NEW: positioning for loader/placeholder
+   BgImage,
+   LoaderLayer,
 } from "./ImageCard.styled";
 
-import { SheenLoader } from "$styles/constants/Animation"; // same as ImageContent
-import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled"; // same as ImageContent
-import { ImageState } from "$constants/utils"; // same enum as ImageContent
-import { Link } from "react-router-dom";
+import { SheenLoader } from "$styles/constants/Animation";
+import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
+import { ImageState } from "$constants/utils";
+import { assetUrl } from "$constants/image-utils/assets";
 
 export interface ImageCardPropsBase {
+   // R2 path only, e.g. "about/web-dev-team/jai.webp"
    img: string;
    loading?: "lazy" | "eager";
    clickTo?: string;
@@ -46,141 +49,120 @@ export interface FeatureCardProps extends ImageCardPropsBase {
 
 export type ImageCardProps = ProfileCardProps | FeatureCardProps | BannerProfileCardProps;
 
-const maxRetries = 2;
-
-const ImageCard: React.FC<ImageCardProps> = (props) => {
+const ImageCard = (props: ImageCardProps) => {
    const { img, loading = "lazy", clickTo } = props;
 
-   // 1) Same image lifecycle as ImageContent
    const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
-   const [attempt, setAttempt] = useState(0);
 
-   // cache-busting src when retrying
-   const currentSrc = useMemo(
-      () => (attempt > 0 ? `${img}?retry=${attempt}` : img),
-      [img, attempt]
-   );
+   const hasLink = Boolean((clickTo ?? "").trim().length);
+   const src = assetUrl(img);
 
-   // reset when base img changes
+   // When the image path changes, we want the loader again.
    useEffect(() => {
-      if (!img) {
-         setImageState(ImageState.ERROR);
-         return;
-      }
-      setAttempt(0);
       setImageState(ImageState.LOADING);
    }, [img]);
 
-   const onLoad = () => setImageState(ImageState.LOADED);
-
-   const onError = () => {
-      if (attempt < maxRetries) {
-         setAttempt((a) => a + 1);
-         setImageState(ImageState.LOADING);
-      } else {
-         setImageState(ImageState.ERROR);
-      }
-   };
-
-   const hasLink = Boolean((clickTo ?? "").trim().length);
-
-   // 2) Overlay content by variant
-   let overlayBlock: React.ReactNode;
+   // Overlay content by variant (no ternaries needed)
+   let overlayBlock: React.ReactNode = null;
    let altText = "";
+   let frameMode: "profile" | "feature" = "feature";
+   let profileSize: "team" | "person" = "team";
 
    if (props.variant === "profile") {
-      const { name, position } = props;
-      altText = name;
+      altText = props.name;
+      frameMode = "profile";
+      profileSize = props.size;
       overlayBlock = (
          <OverlayProfile>
-            <h2>{name}</h2>
-            <p>{position}</p>
+            <h2>{props.name}</h2>
+            <p>{props.position}</p>
          </OverlayProfile>
       );
-   } else if (props.variant === "bannerProfile") {
-      const { title, subtitle } = props;
-      altText = title;
+   }
+
+   if (props.variant === "bannerProfile") {
+      altText = props.title;
+      frameMode = "profile";
+      profileSize = props.size;
       overlayBlock = (
          <OverlayProfile>
-            <h2>{title}</h2>
-            <p>{subtitle}</p>
+            <h2>{props.title}</h2>
+            <p>{props.subtitle}</p>
          </OverlayProfile>
       );
-   } else {
-      // feature
-      const { header, body, cta } = props;
-      altText = header;
+   }
+
+   if (props.variant === "feature") {
+      altText = props.header;
+      frameMode = "feature";
       overlayBlock = (
          <OverlayFeature>
-            <h2>{header}</h2>
-            <p>{body}</p>
+            <h2>{props.header}</h2>
+            <p>{props.body}</p>
 
-            {cta && (
+            {props.cta ? (
                <FeatureCTAWrapper>
-                  <span>{cta}</span>
+                  <span>{props.cta}</span>
                   <MdArrowOutward />
                </FeatureCTAWrapper>
-            )}
+            ) : null}
          </OverlayFeature>
       );
    }
 
+   /**
+    * Intrinsic team banner behavior:
+    * - Only applies to bannerProfile + size="team"
+    * - Card shrink-wraps to the rendered image width at the set height
+    */
+   const isTeamBanner = props.variant === "bannerProfile" && profileSize === "team";
+   const fitMode: "fill" | "intrinsic" = isTeamBanner ? "intrinsic" : "fill";
+
    const imageBlock = (
-      <div>
-         {imageState === ImageState.LOADING && (
+      <>
+         {imageState === ImageState.LOADING ? (
             <LoaderLayer>
                <SheenLoader role="status" aria-live="polite" aria-label="loading image" />
             </LoaderLayer>
-         )}
+         ) : null}
 
-         {imageState === ImageState.ERROR && (
+         {imageState === ImageState.ERROR ? (
             <LoaderLayer>
                <GlossyPlaceholder aria-label="image failed to load" />
             </LoaderLayer>
-         )}
+         ) : null}
 
-         {img && (
-            <BgImage
-               key={currentSrc}
-               src={currentSrc}
-               alt={altText}
-               loading={loading}
-               $visible={imageState === ImageState.LOADED}
-               onLoad={onLoad}
-               onError={onError}
-            />
-         )}
-      </div>
+         <BgImage
+            key={src} // remount when img changes so browser re-triggers load events cleanly
+            src={src}
+            alt={altText}
+            loading={loading}
+            $visible={imageState === ImageState.LOADED}
+            $fit={fitMode}
+            onLoad={() => setImageState(ImageState.LOADED)}
+            onError={() => setImageState(ImageState.ERROR)}
+         />
+      </>
    );
 
    const inner = (
-      <CardInner>
+      <CardInner $shrink={isTeamBanner}>
          {overlayBlock}
-         {props.variant === "profile" ? (
-            <ImgFrame $mode="profile" $profileSize={props.size}>
-               {imageBlock}
-            </ImgFrame>
-         ) : props.variant === "bannerProfile" ? (
-            <ImgFrame $mode="profile" $profileSize={props.size}>
-               {imageBlock}
-            </ImgFrame>
-         ) : (
-            <ImgFrame $mode="feature" $profileSize={"team"}>
-               {imageBlock}
-            </ImgFrame>
-         )}
+         <ImgFrame $mode={frameMode} $profileSize={profileSize} $fit={fitMode}>
+            {imageBlock}
+         </ImgFrame>
       </CardInner>
    );
 
+   if (!hasLink) {
+      return <CardOuter $shrink={isTeamBanner}>{inner}</CardOuter>;
+   }
+
    return (
-      <CardOuter>
-         {hasLink ? (
-            <Link to={clickTo || ""} target="_blank" rel="noopener noreferrer">
-               {inner}
-            </Link>
-         ) : (
-            inner
-         )}
+      <CardOuter $shrink={isTeamBanner}>
+         <Link to={clickTo ?? ""} target="_blank" rel="noopener noreferrer">
+            {inner}
+         </Link>
       </CardOuter>
    );
 };
