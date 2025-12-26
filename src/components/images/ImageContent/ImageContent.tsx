@@ -1,7 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Wrapper, BgImage, Overlay, Inner, Heading, BodyText, CTABox } from "./ImageContent.styled";
+import {
+   Wrapper,
+   BgImage,
+   BgVideo,
+   Overlay,
+   Inner,
+   Heading,
+   BodyText,
+   CTABox,
+} from "./ImageContent.styled";
 import Button from "$components/Button/Button";
 
 import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
@@ -14,14 +23,28 @@ export interface ImageContentProps {
    Body: string;
    ButtonText: string;
 
-   /** R2 path only, e.g. "home-page/hero.webp" */
+   /** R2 path only, e.g. "home-page/hero.webp" or "home-page/hero.webm" */
    ImageSrc: string;
 
    AltText: string;
    clickTo: string;
    className?: string;
    loading?: "eager" | "lazy";
+
+   /**
+    * Only used for webm playback. Defaults are "hero-safe":
+    * autoplay + loop + muted + playsInline
+    */
+   videoAutoPlay?: boolean;
+   videoLoop?: boolean;
+   videoMuted?: boolean;
 }
+
+const getExt = (p: string) => {
+   const clean = (p ?? "").split("?")[0].split("#")[0];
+   const last = clean.split(".").pop();
+   return (last ?? "").toLowerCase();
+};
 
 const ImageContent = ({
    Header,
@@ -32,36 +55,60 @@ const ImageContent = ({
    clickTo,
    className,
    loading = "lazy",
+   videoAutoPlay = true,
+   videoLoop = true,
+   videoMuted = true,
 }: ImageContentProps) => {
-   const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
+   const [mediaState, setMediaState] = useState<ImageState>(ImageState.LOADING);
 
    const isValidLink = Boolean((clickTo ?? "").trim().length);
-   const src = assetUrl(imagePath);
 
-   // show loader again if the image changes
+   const src = useMemo(() => assetUrl(imagePath), [imagePath]);
+   const ext = useMemo(() => getExt(imagePath), [imagePath]);
+   const isWebm = ext === "webm";
+
+   // show loader again if the media changes
    useEffect(() => {
-      setImageState(ImageState.LOADING);
-   }, [imagePath]);
+      setMediaState(ImageState.LOADING);
+   }, [src]);
+
+   const visible = mediaState === ImageState.LOADED;
 
    return (
       <Wrapper className={className}>
-         {imageState === ImageState.LOADING ? (
-            <SheenLoader role="status" aria-live="polite" aria-label="loading image" />
+         {mediaState === ImageState.LOADING ? (
+            <SheenLoader role="status" aria-live="polite" aria-label="loading media" />
          ) : null}
 
-         {imageState === ImageState.ERROR ? (
-            <GlossyPlaceholder aria-label="image failed to load" />
+         {mediaState === ImageState.ERROR ? (
+            <GlossyPlaceholder aria-label="media failed to load" />
          ) : null}
 
-         <BgImage
-            key={src}
-            src={src}
-            alt={AltText}
-            loading={loading}
-            $visible={imageState === ImageState.LOADED}
-            onLoad={() => setImageState(ImageState.LOADED)}
-            onError={() => setImageState(ImageState.ERROR)}
-         />
+         {isWebm ? (
+            <BgVideo
+               key={src}
+               $visible={visible}
+               autoPlay={videoAutoPlay}
+               loop={videoLoop}
+               muted={videoMuted}
+               playsInline
+               preload={loading === "eager" ? "auto" : "metadata"}
+               aria-label={AltText}
+               onCanPlay={() => setMediaState(ImageState.LOADED)}
+               onError={() => setMediaState(ImageState.ERROR)}>
+               <source src={src} type="video/webm" />
+            </BgVideo>
+         ) : (
+            <BgImage
+               key={src}
+               src={src}
+               alt={AltText}
+               loading={loading}
+               $visible={visible}
+               onLoad={() => setMediaState(ImageState.LOADED)}
+               onError={() => setMediaState(ImageState.ERROR)}
+            />
+         )}
 
          <Overlay>
             <Inner>

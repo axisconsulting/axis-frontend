@@ -17,14 +17,16 @@ export const Wrapper = styled.div`
    }
 `;
 
-export const BgImage = styled.img<{ $visible?: boolean }>`
+const bgMediaStyles = css<{ $visible?: boolean }>`
    position: absolute;
    inset: 0;
    width: 100%;
    height: 100%;
    object-fit: cover;
+
    filter: brightness(0.25);
    transform: scale(1);
+
    opacity: ${({ $visible }) => ($visible ? 1 : 0)};
    transition: transform 0.5s ease, filter 0.5s ease, opacity 300ms ease;
 
@@ -42,9 +44,21 @@ export const BgImage = styled.img<{ $visible?: boolean }>`
    }
 `;
 
+export const BgImage = styled.img<{ $visible?: boolean }>`
+   ${bgMediaStyles}
+`;
+
+/**
+ * WebM background video element.
+ * Keep styles identical to BgImage so the component can swap media types seamlessly.
+ */
+export const BgVideo = styled.video<{ $visible?: boolean }>`
+   ${bgMediaStyles}
+`;
+
 export const Overlay = styled.div`
    position: absolute;
-   top: 40%;
+   top: 25%;
    left: 0;
    width: 100%;
    z-index: 2;
