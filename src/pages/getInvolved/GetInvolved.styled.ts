@@ -17,6 +17,18 @@ export const GridSection = styled.section`
    }
 `;
 
+export const LinksGrid = styled.section`
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr;
+   margin-top: 1rem;
+   gap: 0.8rem;
+
+   ${up("LARGE")} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+   }
+`;
+
 // CTA Callout block wrapper
 export const CalloutWrapper = styled.div`
    width: 100%;

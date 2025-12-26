@@ -26,7 +26,7 @@ import {
    CONSULTING_TEAM_LEADS,
    type Member,
 } from "$constants/members";
-import { currentYear, TEMP_URL } from "$constants/utils";
+import { currentYear, FAKE_URL } from "$constants/utils";
 import { TEAM_MEMBERS_URLS } from "$constants/image-utils/image-urls";
 import { consultingTeams, featureBlocks } from "$constants/pages/about";
 
@@ -34,7 +34,7 @@ function TeamRow({
    people,
    teamTitle = "",
    teamSubtitle = `${currentYear}-${currentYear + 1}`,
-   teamImgSrc = TEMP_URL,
+   teamImgSrc = FAKE_URL,
 }: {
    people: Member[];
    teamTitle?: string;
@@ -69,7 +69,7 @@ function TeamRow({
                      variant="profile"
                      name={member.name}
                      position={member.role}
-                     img={member.imgUrl ?? TEMP_URL}
+                     img={member.imgUrl ?? FAKE_URL}
                      clickTo={member.linkedin || undefined}
                      size="person"
                      loading="lazy"

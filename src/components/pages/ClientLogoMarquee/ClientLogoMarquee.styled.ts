@@ -60,13 +60,38 @@ export const LogoItem = styled.div`
    white-space: nowrap;
 `;
 
-export const LogoImg = styled.img`
+/**
+ * Wrapper for loader overlay (LoaderLayer is absolute).
+ * Needs to match the logo image height so the loader doesn't change layout.
+ */
+export const LogoImgWrap = styled.div`
+   position: relative;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   height: 48px;
+
+   /* Keep the loader/placeholder clipped to the same rounded shape */
+   border-radius: 12px;
+   overflow: hidden;
+
+   ${up("LARGE")} {
+      height: 96px;
+   }
+`;
+
+export const LogoImg = styled.img<{ $loaded: boolean }>`
    height: 48px;
 
    border-radius: 12px;
    width: auto;
    object-fit: contain;
    display: block;
+
+   /* Fade in once loaded */
+   opacity: ${({ $loaded }) => ($loaded ? 1 : 0)};
+   transition: opacity 160ms ease;
 
    ${up("LARGE")} {
       height: 96px;

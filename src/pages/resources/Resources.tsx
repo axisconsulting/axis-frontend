@@ -3,14 +3,19 @@ import type { FC } from "react";
 import Title from "$components/Title/Title";
 
 import { PageWrapper } from "$styles/constants/PageWrapper";
-import { CalloutWrapper, Container, StatsGrid } from "./Resources.styled";
+import { CalloutWrapper, Container, LinksGrid } from "./Resources.styled";
 import Icon from "$components/icons/IconContainer/IconContainer";
-import { AXIS_LINKS, RECRUITMENT } from "$constants/links";
+import { AXIS_LINKS, RECRUITMENT, SNAPSHOT_LINKS } from "$constants/links";
 
 import { BsPaperclip } from "react-icons/bs";
+import { MdOilBarrel } from "react-icons/md";
+import { BsBank } from "react-icons/bs";
+import { MdOutlineHealthAndSafety } from "react-icons/md";
+
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { RESOURCES_URLS } from "$constants/pages/resources";
+import { CONFIG_STRINGS } from "$constants/config";
 
 const Resources: FC = () => {
    return (
@@ -22,9 +27,9 @@ const Resources: FC = () => {
 
          <Container>
             <ImageContainer
-               Header="Sign up to Receive our Consulting 101 Package"
-               Body="Take the first step towards your consulting career. Click here to sign up for our beginners' guide to consulting"
-               CTA="Register Here"
+               Header="Learn about our Consulting 101 Program"
+               Body="Take the first step towards your consulting career. Click here to view for our beginners' guide to consulting!"
+               CTA="View Consulting 101 Guide"
                Image={RESOURCES_URLS.consulting_101_package}
                clickTo={AXIS_LINKS.CONSULTING_101}
                loading="lazy"
@@ -39,30 +44,30 @@ const Resources: FC = () => {
             />
          </Container>
 
-         <StatsGrid>
-            <Icon Icon={BsPaperclip} Text="Consulting 101" clickTo={AXIS_LINKS.CONSULTING_101} />
+         <LinksGrid>
             <Icon
                Icon={BsPaperclip}
                Text="24/25 Impact Report"
                clickTo={AXIS_LINKS.IMPACT_REPORT}
             />
             <Icon
-               Icon={BsPaperclip}
-               Text="Consulting Application Package"
-               clickTo={RECRUITMENT.CONSULTANT_PACKAGE}
+               Icon={MdOilBarrel}
+               Text="Oil & Gas Snapshot"
+               clickTo={SNAPSHOT_LINKS.OIL_AND_GAS_REPORT}
             />
+            <Icon Icon={BsBank} Text="Banking Snapshot" clickTo={SNAPSHOT_LINKS.BANKING_REPORT} />
             <Icon
-               Icon={BsPaperclip}
-               Text="Coordinator Application Package"
-               clickTo={RECRUITMENT.COORDINATOR_PACKAGE}
+               Icon={MdOutlineHealthAndSafety}
+               Text="Healthcare Snapshot"
+               clickTo={SNAPSHOT_LINKS.HEALTHCARE_REPORT}
             />
-         </StatsGrid>
+         </LinksGrid>
 
          <CalloutWrapper>
             <ImageContent
                Header="Your Future Awaits!"
                Body="View Application Package"
-               ButtonText="Apply Now"
+               ButtonText={CONFIG_STRINGS.HIRING_MSG}
                ImageSrc={RESOURCES_URLS.future_awaits_card}
                clickTo={RECRUITMENT.APPLICATION_FORM}
                AltText="The Axis Consulting Organization Group Photo"

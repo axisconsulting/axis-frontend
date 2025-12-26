@@ -1,15 +1,21 @@
 // src/components/ClientLogoGrid/ClientLogoMarquee.tsx
 import type { FC } from "react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { CLIENT_LOGOS, type ClientLogo } from "$constants/pages/clients";
 import { assetUrl } from "$constants/image-utils/assets";
+
+import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
+import { ImageState } from "$constants/utils";
+import { SheenLoader } from "$styles/constants/Animation";
+import { LoaderLayer } from "$components/images/ImageCard/ImageCard.styled";
 
 import {
    MarqueeWrapper,
    Row,
    Track,
    LogoItem,
+   LogoImgWrap,
    LogoImg,
    LogoLabel,
    FadeEdge,
@@ -29,9 +35,60 @@ type LogoCellProps = {
 const LogoCell: FC<LogoCellProps> = ({ logo, showLabel }) => {
    const src = assetUrl(logo.logoSrc);
 
+   const imgRef = useRef<HTMLImageElement | null>(null);
+   const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
+
+   const syncLoadedStateIfComplete = () => {
+      const el = imgRef.current;
+      if (!el) return;
+
+      if (el.complete && el.naturalWidth > 0) {
+         setImageState(ImageState.LOADED);
+      }
+   };
+
+   // When src changes, reset + immediately sync if cached
+   useEffect(() => {
+      setImageState(ImageState.LOADING);
+      syncLoadedStateIfComplete();
+   }, [src]);
+
+   const isLoaded = imageState === ImageState.LOADED;
+   const isError = imageState === ImageState.ERROR;
+
+   const altText = `${logo.name} logo`;
+
    return (
       <LogoItem>
-         <LogoImg src={src} alt={`${logo.name} logo`} loading="lazy" />
+         <LogoImgWrap>
+            {!isLoaded && !isError ? (
+               <LoaderLayer>
+                  <SheenLoader role="status" aria-live="polite" aria-label="loading logo" />
+               </LoaderLayer>
+            ) : null}
+
+            {!isLoaded && isError ? (
+               <LoaderLayer>
+                  <GlossyPlaceholder
+                     showNotFound
+                     label={altText}
+                     aria-label="logo failed to load"
+                  />
+               </LoaderLayer>
+            ) : null}
+
+            <LogoImg
+               ref={imgRef}
+               key={src}
+               src={src}
+               alt={altText}
+               loading="lazy"
+               $loaded={isLoaded}
+               onLoad={() => setImageState(ImageState.LOADED)}
+               onError={() => setImageState(ImageState.ERROR)}
+            />
+         </LogoImgWrap>
+
          {showLabel ? <LogoLabel>{logo.name}</LogoLabel> : null}
       </LogoItem>
    );

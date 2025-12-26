@@ -2,7 +2,7 @@ import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import Title from "$components/Title/Title";
 import { SOCIAL_LINKS } from "$constants/links";
-import { Container, SmallCardRow } from "./Odyssey.styled";
+import { CalloutWrapper, Container, SmallCardRow } from "./Odyssey.styled";
 
 const LINKS = {
    CARD_1: SOCIAL_LINKS.INSTAGRAM,
@@ -47,14 +47,16 @@ export default function Odyssey() {
             />
          </SmallCardRow>
 
-         <ImageContent
-            Header="Ready to Discover your True Potential?"
-            Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
-            ButtonText="Learn More"
-            ImageSrc={IMAGES.CARD_LARGE}
-            AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
-            clickTo={LINKS.CARD_LARGE}
-         />
+         <CalloutWrapper>
+            <ImageContent
+               Header="Ready to Discover your True Potential?"
+               Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
+               ButtonText="Learn More"
+               ImageSrc={IMAGES.CARD_LARGE}
+               AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
+               clickTo={LINKS.CARD_LARGE}
+            />
+         </CalloutWrapper>
       </Container>
    );
 }

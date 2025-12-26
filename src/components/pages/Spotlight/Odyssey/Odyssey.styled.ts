@@ -19,6 +19,7 @@ export const Container = styled.div`
 export const SmallCardRow = styled.div`
    display: flex;
    flex-direction: column;
+   width: 100%;
    gap: 1rem;
 
    ul {
@@ -27,7 +28,13 @@ export const SmallCardRow = styled.div`
       padding: 0;
    }
 
-   ${up("LARGE")} {
+   ${up("MEDIUM")} {
       flex-direction: row;
    }
+`;
+
+export const CalloutWrapper = styled.div`
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
 `;

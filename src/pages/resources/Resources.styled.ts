@@ -14,7 +14,7 @@ export const Container = styled.section`
    }
 `;
 
-export const StatsGrid = styled.section`
+export const LinksGrid = styled.section`
    display: grid;
    width: 100%;
    grid-template-columns: 1fr;

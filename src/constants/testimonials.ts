@@ -30,34 +30,14 @@ export const TESTIMONIALS: TestimonialEntry[] = [
       author: "Kaia Do",
       role: "2024/2025 Consultant",
    },
-];
-
-/*
-export const TESTIMONIALS: TestimonialEntry[] = [
    {
-      quote: "My experience with Axis provided countless opportunities to build new skills that are transferable both academically and professionally. It was an invaluable environment for growth, offering the hands-on challenges necessary to excel as a leader and a future professional.",
-      author: "Lawrence Zhu",
-      role: "2023/2024 Executive Director of Consulting",
+      quote: "Axis pushed me outside my comfort zone - learning how to work with others, managing a team to meet client expectations, and delivering high quality research under a time constraint. I owe it to Axis for a lot of the learning and growth I've had!",
+      author: "Nicholas Hartono",
+      role: "2022/2023 Consultant",
    },
    {
-      quote: "Axis was an integral part of my undergrad experience. I learned so much as a strategy analyst, connecting with peers and professionals while expanding my knowledge through industry research. It is the perfect place to bridge the gap between theory and practice.",
-      author: "Sandy Lin",
-      role: "2024/2025 Strategy Analyst",
-   },
-   {
-      quote: "Being a Team Lead taught me the complexities of scoping projects, leading teams, and building client relationships. I highly recommend Axis for the valuable opportunity to work with real clients on high-impact projects that truly prepare you for the consulting world.",
-      author: "Kyle Seto",
-      role: "2024/2025 Team Lead",
-   },
-   {
-      quote: "Axis was a game-changer for me. With the team's mentorship, I landed a management consulting internship at KPMG as a second-year student. For anyone looking to build problem-solving and communication skills, Axis is a must-join to kickstart your professional career.",
-      author: "Tan Vu",
-      role: "2024/2025 Consultant",
-   },
-   {
-      quote: "Axis provided an exceptional foundation in strategy. The collaborative environment allowed me to contribute to high-impact projects while building genuine friendships. It's a unique space where intellectual stimulation meets a supportive community of diverse and talented perspectives.",
-      author: "Kaia Do",
-      role: "2024/2025 Consultant",
+      quote: "Axis has helped me do my part for the community while expanding my network and gaining appropriate skills that make me closer to achieving my dream job. It is a great opportunity to work with and learn from some of the brightest minds at SFU!",
+      author: "Arsh Gill",
+      role: "2020/2021 Team Lead",
    },
 ];
-*/

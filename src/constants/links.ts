@@ -1,6 +1,9 @@
-// TODO: replace once links are finalized
+import { HIRING_CONFIG, EVENT_CONFIG } from "./config";
+
 const BASE_URL = window.location.origin; // Get the base URL of the current site
-const AXIS_NOT_FOUND_LINK = `${BASE_URL}/notfound`;
+
+// TODO: Placeholder link to be replaced with actual URLs when available
+const REPLACE_WITH_VALID_LINK = `${BASE_URL}/notfound`;
 
 export const SOCIAL_LINKS = {
    LINKEDIN: "https://www.linkedin.com/company/sfuaxisconsulting/",
@@ -11,20 +14,29 @@ export const SOCIAL_LINKS = {
 export const AXIS_LINKS = {
    DOMAIN: "https://www.sfuaxisconsulting.com/",
    EMAIL: "axismd@sfu.ca",
-   IMPACT_REPORT: "https://drive.google.com/file/d/1NurcvvOy8DUCYgc11QRXQB-QbTkSctZG/view",
+   IMPACT_REPORT:
+      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FAxis%20Consulting%20Impact%20Report%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
    CONSULTING_101:
-      "https://forms.office.com/Pages/ResponsePage.aspx?id=fmfoBInJuUeGGdg9Wl9sZ6JsHL5n-8JLl38GgQsZ96JUQUJaMUs0NkxUSTROQTVBN0YzUzBNUVBOSC4u",
+      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FConsulting%20101%20Guide%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
    MAILING_LIST: "https://forms.office.com/r/vQxSPj9Sxf",
 } as const;
 
+export const SNAPSHOT_LINKS = {
+   OIL_AND_GAS_REPORT:
+      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FOil%20%26%20Gas%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+   BANKING_REPORT:
+      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FBanking%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+   HEALTHCARE_REPORT:
+      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FHealthcare%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+} as const;
+
 export const RECRUITMENT = {
-   COORDINATOR_PACKAGE:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202024%2D2025%2FInternal%2FSpring%20Hiring%2FSpring%20Hiring%20Package%20%28Coordinators%29%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202024%2D2025%2FInternal%2FSpring%20Hiring&ga=1",
-   CONSULTANT_PACKAGE: AXIS_NOT_FOUND_LINK,
-   APPLICATION_FORM: AXIS_NOT_FOUND_LINK,
+   COORDINATOR_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
+   CONSULTANT_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
+   APPLICATION_FORM: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
 } as const;
 
 export const EVENT_LINKS = {
-   ODYSSEY: AXIS_NOT_FOUND_LINK,
-   REVOLVE: AXIS_NOT_FOUND_LINK,
+   ODYSSEY: EVENT_CONFIG.ODYSSEY_REGISTRATION_TOGGLE ? REPLACE_WITH_VALID_LINK : "",
+   REVOLVE: EVENT_CONFIG.REVOLVE_REGISTRATION_TOGGLE ? REPLACE_WITH_VALID_LINK : "",
 } as const;

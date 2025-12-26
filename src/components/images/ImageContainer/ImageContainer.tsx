@@ -55,8 +55,15 @@ const ImageContainer = ({
          </CTAInline>
       );
 
-      if (!hasLink) return content;
-      return <Link to={clickTo ? clickTo : ""}>{content}</Link>;
+      if (!hasLink) {
+         return <span aria-disabled="true">{content}</span>;
+      } else {
+         return (
+            <Link target="_blank" to={clickTo ? clickTo : ""}>
+               {content}
+            </Link>
+         );
+      }
    };
 
    return (
