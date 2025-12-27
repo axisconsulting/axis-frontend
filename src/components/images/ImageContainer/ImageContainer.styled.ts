@@ -1,5 +1,5 @@
 // ImageContainer.styled.ts
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { up } from "$styles/constants/breakpoints";
 import { withAlpha } from "$styles/colors";
 
@@ -109,20 +109,20 @@ export const MediaBox = styled.div`
    width: 100%;
    flex: 1 1 auto; /* take available vertical space in Wrapper */
    aspect-ratio: 16 / 10;
-   min-height: 16rem; /* reasonable minimum so it’s not tiny */
+   min-height: 16rem;
 
    border-radius: 0.25rem;
    overflow: hidden;
 
    ${up("LARGE")} {
-      min-height: 18rem; /* slightly taller on desktop, but not forced 40rem */
+      min-height: 18rem;
    }
 `;
 
 /**
- * Background image fills whatever height the MediaBox/grid cell decides.
+ * Shared background media styles (img + video) so swapping formats is seamless.
  */
-export const MediaImg = styled.img<{ $visible: boolean }>`
+const bgMediaStyles = css<{ $visible: boolean }>`
    width: 100%;
    height: 100%;
    object-fit: cover;
@@ -137,6 +137,23 @@ export const MediaImg = styled.img<{ $visible: boolean }>`
       filter: brightness(0.15);
       transform: scale(1.03);
    }
+
+   @media (prefers-reduced-motion: reduce) {
+      transition: opacity 200ms linear;
+      transform: none;
+
+      ${Wrapper}:hover & {
+         transform: none;
+      }
+   }
+`;
+
+export const MediaImg = styled.img<{ $visible: boolean }>`
+   ${bgMediaStyles}
+`;
+
+export const MediaVideo = styled.video<{ $visible: boolean }>`
+   ${bgMediaStyles}
 `;
 
 /** Optional: if you still use this for overlays */
