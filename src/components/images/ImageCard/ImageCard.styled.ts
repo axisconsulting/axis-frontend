@@ -1,7 +1,6 @@
 // src/components/images/ImageCard/ImageCard.styled.ts
 import styled, { css } from "styled-components";
 import { up } from "$styles/constants/breakpoints";
-import { withAlpha } from "$styles/colors";
 
 /**
  * Outer wrapper.
@@ -9,8 +8,6 @@ import { withAlpha } from "$styles/colors";
  * For intrinsic team banner, we shrink-wrap in a horizontal track.
  */
 export const CardOuter = styled.div<{ $shrink?: boolean }>`
-   border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.1)};
-   border-radius: 8px;
    display: block;
    color: ${({ theme }) => theme.tokens.fg};
 
