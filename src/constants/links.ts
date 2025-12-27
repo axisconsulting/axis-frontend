@@ -15,19 +15,19 @@ export const AXIS_LINKS = {
    DOMAIN: "https://www.sfuaxisconsulting.com/",
    EMAIL: "axismd@sfu.ca",
    IMPACT_REPORT:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FAxis%20Consulting%20Impact%20Report%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+      "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQC7US3vtb6zToQ_eT9aSqvuAW757xMmeZET4QIZfEv0BqE?e=66E96H",
    CONSULTING_101:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FConsulting%20101%20Guide%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+      "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQDKyC4rC6qkQIhh0T28AvMhAeYTYwqXFWUqJMiADCzKNEk?e=xmTsld",
    MAILING_LIST: "https://forms.office.com/r/vQxSPj9Sxf",
 } as const;
 
 export const SNAPSHOT_LINKS = {
    OIL_AND_GAS_REPORT:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FOil%20%26%20Gas%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+      "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQC75jigPxCdS6ciAyhYxGGeAZqyLBJ4-j-O65ZvRlxGN-o?e=VjkrGv",
    BANKING_REPORT:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FBanking%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+      "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQC7YvUtIJv_SpfHqi127YCOAZkW77OMoVxD2Pb5p3deA64?e=E0CaY6",
    HEALTHCARE_REPORT:
-      "https://1sfu-my.sharepoint.com/personal/axismd_sfu_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website%2FHealthcare%20Snapshot%2Epdf&parent=%2Fpersonal%2Faxismd%5Fsfu%5Fca%2FDocuments%2FAxis%20Consulting%202025%2D2026%2F04%2E%20Directors%2F04%2E%20Strategy%2FReports%20for%20Website&ga=1",
+      "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQCh4_EIYTEqSaKKb_WL-_q7Abg7WKNrJHVuQ1o0VBcmHjo?e=WrRZLV",
 } as const;
 
 export const RECRUITMENT = {
