@@ -26,14 +26,14 @@ import {
    CONSULTING_TEAM_LEADS,
    type Member,
 } from "$constants/members";
-import { currentYear, FAKE_URL } from "$constants/utils";
+import { FAKE_URL } from "$constants/utils";
 import { TEAM_MEMBERS_URLS } from "$constants/image-utils/image-urls";
 import { consultingTeams, featureBlocks } from "$constants/pages/about";
 
 function TeamRow({
    people,
    teamTitle = "",
-   teamSubtitle = `${currentYear}-${currentYear + 1}`,
+   teamSubtitle = "2025-2026", //* This should be updated each year manually */
    teamImgSrc = FAKE_URL,
 }: {
    people: Member[];
