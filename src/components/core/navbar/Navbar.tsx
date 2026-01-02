@@ -100,11 +100,11 @@ export default function Navbar() {
                         <NavLink to={ROUTES.SPONSORS} onClick={onNavClick} role="menuitem">
                            {ROUTE_STRINGS.SPONSORS}
                         </NavLink>
-                        <NavLink to={ROUTES.GET_INVOLVED} onClick={onNavClick} role="menuitem">
-                           {ROUTE_STRINGS.GET_INVOLVED}
-                        </NavLink>
                         <NavLink to={ROUTES.RESOURCES} onClick={onNavClick} role="menuitem">
                            {ROUTE_STRINGS.RESOURCES}
+                        </NavLink>
+                        <NavLink to={ROUTES.GET_INVOLVED} onClick={onNavClick} role="menuitem">
+                           {ROUTE_STRINGS.GET_INVOLVED}
                         </NavLink>
                      </ul>
                   </div>

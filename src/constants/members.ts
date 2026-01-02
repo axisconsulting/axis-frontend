@@ -7,7 +7,7 @@ export interface Member {
    name: string;
    role: string;
    linkedin: string;
-   imgUrl?: string;
+   imgUrl: string;
 }
 
 export interface TeamMembers {
@@ -42,96 +42,6 @@ export const MANAGING_DIRECTORS: Member[] = [
       role: "Managing Director",
       linkedin: "https://www.linkedin.com/in/andrew-novak831/",
       imgUrl: `${ABOUT_BUCKET}managing-directors/md-andrew.webp`,
-   },
-] as const;
-
-// ================= Consulting Team Leads =================
-export const CONSULTING_TEAM_LEADS: Member[] = [
-   {
-      name: "Nathan Chu",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/nathan-chu-404a6b1b0/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/team-lead-nathan.webp`,
-   },
-   {
-      name: "Sabrina Wang",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/sabrinawang9/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/team-lead-sabrina.webp`,
-   },
-   {
-      name: "Ryan Thauald",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/ryanthaulad",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/team-lead-ryan.webp`,
-   },
-   {
-      name: "Samuel McCallen",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/samuel-mccallen",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/team-lead-sam.webp`,
-   },
-] as const;
-
-// ================= Directors =================
-export const DIRECTORS: Member[] = [
-   {
-      name: "Tom Bui",
-      role: "Director of Finance",
-      linkedin: "https://www.linkedin.com/in/hungtombui/",
-      imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
-   },
-   {
-      name: "Hazel Liu",
-      role: "Director of Internal",
-      linkedin: "https://www.linkedin.com/in/hazel-liu-/",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-dir-hazel.webp`,
-   },
-   {
-      name: "Tan Vu",
-      role: "Director of External",
-      linkedin: "https://www.linkedin.com/in/tan-vu",
-      imgUrl: `${ABOUT_BUCKET}external-team/external-dir-tan.webp`,
-   },
-   {
-      name: "Carol Wang",
-      role: "Director of Strategy",
-      linkedin: "https://www.linkedin.com/in/wangmcarol/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-dir-carol.webp`,
-   },
-   {
-      name: "Lucy Liu",
-      role: "Director of Strategy",
-      linkedin: "https://www.linkedin.com/in/lucyliuu/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-dir-lucy.webp`,
-   },
-   {
-      name: "Jayson Lee",
-      role: "Director of Marketing Design",
-      linkedin: "https://www.linkedin.com/in/jaydglee",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-dir-jayson.webp`,
-   },
-   {
-      name: "Jessica Kan",
-      role: "Director of Marketing Strategy",
-      linkedin: "https://www.linkedin.com/in/jessicataokan",
-      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-dir-jessica.webp`,
-   },
-   {
-      name: "Jai Malhi",
-      role: "Director of Web Development",
-      linkedin: "https://www.linkedin.com/in/jaimalhi/",
-      imgUrl: `${ABOUT_BUCKET}web-dev-team/web-dir-jai.webp`,
-   },
-] as const;
-
-// ================= Finance =================
-export const FINANCE_TEAM: Member[] = [
-   {
-      name: "Tom Bui",
-      role: "Director of Finance",
-      linkedin: "https://www.linkedin.com/in/hungtombui/",
-      imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
    },
 ] as const;
 
@@ -292,16 +202,26 @@ export const MARKETING_DESIGN_TEAM: Member[] = [
       imgUrl: `${ABOUT_BUCKET}design-team/design-coord-august.webp`,
    },
    {
+      name: "Kal Kuan Chia",
+      role: "Marketing Design Coordinator",
+      linkedin: "https://www.linkedin.com/in/kal-kuan-chia-1a25242b8/",
+      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-kuan.webp`,
+   },
+   {
       name: "Maggie Chang",
       role: "Marketing Design Coordinator",
       linkedin: "https://www.linkedin.com/in/mag-chang/",
       imgUrl: `${ABOUT_BUCKET}design-team/design-coord-maggie.webp`,
    },
+] as const;
+
+// ================= Finance =================
+export const FINANCE_TEAM: Member[] = [
    {
-      name: "Kal Kuan Chia",
-      role: "Marketing Design Coordinator",
-      linkedin: "https://www.linkedin.com/in/kal-kuan-chia-1a25242b8/",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-kuan.webp`,
+      name: "Tom Bui",
+      role: "Director of Finance",
+      linkedin: "https://www.linkedin.com/in/hungtombui/",
+      imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
    },
 ] as const;
 
@@ -318,7 +238,7 @@ export const WEB_DEV_TEAM: Member[] = [
 // ================= Team Ryan (Nebula) =================
 export const TEAM_NEBULA: Member[] = [
    {
-      name: "Ryan Thauald",
+      name: "Ryan Thaulad",
       role: "Consulting Team Lead",
       linkedin: "https://www.linkedin.com/in/ryanthaulad",
       imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/team-lead-ryan.webp`,
@@ -342,16 +262,16 @@ export const TEAM_NEBULA: Member[] = [
       imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-claire.webp`,
    },
    {
-      name: "Victor Suwantaweechoat",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/lertpong-suwantaweechoat/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-victor.webp`,
-   },
-   {
       name: "Evan Elsaesser",
       role: "Consultant",
       linkedin: "https://linkedin.com/in/evan-elsaesser",
       imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-evan.webp`,
+   },
+   {
+      name: "Victor Suwantaweechoat",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/lertpong-suwantaweechoat/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-victor.webp`,
    },
 ] as const;
 
@@ -473,6 +393,26 @@ export const TEAM_ECLIPSE: Member[] = [
       linkedin: "https://www.linkedin.com/in/edric-lagrisola/",
       imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/consultant-edric.webp`,
    },
+] as const;
+
+// ================= Directors =================
+export const DIRECTORS: Member[] = [
+   INTERNAL_TEAM[0], // Hazel Liu
+   EXTERNAL_TEAM[0], // Tan Vu
+   STRATEGY_TEAM[0], // Carol Wang
+   STRATEGY_TEAM[1], // Lucy Liu
+   MARKETING_STRATEGY_TEAM[0], // Jessica Kan
+   MARKETING_DESIGN_TEAM[0], // Jayson Lee
+   FINANCE_TEAM[0], // Tom Bui
+   WEB_DEV_TEAM[0], // Jai Malhi
+] as const;
+
+// ================= Consulting Team Leads =================
+export const CONSULTING_TEAM_LEADS: Member[] = [
+   TEAM_NEBULA[0], // Ryan Thaulad
+   TEAM_NOVA[0], // Nathan Chu
+   TEAM_POLARIS[0], // Sabrina Wang
+   TEAM_ECLIPSE[0], // Samuel McCallen
 ] as const;
 
 // ================= All Members Export =================
