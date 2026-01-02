@@ -32,10 +32,10 @@ export default function Footer() {
 
             <RightCols>
                <LinkGroup>
-                  <h6>Our Resources</h6>
+                  <h6>Learn More</h6>
                   <Hyperlink text="Resources" clickTo={ROUTES.RESOURCES} />
-                  <Hyperlink text="Email" mailto={AXIS_LINKS.EMAIL} />
                   <Hyperlink text="Impact Report" clickTo={AXIS_LINKS.IMPACT_REPORT} />
+                  <Hyperlink text="Email" mailto={AXIS_LINKS.EMAIL} />
                </LinkGroup>
                <LinkGroup>
                   <h6>Discover</h6>
