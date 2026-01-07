@@ -366,7 +366,7 @@ export const TEAM_ECLIPSE: Member[] = [
    {
       name: "Albel Singh Dhanoa",
       role: "Sr. Consultant",
-      linkedin: "", // No LinkedIn URL provided
+      linkedin: "https://www.linkedin.com/in/albel-dhanoa/",
       imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/sr-consultant-albel.webp`,
    },
    {
