@@ -69,7 +69,7 @@ const ImageCard = (props: ImageCardProps) => {
    let profileSize: "team" | "person" = "team";
 
    if (props.variant === "profile") {
-      altText = props.name;
+      altText = `${props.name} | ${props.position}`;
       frameMode = "profile";
       profileSize = props.size;
       overlayBlock = (
