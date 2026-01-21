@@ -1,6 +1,6 @@
 // src/constants/assets.ts
-const RAW_BASE = "https://assets.sfuaxisconsulting.com";
-const BASE = RAW_BASE.replace(/\/+$/, ""); // trim trailing slash
+export const BASE_CDN_URL = "https://assets.sfuaxisconsulting.com";
+const BASE = BASE_CDN_URL.replace(/\/+$/, ""); // trim trailing slash
 
 /**
  * Generates a full URL for an asset based on the provided path.
