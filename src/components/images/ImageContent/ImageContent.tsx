@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 
 import {
    Wrapper,
@@ -116,9 +115,7 @@ const ImageContent = ({
                <BodyText>{Body}</BodyText>
                <CTABox>
                   {isValidLink ? (
-                     <Link to={clickTo}>
-                        <Button>{ButtonText}</Button>
-                     </Link>
+                     <Button clickTo={clickTo}>{ButtonText}</Button>
                   ) : (
                      <Button variant="ghost">{ButtonText}</Button>
                   )}

@@ -31,7 +31,7 @@ const ChildWrapper = styled.div`
  * This is the main App component that includes the Navbar, an Outlet for rendering child routes, and the footer
  */
 export default function App() {
-   preconnect(BASE_CDN_URL); // we will request something
+   preconnect(BASE_CDN_URL); // we will request something from the CDN, so preconnect to it early
 
    return (
       <RootWrapper>

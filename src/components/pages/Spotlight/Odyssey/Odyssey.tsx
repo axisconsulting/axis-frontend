@@ -17,7 +17,11 @@ const IMAGES = {
    CARD_LARGE: "generic/events/odyssey/odyssey_3.webp",
 } as const;
 
-export default function Odyssey() {
+type OdysseyProps = {
+   isLargeCardVisible?: boolean;
+};
+
+export default function Odyssey({ isLargeCardVisible = true }: OdysseyProps) {
    return (
       <Container>
          <Title Header="Odyssey Mentorship Program" />
@@ -47,16 +51,18 @@ export default function Odyssey() {
             />
          </SmallCardRow>
 
-         <CalloutWrapper>
-            <ImageContent
-               Header="Ready to Discover your True Potential?"
-               Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
-               ButtonText="Learn More"
-               ImageSrc={IMAGES.CARD_LARGE}
-               AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
-               clickTo={LINKS.CARD_LARGE}
-            />
-         </CalloutWrapper>
+         {isLargeCardVisible && (
+            <CalloutWrapper>
+               <ImageContent
+                  Header="Ready to Discover your True Potential?"
+                  Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
+                  ButtonText="Learn More"
+                  ImageSrc={IMAGES.CARD_LARGE}
+                  AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
+                  clickTo={LINKS.CARD_LARGE}
+               />
+            </CalloutWrapper>
+         )}
       </Container>
    );
 }
