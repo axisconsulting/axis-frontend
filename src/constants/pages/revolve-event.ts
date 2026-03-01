@@ -69,3 +69,69 @@ export const INTERN_PANELISTS: RevolveEventSpeaker[] = [
       img: REVOLVE_SPEAKER_URLS.Intern_Tan_Vu_IBM,
    },
 ];
+
+// Attending companies (for logo marquee)
+const REVOLVE_COMPANY_BUCKET = "generic/events/revolve/companies/";
+
+export const REVOLVE_COMPANY_LOGOS = [
+   {
+      key: "ibm",
+      name: "IBM",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}ibm.webp`,
+      website: "https://www.ibm.com/",
+   },
+   {
+      key: "kpmg",
+      name: "KPMG",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}kpmg.webp`,
+      website: "https://kpmg.com/",
+   },
+   {
+      key: "deloitte",
+      name: "Deloitte",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}deloitte.webp`,
+      website: "https://www.deloitte.com/",
+   },
+   {
+      key: "ey",
+      name: "EY",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}ey.webp`,
+      website: "https://www.ey.com/",
+   },
+   {
+      key: "pwc",
+      name: "PwC",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}pwc.webp`,
+      website: "https://www.pwc.com/",
+   },
+   {
+      key: "slalom",
+      name: "Slalom",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}slalom.webp`,
+      website: "https://www.slalom.com/",
+   },
+   {
+      key: "doane_grant_thornton",
+      name: "Doane Grant Thornton",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}doane-grant-thornton.webp`,
+      website: "https://www.doanegrantthornton.ca/",
+   },
+   {
+      key: "passion_fruit",
+      name: "Passion Fruit",
+      logoSrc: `${REVOLVE_COMPANY_BUCKET}passion-fruit.webp`,
+      website: "https://www.passionfruitpartners.com/",
+   },
+] as const;
+
+export type RevolveCompanyLogo = (typeof REVOLVE_COMPANY_LOGOS)[number];
+export type RevolveCompanyKey = RevolveCompanyLogo["key"];
+
+export const REVOLVE_COMPANY_LOGOS_BY_KEY: Record<RevolveCompanyKey, RevolveCompanyLogo> =
+   REVOLVE_COMPANY_LOGOS.reduce(
+      (acc, company) => {
+         acc[company.key] = company;
+         return acc;
+      },
+      {} as Record<RevolveCompanyKey, RevolveCompanyLogo>,
+   );

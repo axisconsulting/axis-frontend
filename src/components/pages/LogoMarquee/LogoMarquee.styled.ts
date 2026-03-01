@@ -1,4 +1,4 @@
-// src/components/ClientLogoGrid/ClientLogoMarquee.styled.ts
+// src/components/LogoMarquee/LogoMarquee.styled.ts
 import styled, { css, keyframes } from "styled-components";
 import { up } from "$styles/constants/breakpoints";
 

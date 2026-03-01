@@ -18,6 +18,20 @@ export const PageWrapper = styled.div`
    }
 `;
 
+export const RevolveInfoSection = styled.section`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 0 5rem;
+
+   h1 {
+      margin: 0;
+      color: ${({ theme }) => theme.palette.AXIS_BLUE};
+   }
+`;
+
 export const TeamSection = styled.section`
    display: flex;
    flex-direction: column;
@@ -88,4 +102,19 @@ export const CardsTrack = styled.div<{ $center?: boolean }>`
               justify-content: flex-start;
               flex-wrap: nowrap;
            `}
+`;
+
+export const AttendeesLogosSection = styled.section`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   width: 100%;
+   gap: 2rem;
+
+   h2 {
+      font-family: ${({ theme }) => theme.fonts.heading};
+      font-size: ${({ theme }) => theme.fontSizes.h2};
+      margin: 0;
+   }
 `;

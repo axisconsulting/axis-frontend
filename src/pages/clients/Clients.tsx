@@ -15,7 +15,7 @@ import {
 import { ClientsListSection, ClientsLogosSection, CalloutWrapper } from "./Clients.styled";
 import CompanyBlock from "$components/pages/CompanyBlock/CompanyBlock";
 import { PageWrapper } from "$styles/constants/PageWrapper";
-import ClientLogoMarquee from "$components/pages/ClientLogoMarquee/ClientLogoMarquee";
+import LogoMarquee from "$components/pages/LogoMarquee/LogoMarquee";
 
 const Clients: FC = () => {
    // All logos except the ones featured
@@ -63,8 +63,7 @@ const Clients: FC = () => {
          {/* Logo grid - shows all OTHER clients */}
          <ClientsLogosSection>
             <h3>Clients We've Worked With</h3>
-            {/* <ClientLogoGrid clients={nonFeaturedLogos} /> */}
-            <ClientLogoMarquee clients={nonFeaturedLogos} speedSeconds={45} />
+            <LogoMarquee clients={nonFeaturedLogos} speedSeconds={45} />
          </ClientsLogosSection>
 
          {/* CTA block */}

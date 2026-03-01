@@ -5,8 +5,10 @@ import ImageCard from "$components/images/ImageCard/ImageCard";
 import { FAKE_URL } from "$constants/utils";
 
 import {
+   AttendeesLogosSection,
    CardsTrack,
    PageWrapper,
+   RevolveInfoSection,
    ScrollContainer,
    TeamRowOuter,
    TeamSection,
@@ -19,7 +21,9 @@ import {
    FIRM_LED_WORKSHOP_HOSTS,
    INTERN_PANELISTS,
    type RevolveEventSpeaker,
+   REVOLVE_COMPANY_LOGOS,
 } from "$constants/pages/revolve-event";
+import LogoMarquee from "$components/pages/LogoMarquee/LogoMarquee";
 
 function SpeakerRow({ speakers }: { speakers: RevolveEventSpeaker[] }) {
    const totalCards = speakers.length;
@@ -47,16 +51,27 @@ function SpeakerRow({ speakers }: { speakers: RevolveEventSpeaker[] }) {
    );
 }
 
-// What is Revolve:
-// Revolve Consulting Conference is one-day consulting conference event that aims to provide undergraduate students interested in the consulting industry an opportunity to network, engage, and learn from consulting professionals. Additionally, attendees have the opportunity to see how Axis Consulting delivers real impact through the showcase of Axis Consulting’s client engagements in the year.
-
 const RevolveEvent: FC = () => {
+   // Duplicated array to create seamless marquee effect
+   const COMPANY_MARQUEE = [...REVOLVE_COMPANY_LOGOS, ...REVOLVE_COMPANY_LOGOS];
+
    return (
       <PageWrapper>
          <Title
             Header="Revolve Consulting Conference"
             Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
          />
+
+         <RevolveInfoSection>
+            <h1>What is Revolve?</h1>
+            <p>
+               Revolve Consulting Conference is one-day consulting conference event that aims to
+               provide undergraduate students interested in the consulting industry an opportunity
+               to network, engage, and learn from consulting professionals. Additionally, attendees
+               have the opportunity to see how Axis Consulting delivers real impact through the
+               showcase of Axis Consulting's client engagements in the year.
+            </p>
+         </RevolveInfoSection>
 
          {/* Keynote Speaker */}
          <TeamSection>
@@ -90,6 +105,12 @@ const RevolveEvent: FC = () => {
             </TeamSectionHeaderRow>
             <SpeakerRow speakers={INTERN_PANELISTS} />
          </TeamSection>
+
+         {/* Logo grid - shows all attending companies*/}
+         <AttendeesLogosSection>
+            <h2>Attending Companies</h2>
+            <LogoMarquee clients={COMPANY_MARQUEE} speedSeconds={45} />
+         </AttendeesLogosSection>
       </PageWrapper>
    );
 };
