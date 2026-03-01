@@ -34,6 +34,7 @@ export default function Footer() {
                <LinkGroup>
                   <h6>Learn More</h6>
                   <Hyperlink text="Resources" clickTo={ROUTES.RESOURCES} />
+                  <Hyperlink text="Revolve" clickTo={ROUTES.REVOLVE_EVENT} />
                   <Hyperlink text="Impact Report" clickTo={AXIS_LINKS.IMPACT_REPORT} />
                   <Hyperlink text="Email" mailto={AXIS_LINKS.EMAIL} />
                </LinkGroup>

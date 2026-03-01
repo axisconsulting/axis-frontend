@@ -10,6 +10,10 @@ export const PageWrapper = styled.div`
    flex-direction: column;
    gap: 5rem;
 
+   & > div {
+      width: 100%;
+   }
+
    ${up("LARGE")} {
       width: 70%;
       gap: 10rem;

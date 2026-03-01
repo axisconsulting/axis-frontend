@@ -1,8 +1,8 @@
-// src/components/ClientLogoGrid/ClientLogoMarquee.tsx
+// src/components/LogoMarquee/LogoMarquee.tsx
 import type { FC } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { CLIENT_LOGOS, type ClientLogo } from "$constants/pages/clients";
+import { CLIENT_LOGOS } from "$constants/pages/clients";
 import { assetUrl } from "$constants/image-utils/assets";
 
 import { GlossyPlaceholder } from "$styles/constants/Placeholder.styled";
@@ -19,16 +19,26 @@ import {
    LogoImg,
    LogoLabel,
    FadeEdge,
-} from "./ClientLogoMarquee.styled";
+} from "./LogoMarquee.styled";
 
-type ClientLogoMarqueeProps = {
-   clients?: ReadonlyArray<ClientLogo>;
+/**
+ * Generic logo type so this marquee can be reused across pages.
+ */
+export type MarqueeLogo = {
+   key: string;
+   name: string;
+   logoSrc: string;
+   website?: string;
+};
+
+type LogoMarqueeProps = {
+   clients?: ReadonlyArray<MarqueeLogo>;
    showLabel?: boolean;
    speedSeconds?: number;
 };
 
 type LogoCellProps = {
-   logo: ClientLogo;
+   logo: MarqueeLogo;
    showLabel: boolean;
 };
 
@@ -47,7 +57,6 @@ const LogoCell: FC<LogoCellProps> = ({ logo, showLabel }) => {
       }
    };
 
-   // When src changes, reset + immediately sync if cached
    useEffect(() => {
       setImageState(ImageState.LOADING);
       syncLoadedStateIfComplete();
@@ -58,8 +67,8 @@ const LogoCell: FC<LogoCellProps> = ({ logo, showLabel }) => {
 
    const altText = `${logo.name} logo`;
 
-   return (
-      <LogoItem>
+   const content = (
+      <>
          <LogoImgWrap>
             {!isLoaded && !isError ? (
                <LoaderLayer>
@@ -90,13 +99,30 @@ const LogoCell: FC<LogoCellProps> = ({ logo, showLabel }) => {
          </LogoImgWrap>
 
          {showLabel ? <LogoLabel>{logo.name}</LogoLabel> : null}
+      </>
+   );
+
+   return (
+      <LogoItem>
+         {logo.website ? (
+            <a
+               href={logo.website}
+               target="_blank"
+               rel="noreferrer noopener"
+               aria-label={`Visit ${logo.name} website`}
+               style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+               {content}
+            </a>
+         ) : (
+            content
+         )}
       </LogoItem>
    );
 };
 
-const splitTwoRows = (logos: ReadonlyArray<ClientLogo>) => {
-   const top: ClientLogo[] = [];
-   const bottom: ClientLogo[] = [];
+const splitTwoRows = (logos: ReadonlyArray<MarqueeLogo>) => {
+   const top: MarqueeLogo[] = [];
+   const bottom: MarqueeLogo[] = [];
 
    for (let i = 0; i < logos.length; i += 1) {
       if (i % 2 === 0) top.push(logos[i]);
@@ -106,14 +132,13 @@ const splitTwoRows = (logos: ReadonlyArray<ClientLogo>) => {
    return { top, bottom };
 };
 
-const ClientLogoMarquee: FC<ClientLogoMarqueeProps> = ({
+const LogoMarquee: FC<LogoMarqueeProps> = ({
    clients = CLIENT_LOGOS,
    showLabel = false,
    speedSeconds = 28,
 }) => {
    const { top, bottom } = useMemo(() => splitTwoRows(clients), [clients]);
 
-   // Duplicate to create a seamless loop
    const topLoop = useMemo(() => [...top, ...top], [top]);
    const bottomLoop = useMemo(() => [...bottom, ...bottom], [bottom]);
 
@@ -142,4 +167,4 @@ const ClientLogoMarquee: FC<ClientLogoMarqueeProps> = ({
    );
 };
 
-export default ClientLogoMarquee;
+export default LogoMarquee;

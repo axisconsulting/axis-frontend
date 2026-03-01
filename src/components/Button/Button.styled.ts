@@ -5,11 +5,29 @@ export const StyledButton = styled.button<{
    size: "sm" | "md" | "lg";
    flat: boolean;
 }>`
+   /* Reset for when rendered as <a> via as={Link} */
+   text-decoration: none;
+   color: inherit;
+
+   &:link,
+   &:visited,
+   &:hover,
+   &:active {
+      text-decoration: none;
+      color: inherit;
+   }
+
    border: none;
    border-radius: 50px;
    font-weight: 600;
    cursor: pointer;
-   transition: all 0.2s ease;
+   transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+
    display: inline-flex;
    align-items: center;
    justify-content: center;
@@ -43,6 +61,7 @@ export const StyledButton = styled.button<{
                background: ${tokens.surface};
                color: ${tokens.fg};
                border: 1px solid ${tokens.border};
+
                &:hover {
                   background: ${tokens.surfaceHover};
                }
@@ -52,16 +71,17 @@ export const StyledButton = styled.button<{
                background: transparent;
                color: ${tokens.link};
                border: 1px solid transparent;
+
                &:hover {
                   color: ${tokens.linkHover};
                   background: rgba(255, 255, 255, 0.05);
                }
             `;
          default:
-            // primary
             return css`
                background: ${tokens.link};
                color: ${tokens.fg};
+
                &:hover {
                   background: ${tokens.linkHover};
                }

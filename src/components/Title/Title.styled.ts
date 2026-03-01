@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
    justify-content: center;
    text-align: center;
    width: 100%;
-   margin: 20% auto 0;
+   margin-top: 2.5rem;
 
    ${up("LARGE")} {
       width: 85%;
-      margin-top: 5%;
+      margin-top: 3rem;
    }
 `;
 
