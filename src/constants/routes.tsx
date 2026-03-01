@@ -6,4 +6,5 @@ export const ROUTES = {
    CLIENTS: "/clients",
    SPONSORS: "/sponsors",
    RESOURCES: "/resources",
+   REVOLVE_EVENT: "/revolve",
 } as const;

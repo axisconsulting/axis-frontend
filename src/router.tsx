@@ -11,6 +11,7 @@ import Clients from "./pages/clients/Clients";
 import Sponsors from "./pages/sponsors/Sponsors";
 import Resources from "./pages/resources/Resources";
 import NotFound from "./pages/notFound/NotFound";
+import RevolveEvent from "./pages/revolveEvent/RevolveEvent";
 
 // Remove leading slashes from child route paths
 function stripLeadingSlash(path: string) {
@@ -46,6 +47,10 @@ export const routes: RouteObject[] = [
          {
             path: stripLeadingSlash(ROUTES.RESOURCES),
             element: <Resources />,
+         },
+         {
+            path: stripLeadingSlash(ROUTES.REVOLVE_EVENT),
+            element: <RevolveEvent />,
          },
          {
             path: "*",

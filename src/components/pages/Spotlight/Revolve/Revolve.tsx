@@ -1,17 +1,17 @@
 import Button from "$components/Button/Button";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import Title from "$components/Title/Title";
+import { EVENT_LINKS } from "$constants/links";
 import { Container, SmallCardRow } from "./Revolve.styled";
 
 const LINKS = {
-   REVOLVE_TICKET_LINK: "https://www.bouncelife.com/events/6982a0f2cc5b63a647be6ab6",
    REVOLVE_EVENT_SCHEDULE_POST:
       "https://www.instagram.com/p/DUzRRsEkdfO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
 } as const;
 
 const IMAGES = {
    CARD_1: "generic/events/revolve/revolve_1.webp",
-   CARD_2: "generic/events/revolve/revolve_2.webp",
+   CARD_2: "generic/events/odyssey/odyssey_3.webp",
 } as const;
 
 export default function Revolve() {
@@ -25,7 +25,7 @@ export default function Revolve() {
                Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
                CTA="Attend the Conference"
                Image={IMAGES.CARD_1}
-               clickTo={LINKS.REVOLVE_TICKET_LINK}
+               clickTo={EVENT_LINKS.REVOLVE}
                loading="lazy"
             />
             <ImageContainer
