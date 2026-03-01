@@ -2,6 +2,7 @@ import Button from "$components/Button/Button";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import Title from "$components/Title/Title";
 import { EVENT_LINKS } from "$constants/links";
+import { ROUTES } from "$constants/routes";
 import { Container, SmallCardRow } from "./Revolve.styled";
 
 const LINKS = {
@@ -44,7 +45,7 @@ export default function Revolve() {
             />
          </SmallCardRow>
 
-         <Button clickTo={"/revolve"} size="lg">
+         <Button clickTo={ROUTES.REVOLVE_EVENT} size="lg">
             Learn More
          </Button>
       </Container>
