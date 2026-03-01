@@ -6,6 +6,7 @@ import { FAKE_URL } from "$constants/utils";
 
 import {
    AttendeesLogosSection,
+   HeaderWrapper,
    CardsTrack,
    PageWrapper,
    RevolveInfoSection,
@@ -24,6 +25,8 @@ import {
    REVOLVE_COMPANY_LOGOS,
 } from "$constants/pages/revolve-event";
 import LogoMarquee from "$components/pages/LogoMarquee/LogoMarquee";
+import Button from "$components/Button/Button";
+import { EVENT_LINKS } from "$constants/links";
 
 function SpeakerRow({ speakers }: { speakers: RevolveEventSpeaker[] }) {
    const totalCards = speakers.length;
@@ -54,13 +57,25 @@ function SpeakerRow({ speakers }: { speakers: RevolveEventSpeaker[] }) {
 const RevolveEvent: FC = () => {
    // Duplicated array to create seamless marquee effect
    const COMPANY_MARQUEE = [...REVOLVE_COMPANY_LOGOS, ...REVOLVE_COMPANY_LOGOS];
+   // Disable registration button after March 4th, 2026 at midnight PST (UTC-8)
+   const PST_MIDNIGHT_MARCH_4 = new Date("2026-03-05T08:00:00Z");
+   const disabled = new Date() > PST_MIDNIGHT_MARCH_4;
 
    return (
       <PageWrapper>
-         <Title
-            Header="Revolve Consulting Conference"
-            Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
-         />
+         <HeaderWrapper>
+            <Title
+               Header="Revolve Consulting Conference"
+               Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
+            />
+            <Button
+               clickTo={!disabled ? EVENT_LINKS.REVOLVE : undefined}
+               variant={!disabled ? "primary" : "ghost"}
+               disabled={disabled}
+               size="lg">
+               {!disabled ? "Register Now (Until March 4th)!" : "Registration Now Closed"}
+            </Button>
+         </HeaderWrapper>
 
          <RevolveInfoSection>
             <h1>What is Revolve?</h1>

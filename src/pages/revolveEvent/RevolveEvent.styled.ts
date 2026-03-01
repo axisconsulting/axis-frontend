@@ -18,6 +18,15 @@ export const PageWrapper = styled.div`
    }
 `;
 
+export const HeaderWrapper = styled.section`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   gap: 2rem;
+`;
+
 export const RevolveInfoSection = styled.section`
    display: flex;
    flex-direction: column;

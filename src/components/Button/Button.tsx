@@ -15,10 +15,10 @@ const Button: React.FC<ButtonProps> = ({
    variant = "primary",
    size = "md",
    flat = false,
+   disabled,
    ...rest
 }) => {
-   // If clickTo exists, render Link styled as button
-   if (clickTo) {
+   if (clickTo && !disabled) {
       return (
          <StyledButton as={Link} to={clickTo} variant={variant} size={size} flat={flat}>
             {children}
@@ -26,9 +26,8 @@ const Button: React.FC<ButtonProps> = ({
       );
    }
 
-   // Otherwise render normal button
    return (
-      <StyledButton variant={variant} size={size} flat={flat} {...rest}>
+      <StyledButton variant={variant} size={size} flat={flat} disabled={disabled} {...rest}>
          {children}
       </StyledButton>
    );
