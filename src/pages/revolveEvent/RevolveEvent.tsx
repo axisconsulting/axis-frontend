@@ -23,6 +23,7 @@ import {
    INTERN_PANELISTS,
    type RevolveEventSpeaker,
    REVOLVE_COMPANY_LOGOS,
+   isRevolveRegistrationClosed,
 } from "$constants/pages/revolve-event";
 import LogoMarquee from "$components/pages/LogoMarquee/LogoMarquee";
 import Button from "$components/Button/Button";
@@ -57,9 +58,6 @@ function SpeakerRow({ speakers }: { speakers: RevolveEventSpeaker[] }) {
 const RevolveEvent: FC = () => {
    // Duplicated array to create seamless marquee effect
    const COMPANY_MARQUEE = [...REVOLVE_COMPANY_LOGOS, ...REVOLVE_COMPANY_LOGOS];
-   // Disable registration button after March 4th, 2026 at midnight PST (UTC-8)
-   const PST_MIDNIGHT_MARCH_4 = new Date("2026-03-05T08:00:00Z");
-   const disabled = new Date() > PST_MIDNIGHT_MARCH_4;
 
    return (
       <PageWrapper>
@@ -69,11 +67,13 @@ const RevolveEvent: FC = () => {
                Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
             />
             <Button
-               clickTo={!disabled ? EVENT_LINKS.REVOLVE : undefined}
-               variant={!disabled ? "primary" : "ghost"}
-               disabled={disabled}
+               clickTo={!isRevolveRegistrationClosed ? EVENT_LINKS.REVOLVE : undefined}
+               variant={!isRevolveRegistrationClosed ? "primary" : "ghost"}
+               disabled={isRevolveRegistrationClosed}
                size="lg">
-               {!disabled ? "Register Now (Until March 4th)!" : "Registration Now Closed"}
+               {!isRevolveRegistrationClosed
+                  ? "Register Now (Until March 4th)!"
+                  : "Registration Now Closed"}
             </Button>
          </HeaderWrapper>
 

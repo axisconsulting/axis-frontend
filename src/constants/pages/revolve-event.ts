@@ -1,3 +1,7 @@
+// Disable registration button after March 4th, 2026 at midnight PST (UTC-8)
+const PST_MIDNIGHT_MARCH_4 = new Date("2026-02-05T08:00:00Z");
+export const isRevolveRegistrationClosed = new Date() > PST_MIDNIGHT_MARCH_4;
+
 // R2-relative URLs + speaker constants for Revolve Consulting Conference
 export const REVOLVE_SPEAKER_URLS = {
    Colette_Cheung_IBM: "generic/events/revolve/speakers/Colette-Cheung-IBM.webp",

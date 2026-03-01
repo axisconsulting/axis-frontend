@@ -2,6 +2,7 @@ import Button from "$components/Button/Button";
 import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import Title from "$components/Title/Title";
 import { EVENT_LINKS } from "$constants/links";
+import { isRevolveRegistrationClosed } from "$constants/pages/revolve-event";
 import { ROUTES } from "$constants/routes";
 import { Container, SmallCardRow } from "./Revolve.styled";
 
@@ -24,9 +25,11 @@ export default function Revolve() {
             <ImageContainer
                Header="Consulting Conference"
                Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
-               CTA="Attend the Conference"
+               CTA={
+                  !isRevolveRegistrationClosed ? "Attend the Conference" : "Registration Now Closed"
+               }
                Image={IMAGES.CARD_1}
-               clickTo={EVENT_LINKS.REVOLVE}
+               clickTo={!isRevolveRegistrationClosed ? EVENT_LINKS.REVOLVE : undefined}
                loading="lazy"
             />
             <ImageContainer
