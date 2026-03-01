@@ -24,7 +24,7 @@ export const RevolveInfoSection = styled.section`
    justify-content: center;
    align-items: center;
    text-align: center;
-   padding: 0 5rem;
+   padding: 0 8%;
 
    h1 {
       margin: 0;
