@@ -245,7 +245,7 @@ export const TEAM_NEBULA: Member[] = [
    },
    {
       name: "Sonakshi Rao",
-      role: "Sr. Consultant",
+      role: "Consulting Team Lead",
       linkedin: "https://www.linkedin.com/in/sonakshi-rao/",
       imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/sr-consultant-sonakshi.webp`,
    },
@@ -410,6 +410,7 @@ export const DIRECTORS: Member[] = [
 // ================= Consulting Team Leads =================
 export const CONSULTING_TEAM_LEADS: Member[] = [
    TEAM_NEBULA[0], // Ryan Thaulad
+   TEAM_NEBULA[1], // Sonakshi Rao
    TEAM_NOVA[0], // Nathan Chu
    TEAM_POLARIS[0], // Sabrina Wang
    TEAM_ECLIPSE[0], // Samuel McCallen
@@ -459,7 +460,7 @@ export const findMemberByName = (name: string): Member | undefined => {
 // Get members by role
 export const getMembersByRole = (role: string): Member[] => {
    return getAllUniqueMembers().filter((member) =>
-      member.role.toLowerCase().includes(role.toLowerCase())
+      member.role.toLowerCase().includes(role.toLowerCase()),
    );
 };
 
