@@ -25,9 +25,7 @@ export default function Revolve() {
             <ImageContainer
                Header="Consulting Conference"
                Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
-               CTA={
-                  !isRevolveRegistrationClosed ? "Attend the Conference" : "Registration Now Closed"
-               }
+               CTA={!isRevolveRegistrationClosed ? "Attend the Conference" : "Learn More"}
                Image={IMAGES.CARD_1}
                clickTo={!isRevolveRegistrationClosed ? EVENT_LINKS.REVOLVE : undefined}
                loading="lazy"

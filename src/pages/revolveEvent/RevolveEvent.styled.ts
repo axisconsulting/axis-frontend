@@ -25,6 +25,15 @@ export const HeaderWrapper = styled.section`
    align-items: center;
    text-align: center;
    gap: 2rem;
+
+   & > div {
+      display: flex;
+      flex-direction: column;
+
+      em {
+         margin-top: 1rem;
+      }
+   }
 `;
 
 export const RevolveInfoSection = styled.section`

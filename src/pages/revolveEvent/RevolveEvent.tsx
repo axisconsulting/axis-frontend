@@ -66,15 +66,19 @@ const RevolveEvent: FC = () => {
                Header="Revolve Consulting Conference"
                Body="Get ready to network with industry professionals, hear key insights from our speakers, and engage in firm-led workshops."
             />
-            <Button
-               clickTo={!isRevolveRegistrationClosed ? EVENT_LINKS.REVOLVE : undefined}
-               variant={!isRevolveRegistrationClosed ? "primary" : "ghost"}
-               disabled={isRevolveRegistrationClosed}
-               size="lg">
-               {!isRevolveRegistrationClosed
-                  ? "Register Now (Until March 4th)!"
-                  : "Registration Now Closed"}
-            </Button>
+            <div>
+               <Button
+                  clickTo={!isRevolveRegistrationClosed ? EVENT_LINKS.REVOLVE : undefined}
+                  variant={!isRevolveRegistrationClosed ? "primary" : "ghost"}
+                  disabled={isRevolveRegistrationClosed}
+                  size="lg">
+                  {!isRevolveRegistrationClosed ? "Register Now" : "Registration Now Closed"}
+               </Button>
+               <em>
+                  {!isRevolveRegistrationClosed ? "Registration closes" : "Registration closed"}{" "}
+                  March 6th, 2026 at 11:59 PM PST
+               </em>
+            </div>
          </HeaderWrapper>
 
          <RevolveInfoSection>

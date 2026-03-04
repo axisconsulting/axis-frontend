@@ -1,6 +1,6 @@
-// Disable registration button after March 4th, 2026 at midnight PST (UTC-8)
-const PST_MIDNIGHT_MARCH_4 = new Date("2026-03-05T08:00:00Z");
-export const isRevolveRegistrationClosed = new Date() > PST_MIDNIGHT_MARCH_4;
+// Disable registration button after March 6th, 2026 at 11:59PM PST (UTC-8)
+const PST_MIDNIGHT_MARCH_6 = new Date("2026-03-07T07:59:00Z");
+export const isRevolveRegistrationClosed = new Date() > PST_MIDNIGHT_MARCH_6;
 
 // R2-relative URLs + speaker constants for Revolve Consulting Conference
 export const REVOLVE_SPEAKER_URLS = {
