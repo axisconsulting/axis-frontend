@@ -34,16 +34,18 @@ const Sponsors: FC = () => {
                title="EY (Ernst & Young)"
                body="A global professional services firm focused on 'Building a better working world' through its integrated services in assurance, consulting, tax, and strategy and transactions."
                imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.logoSrc}
+               imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.website}
                altText={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.name}
             />
             <CompanyBlock
                title="Deloitte"
                imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.logoSrc}
+               imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.website}
                altText={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.name}
             />
          </SponsorsListSection>
 
-         {/* Logo grid - shows all attending companies*/}
+         {/* Logo grid - shows all sponsor companies*/}
          <AttendeesLogosSection>
             <h2>Additional Sponsors</h2>
             <LogoMarquee clients={COMPANY_MARQUEE} speedSeconds={45} />

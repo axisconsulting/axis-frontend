@@ -12,13 +12,13 @@ export const SPONSORS_COMPANY_LOGOS = [
    {
       key: "deloitte", // monetary sponsor
       name: "Deloitte",
-      logoSrc: `${SPONSORS_COMPANY_BUCKET}deloitte.webp`,
+      logoSrc: `${SPONSORS_COMPANY_BUCKET}Deloitte.webp`,
       website: "https://www.deloitte.com/",
    },
    {
       key: "ey", // monetary sponsor
       name: "EY",
-      logoSrc: `${SPONSORS_COMPANY_BUCKET}ey.webp`,
+      logoSrc: `${SPONSORS_COMPANY_BUCKET}EY.webp`,
       website: "https://www.ey.com/",
    },
    {

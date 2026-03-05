@@ -20,6 +20,7 @@ import {
    LogoLabel,
    FadeEdge,
 } from "./LogoMarquee.styled";
+import { Link } from "react-router-dom";
 
 /**
  * Generic logo type so this marquee can be reused across pages.
@@ -105,14 +106,14 @@ const LogoCell: FC<LogoCellProps> = ({ logo, showLabel }) => {
    return (
       <LogoItem>
          {logo.website ? (
-            <a
-               href={logo.website}
+            <Link
+               to={logo.website}
                target="_blank"
                rel="noreferrer noopener"
                aria-label={`Visit ${logo.name} website`}
                style={{ display: "block", textDecoration: "none", color: "inherit" }}>
                {content}
-            </a>
+            </Link>
          ) : (
             content
          )}

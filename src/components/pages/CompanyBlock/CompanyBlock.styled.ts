@@ -1,6 +1,7 @@
 // src/components/CompanyBlock/CompanyBlock.styled.ts
 import styled from "styled-components";
 import { up } from "$styles/constants/breakpoints";
+import { withAlpha } from "$styles/colors";
 
 export const BlockWrapper = styled.section`
    width: 100%;
@@ -33,6 +34,23 @@ export const ImageWrapper = styled.div`
    border-radius: 0.75rem;
    background: ${({ theme }) => theme.tokens.bg};
    margin-bottom: 1rem;
+
+   a {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: ${({ theme }) => theme.palette.STARDUST_GRAY};
+   }
+
+   a:hover {
+      transition: background-color 0.3s ease-in-out;
+      background-color: ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.8)};
+   }
 
    ${up("LARGE")} {
       /* Don’t let image area take half the page on desktop */
