@@ -26,9 +26,9 @@ export const AttendeesLogosSection = styled.section`
    width: 100%;
    gap: 2rem;
 
-   h2 {
+   h3 {
       font-family: ${({ theme }) => theme.fonts.heading};
-      font-size: ${({ theme }) => theme.fontSizes.h2};
+      font-size: ${({ theme }) => theme.fontSizes.h3};
       margin: 0;
    }
 `;

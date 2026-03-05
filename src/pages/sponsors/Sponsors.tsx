@@ -47,7 +47,7 @@ const Sponsors: FC = () => {
 
          {/* Logo grid - shows all sponsor companies*/}
          <AttendeesLogosSection>
-            <h2>Additional Sponsors</h2>
+            <h3>Additional Sponsors</h3>
             <LogoMarquee clients={COMPANY_MARQUEE} speedSeconds={45} />
          </AttendeesLogosSection>
 
