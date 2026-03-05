@@ -17,6 +17,7 @@ import { ImageState } from "$constants/utils";
 import { SheenLoader } from "$styles/constants/Animation";
 import { LoaderLayer } from "$components/images/ImageCard/ImageCard.styled";
 import { assetUrl } from "$constants/image-utils/assets";
+import { Link } from "react-router-dom";
 
 type CompanyBlockProps = {
    title: string;
@@ -24,6 +25,7 @@ type CompanyBlockProps = {
 
    /** R2 path only */
    imageSrc: string;
+   imageLink: string; // external link by clicking the image
 
    altText: string;
    imageWidth?: string;
@@ -34,6 +36,7 @@ const CompanyBlock: FC<CompanyBlockProps> = ({
    title,
    body,
    imageSrc,
+   imageLink,
    altText,
    imageWidth,
    usePlaceholder = false,
@@ -65,7 +68,6 @@ const CompanyBlock: FC<CompanyBlockProps> = ({
       <BlockWrapper>
          <BlockInner>
             <ImageWrapper>
-               {/* Only show loader/placeholder if NOT loaded */}
                {!isLoaded && !usePlaceholder && !isError ? (
                   <LoaderLayer>
                      <SheenLoader role="status" aria-live="polite" aria-label="loading image" />
@@ -82,16 +84,23 @@ const CompanyBlock: FC<CompanyBlockProps> = ({
                   </LoaderLayer>
                ) : null}
 
-               <StyledImage
-                  ref={imgRef}
-                  key={src}
-                  src={src}
-                  alt={altText}
-                  style={imageWidth ? { width: imageWidth } : undefined}
-                  loading="lazy"
-                  onLoad={() => setImageState(ImageState.LOADED)}
-                  onError={() => setImageState(ImageState.ERROR)}
-               />
+               <Link
+                  to={imageLink}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`Visit ${title} website`}>
+                  {/* Only show loader/placeholder if NOT loaded */}
+                  <StyledImage
+                     ref={imgRef}
+                     key={src}
+                     src={src}
+                     alt={altText}
+                     style={imageWidth ? { width: imageWidth } : undefined}
+                     loading="lazy"
+                     onLoad={() => setImageState(ImageState.LOADED)}
+                     onError={() => setImageState(ImageState.ERROR)}
+                  />
+               </Link>
             </ImageWrapper>
 
             <TextWrapper>

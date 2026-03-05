@@ -28,7 +28,7 @@ export function withAlpha(hex: string, alpha: number) {
               .map((c) => c + c)
               .join("")
          : h,
-      16
+      16,
    );
    const r = (bigint >> 16) & 255;
    const g = (bigint >> 8) & 255;

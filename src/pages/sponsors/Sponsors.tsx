@@ -6,12 +6,21 @@ import ImageContent from "$components/images/ImageContent/ImageContent";
 
 import { AXIS_LINKS } from "$constants/links";
 
-import { CalloutWrapper, SponsorsListSection } from "./Sponsors.styled";
-import { SPONSOR_LOGOS_BY_KEY, SPONSOR_URL } from "$constants/pages/sponsors";
+import { AttendeesLogosSection, CalloutWrapper, SponsorsListSection } from "./Sponsors.styled";
+import {
+   SPONSORS_COMPANY_LOGOS_BY_KEY,
+   SPONSOR_URL,
+   SPONSORS_COMPANY_LOGOS,
+} from "$constants/pages/sponsors";
 import CompanyBlock from "$components/pages/CompanyBlock/CompanyBlock";
 import { PageWrapper } from "$styles/constants/PageWrapper";
+import LogoMarquee from "$components/pages/LogoMarquee/LogoMarquee";
 
 const Sponsors: FC = () => {
+   // Duplicated array to create seamless marquee effect
+   const NON_MONETARY_SPONSORS = SPONSORS_COMPANY_LOGOS.slice(2); // in-kind sponsors
+   const COMPANY_MARQUEE = [...NON_MONETARY_SPONSORS, ...NON_MONETARY_SPONSORS];
+
    return (
       <PageWrapper>
          <Title
@@ -24,15 +33,23 @@ const Sponsors: FC = () => {
             <CompanyBlock
                title="EY (Ernst & Young)"
                body="A global professional services firm focused on 'Building a better working world' through its integrated services in assurance, consulting, tax, and strategy and transactions."
-               imageSrc={SPONSOR_LOGOS_BY_KEY.ey.logoSrc}
-               altText={SPONSOR_LOGOS_BY_KEY.ey.name}
+               imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.logoSrc}
+               imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.website}
+               altText={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.name}
             />
             <CompanyBlock
                title="Deloitte"
-               imageSrc={SPONSOR_LOGOS_BY_KEY.deloitte.logoSrc}
-               altText={SPONSOR_LOGOS_BY_KEY.deloitte.name}
+               imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.logoSrc}
+               imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.website}
+               altText={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.name}
             />
          </SponsorsListSection>
+
+         {/* Logo grid - shows all sponsor companies*/}
+         <AttendeesLogosSection>
+            <h3>Additional Sponsors</h3>
+            <LogoMarquee clients={COMPANY_MARQUEE} speedSeconds={45} />
+         </AttendeesLogosSection>
 
          {/* CTA block */}
          <CalloutWrapper>

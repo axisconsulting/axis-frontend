@@ -34,6 +34,7 @@ const Clients: FC = () => {
                title="Ark Renewable Energy"
                body="Ark, a hyper-growth startup in the renewable energy industry, serves residential and commercial clients, leveraging the EPC (Engineering, Procurement, and Construction) model in construction to facilitate greener home development"
                imageSrc={CLIENT_LOGOS_BY_KEY.ark.logoSrc}
+               imageLink={CLIENT_LOGOS_BY_KEY.ark.website}
                altText={CLIENT_LOGOS_BY_KEY.ark.name}
             />
 
@@ -41,6 +42,7 @@ const Clients: FC = () => {
                title="Teck Resources"
                body="Teck is a leading Canadian resources company focusing on producing the metals essential for energy transition. Established in 1913, Teck leads the mining industry in sustainably extracting resources the world needs to enable development"
                imageSrc={CLIENT_LOGOS_BY_KEY.teck.logoSrc}
+               imageLink={CLIENT_LOGOS_BY_KEY.teck.website}
                altText={CLIENT_LOGOS_BY_KEY.teck.name}
                imageWidth="200px"
             />
@@ -49,6 +51,7 @@ const Clients: FC = () => {
                title="Recycling Council of British Columbia"
                body="RCBC is Canada's longest-serving recycling council dedicated to providing the most up-to-date recycling information to residents across BC, while leading research and policy advocacy for circular economy initiatives"
                imageSrc={CLIENT_LOGOS_BY_KEY.rcbc.logoSrc}
+               imageLink={CLIENT_LOGOS_BY_KEY.rcbc.website}
                altText={CLIENT_LOGOS_BY_KEY.rcbc.name}
             />
 
@@ -56,6 +59,7 @@ const Clients: FC = () => {
                title="Civic Innovation Lab"
                body="Burnaby-based research institute partnership between Simon Fraser University (SFU) and the City of Burnaby, aimed at providing a permanent base to drive solutions that advance community engagement and well-being"
                imageSrc={CLIENT_LOGOS_BY_KEY.cil.logoSrc}
+               imageLink={CLIENT_LOGOS_BY_KEY.cil.website}
                altText={CLIENT_LOGOS_BY_KEY.cil.name}
             />
          </ClientsListSection>

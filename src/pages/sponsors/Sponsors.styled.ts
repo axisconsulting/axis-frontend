@@ -17,3 +17,18 @@ export const CalloutWrapper = styled.div`
    height: 100%;
    overflow: hidden;
 `;
+
+export const AttendeesLogosSection = styled.section`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   width: 100%;
+   gap: 2rem;
+
+   h3 {
+      font-family: ${({ theme }) => theme.fonts.heading};
+      font-size: ${({ theme }) => theme.fontSizes.h3};
+      margin: 0;
+   }
+`;
