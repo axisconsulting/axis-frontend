@@ -4,7 +4,7 @@
 [![Contributors](https://img.shields.io/github/contributors/axisconsulting/axis-frontend.svg)](https://github.com/axisconsulting/axis-frontend)
 
 <!-- Please update this for visibility -->
-> Last updated: Sept. 2025
+> Last updated: April 2026
 
 ## 📋 Table of Contents
 
