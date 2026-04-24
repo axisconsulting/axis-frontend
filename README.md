@@ -4,11 +4,12 @@
 [![Contributors](https://img.shields.io/github/contributors/axisconsulting/axis-frontend.svg)](https://github.com/axisconsulting/axis-frontend)
 
 <!-- Please update this for visibility -->
-> Last updated: Sept. 2025
+> Last updated: April 2026
 
 ## 📋 Table of Contents
 
 - [About](#about)
+- [Folder Structure](#folder-structure)
 - [Technology Stack](#technology-stack)
 - [Getting Started](#getting-started)
 - [Development Setup](#development-setup)
@@ -18,6 +19,46 @@
 
 ## About
 Axis Consulting is a student-led pro-bono consultancy part of Simon Fraser University.
+
+<!-- =========================== -->
+## Folder Structure
+```
+├── public/
+│   └── sitemap.xml
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── constants/
+│   ├── pages/
+│   │   ├── about/
+│   │   ├── clients/
+│   │   ├── getInvolved/
+│   │   ├── home/
+│   │   ├── notFound/
+│   │   ├── resources/
+│   │   ├── revolveEvent/
+│   │   └── sponsors/
+│   ├── styles/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── router.tsx
+│   └── vite-env.d.ts
+├── tests/
+│   ├── demo/
+│   └── home.spec.ts
+├── .gitignore
+├── bun.lock
+├── eslint.config.js
+├── index.html
+├── package.json
+├── playwright.config.ts
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vercel.json
+└── vite.config.ts
+```
 
 <!-- =========================== -->
 ## Technology Stack
@@ -31,8 +72,8 @@ Axis Consulting is a student-led pro-bono consultancy part of Simon Fraser Unive
 
 ### Deployment & Hosting
 - **Hosting**: [Vercel](https://vercel.com)
-- **Domain**: [Squarespace](https://www.squarespace.com)
-- **CDN**: [cloudinary](https://cloudinary.com/developers)
+- **Domain**: [Cloudflare](https://www.cloudflare.com/products/registrar/)
+- **CDN**: [Cloudflare](https://www.cloudflare.com/en-ca/developer-platform/products/r2/)
 
 <!-- =========================== -->
 ## Getting Started
@@ -100,22 +141,7 @@ bun clean:all    # remove all of the above
 - **Staging**: Automatically deploys from `develop` branch
 - **Preview**: Every PR gets a preview deployment
 
-## Resources & Links
-
-### Development Resources
-- **Project Board**: [Trello](https://trello.com/b/lEsaeAWz/axis-website)
-
-### Learning Resources
-- [React Documentation](https://react.dev/)
-- [CSS-Tricks](https://css-tricks.com/)
-- [Google Web Fundamentals](https://developers.google.com/web/fundamentals)
-- [Conventional Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13)
-
-### Tools & Services
-- **Design**: [2024-2025 Exit Report](https://www.figma.com/design/LgbaKk7YCLslPTMsPBQQjo/Axis-2024-2025-Design-Exit-Report?node-id=0-1&p=f&t=ymDPp0xLXSaOpN9e-0) 
-- **Analytics**: [Google Analytics](https://analytics.google.com)
-- **Performance**: [Lighthouse](https://developers.google.com/web/tools/lighthouse)
-
+<!-- =========================== -->
 ## Contact
 
 [![Website](https://img.shields.io/badge/Website-Visit-blue)]([https://your-website.com](https://www.sfuaxisconsulting.com))
