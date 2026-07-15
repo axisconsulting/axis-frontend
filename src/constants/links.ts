@@ -31,9 +31,9 @@ export const SNAPSHOT_LINKS = {
 } as const;
 
 export const RECRUITMENT = {
-   COORDINATOR_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
-   CONSULTANT_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
-   APPLICATION_FORM: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
+   COORDINATOR_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQAFfmGV-SnGR7WwJ8qsm3OkAUiSuaIVlTUxxMhymnHvuqM?e=14IZAn" : REPLACE_WITH_VALID_LINK,
+   CONSULTANT_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQD0CWvuxD7sQpnZbqWOLSxuAZ9buJ4vzDCcixeftlX6Peg?e=2loTo7" : REPLACE_WITH_VALID_LINK,
+   APPLICATION_FORM: HIRING_CONFIG.HIRING_ACTIVE ? "https://linktr.ee/sfuaxisconsulting?utm_source=ig&utm_medium=social&utm_content=link_in_bio" : REPLACE_WITH_VALID_LINK ,
 } as const;
 
 export const EVENT_LINKS = {
