@@ -37,6 +37,7 @@ export interface ImageContentProps {
    videoAutoPlay?: boolean;
    videoLoop?: boolean;
    videoMuted?: boolean;
+   openInNewTab?: boolean;
 }
 
 const getExt = (p: string) => {
@@ -57,6 +58,7 @@ const ImageContent = ({
    videoAutoPlay = true,
    videoLoop = true,
    videoMuted = true,
+   openInNewTab = false,
 }: ImageContentProps) => {
    const [mediaState, setMediaState] = useState<ImageState>(ImageState.LOADING);
 
@@ -115,7 +117,9 @@ const ImageContent = ({
                <BodyText>{Body}</BodyText>
                <CTABox>
                   {isValidLink ? (
-                     <Button clickTo={clickTo}>{ButtonText}</Button>
+                     <Button clickTo={clickTo} openInNewTab={openInNewTab}>
+                        {ButtonText}
+                     </Button>
                   ) : (
                      <Button variant="ghost">{ButtonText}</Button>
                   )}

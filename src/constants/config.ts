@@ -4,12 +4,12 @@
 // - Event toggles
 
 export const HIRING_CONFIG = {
-   HIRING_ACTIVE: false,
+   HIRING_ACTIVE: true, 
 } as const;
 
 export const EVENT_CONFIG = {
    ODYSSEY_REGISTRATION_TOGGLE: false,
-   REVOLVE_REGISTRATION_TOGGLE: true,
+   REVOLVE_REGISTRATION_TOGGLE: false,
 } as const;
 
 export const CONFIG_STRINGS = {

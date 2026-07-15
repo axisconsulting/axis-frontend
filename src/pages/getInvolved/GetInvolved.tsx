@@ -31,6 +31,7 @@ const GetInvolved: FC = () => {
                clickTo={RECRUITMENT.APPLICATION_FORM}
                AltText="a gif with text that says what is new at axis consulting"
                loading="lazy"
+               openInNewTab={true}
             />
             {HIRING_CONFIG.HIRING_ACTIVE && (
                <LinksGrid>
