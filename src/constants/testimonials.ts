@@ -11,6 +11,21 @@ export const TESTIMONIALS: TestimonialEntry[] = [
       role: "2023/2024 Executive Director of Consulting",
    },
    {
+      quote: "As a Strategy Analyst at Axis, I broadened my knowledge of major Canadian sectors by conducting in-depth research for our industry reports. For anyone looking to sharpen their professional skills, Axis is the place to start.",
+      author: "Angela Lim",
+      role: "2025/2026 Strategy Analyst",
+   },
+   {
+      quote: "My time at Axis Consulting gave me the opportunity to work alongside some of the brightest students at SFU to deliver meaningful impact for real clients. Every project challenged me to grow as a problem solver, communicator, and teammate.",
+      author: "Edric Lagrisola",
+      role: "2025/2026 Consultant",
+   },
+   {
+      quote: "If you enjoy research, problem-solving and working with like-minded peers, Axis is the best opportunity for you to take those skills in front of real-world clients. What you learn at Axis is directly transferable to your recruiting and beyond.",
+      author: "Claire Dubois",
+      role: "2025/2026 Senior Consultant",
+   },
+   {
       quote: "Axis was an integral part of my undergrad experience and I was able to learn a lot as a strategy analyst. I had the opportunity to connect with peers and professionals while also expanding my knowledge through research for industry reports.",
       author: "Sandy Lin",
       role: "2024/2025 Strategy Analyst",
