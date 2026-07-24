@@ -4,7 +4,7 @@
 // - Event toggles
 
 export const HIRING_CONFIG = {
-   HIRING_ACTIVE: true, 
+   HIRING_ACTIVE: false, 
 } as const;
 
 export const EVENT_CONFIG = {
