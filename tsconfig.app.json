@@ -22,12 +22,11 @@
       "noFallthroughCasesInSwitch": true,
       "noUncheckedSideEffectImports": true,
 
-      "baseUrl": ".",
       "paths": {
-         "$constants/*": ["src/constants/*"],
-         "$components/*": ["src/components/*"],
-         "$assets/*": ["src/assets/*"],
-         "$styles/*": ["src/styles/*"]
+         "$constants/*": ["./src/constants/*"],
+         "$components/*": ["./src/components/*"],
+         "$assets/*": ["./src/assets/*"],
+         "$styles/*": ["./src/styles/*"]
       }
    },
    "include": ["src"]

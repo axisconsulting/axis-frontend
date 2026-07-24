@@ -22,13 +22,14 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
    if (clickTo && !disabled) {
 
-      if (openInNewTab) {
+      const isExternal = clickTo.startsWith("http") || clickTo.startsWith("mailto:");
 
-         // Creates a reference to a generic type with the same props as StyledButton but acting as a tag <a>
+      if (isExternal || openInNewTab) {
+
          const ExternalLinkButton = StyledButton as React.ElementType;
 
          return (
-            <ExternalLinkButton as={"a"} href={clickTo} target="_blank" rel="noopener noreferrer" variant={variant} size={size} flat={flat}>
+            <ExternalLinkButton as={"a"} href={clickTo} target={openInNewTab ? "_blank" : undefined} rel={openInNewTab ? "noopener noreferrer" : ""} variant={variant} size={size} flat={flat}>
                {children}
             </ExternalLinkButton>
          );
