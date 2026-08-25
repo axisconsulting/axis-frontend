@@ -22,7 +22,6 @@ export default defineConfig({
    // Start your app before tests and wait for it
    webServer: {
       command: "bun run build && bun run preview",
-      // command: "npm run build && npm run preview", 
       url: "http://localhost:4173", // vite preview default port
       reuseExistingServer: !process.env.CI, // don’t restart if already running (local)
       timeout: 90_000,
