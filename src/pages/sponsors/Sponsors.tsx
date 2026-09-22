@@ -39,6 +39,7 @@ const Sponsors: FC = () => {
             />
             <CompanyBlock
                title="Deloitte"
+               body="A global professional services network delivering audit, consulting, tax, and financial advisory services, with a stated purpose to make an impact that matters for clients, people, and society."
                imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.logoSrc}
                imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.website}
                altText={SPONSORS_COMPANY_LOGOS_BY_KEY.deloitte.name}
