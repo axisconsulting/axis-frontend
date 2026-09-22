@@ -50,9 +50,9 @@ export const TESTIMONIALS: TestimonialEntry[] = [
       author: "Nicholas Hartono",
       role: "2022/2023 Consultant",
    },
-   {
+   /*{
       quote: "Axis has helped me do my part for the community while expanding my network and gaining appropriate skills that make me closer to achieving my dream job. It is a great opportunity to work with and learn from some of the brightest minds at SFU!",
       author: "Arsh Gill",
       role: "2020/2021 Team Lead",
-   },
+   },*/
 ];

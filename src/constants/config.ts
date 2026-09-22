@@ -8,7 +8,7 @@ export const HIRING_CONFIG = {
 } as const;
 
 export const EVENT_CONFIG = {
-   ODYSSEY_REGISTRATION_TOGGLE: false,
+   ODYSSEY_REGISTRATION_TOGGLE: true,
    REVOLVE_REGISTRATION_TOGGLE: false,
 } as const;
 

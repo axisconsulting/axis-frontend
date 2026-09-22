@@ -6,9 +6,9 @@ import { CalloutWrapper, Container, SmallCardRow } from "./Odyssey.styled";
 
 const LINKS = {
    CARD_1: SOCIAL_LINKS.INSTAGRAM,
-   CARD_2: SOCIAL_LINKS.INSTAGRAM,
+   CARD_2: "https://www.instagram.com/sfuaxisconsulting/p/DdfvzKwm5c9/?img_index=1",
    CARD_LARGE:
-      "https://www.instagram.com/p/DO_1xR_EpIP/?utm_source=ig_web_copy_link&igsh=MWZkbnI3bzlkNnI4cw==",
+      "https://forms.cloud.microsoft/pages/responsepage.aspx?id=fmfoBInJuUeGGdg9Wl9sZ3dfmpb4AUNHquMegZ8ykp9UQURCTE9QQjFYRkRQN0RVNVpMQ1NKR0pLUSQlQCN0PWcu&route=shorturl",
 } as const;
 
 const IMAGES = {
@@ -28,23 +28,24 @@ export default function Odyssey({ isLargeCardVisible = true }: OdysseyProps) {
 
          <SmallCardRow>
             <ImageContainer
-               Header="Asynchronous Curriculum"
-               Body="Learn about consulting, project management, networking, and more with an experienced industry mentor"
+               Header="Your Consulting Journey Starts Here"
+               Body="Learn about consulting, project management, networking, and more with an experienced industry mentor."
                CTA="Start your Odyssey Journey"
                Image={IMAGES.CARD_1}
                clickTo={LINKS.CARD_1}
                loading="lazy"
             />
             <ImageContainer
-               Header="3 Pillar Events"
+               Header="Learn Pillars"
                Body={
                   <ul>
-                     <li>Event 1: Kick-off & Meeting your Mentor</li>
-                     <li>Event 2: Resume Roast & Networking Rotations</li>
-                     <li>Event 3: Case Interview Walkthrough</li>
+                     <li>Personalized Mentorship</li>
+                     <li>Industry Fundamentals</li>
+                     <li>Meaningful Networks</li>
+                     <li>Career Readiness</li>
                   </ul>
                }
-               CTA="Start your Odyssey Journey"
+               CTA="More information on the program"
                Image={IMAGES.CARD_2}
                clickTo={LINKS.CARD_2}
                loading="lazy"
@@ -55,8 +56,8 @@ export default function Odyssey({ isLargeCardVisible = true }: OdysseyProps) {
             <CalloutWrapper>
                <ImageContent
                   Header="Ready to Discover your True Potential?"
-                  Body="Tailored Mentorship, Industry Foundations, Professional Connections, and Real-World Experience"
-                  ButtonText="Learn More"
+                  Body="Tailored mentorship, industry foundations, and real-world experience. Applications close October 10th at 11:59 PM."
+                  ButtonText="Apply Now"
                   ImageSrc={IMAGES.CARD_LARGE}
                   AltText="The Axis Consulting Organization 2024-2025 posing for our annual group photo"
                   clickTo={LINKS.CARD_LARGE}

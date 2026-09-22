@@ -31,13 +31,14 @@ export const SNAPSHOT_LINKS = {
 } as const;
 
 export const RECRUITMENT = {
-   COORDINATOR_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQAFfmGV-SnGR7WwJ8qsm3OkAUiSuaIVlTUxxMhymnHvuqM?e=14IZAn" : "",
-   CONSULTANT_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? "https://1sfu-my.sharepoint.com/:b:/g/personal/axismd_sfu_ca/IQD0CWvuxD7sQpnZbqWOLSxuAZ9buJ4vzDCcixeftlX6Peg?e=2loTo7" : "",
-   APPLICATION_FORM: HIRING_CONFIG.HIRING_ACTIVE ? "https://linktr.ee/sfuaxisconsulting?utm_source=ig&utm_medium=social&utm_content=link_in_bio" : "" ,
+   COORDINATOR_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
+   CONSULTANT_PACKAGE: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "",
+   APPLICATION_FORM: HIRING_CONFIG.HIRING_ACTIVE ? REPLACE_WITH_VALID_LINK : "" ,
 } as const;
 
 export const EVENT_LINKS = {
-   ODYSSEY: EVENT_CONFIG.ODYSSEY_REGISTRATION_TOGGLE ? REPLACE_WITH_VALID_LINK : "",
+   // TODO: Replace with actual registration links when available
+   ODYSSEY: EVENT_CONFIG.ODYSSEY_REGISTRATION_TOGGLE ? "https://forms.cloud.microsoft/pages/responsepage.aspx?id=fmfoBInJuUeGGdg9Wl9sZ3dfmpb4AUNHquMegZ8ykp9UQURCTE9QQjFYRkRQN0RVNVpMQ1NKR0pLUSQlQCN0PWcu&route=shorturl" : "",
    REVOLVE: EVENT_CONFIG.REVOLVE_REGISTRATION_TOGGLE
       ? "https://www.bouncelife.com/events/6982a0f2cc5b63a647be6ab6"
       : "",

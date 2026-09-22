@@ -21,8 +21,8 @@ import ImageContainer from "$components/images/ImageContainer/ImageContainer";
 import ImageContent from "$components/images/ImageContent/ImageContent";
 import { CLIENT_LOGOS_BY_KEY } from "$constants/pages/clients";
 import { HOME_URLS } from "$constants/pages/home";
-import Revolve from "$components/pages/Spotlight/Revolve/Revolve";
-// import Odyssey from "$components/pages/Spotlight/Odyssey/Odyssey";
+// import Revolve from "$components/pages/Spotlight/Revolve/Revolve";
+import Odyssey from "$components/pages/Spotlight/Odyssey/Odyssey";
 
 export default function Home() {
    return (
@@ -51,8 +51,8 @@ export default function Home() {
          {/* Update Spotlight Section as needed */}
          <SpotlightSection>
             <h3>Spotlight</h3>
-            {/* <Odyssey isLargeCardVisible={false} /> */}
-            <Revolve />
+            <Odyssey isLargeCardVisible={true} />
+            {/* <Revolve /> */}
          </SpotlightSection>
 
          <CenterStack>
