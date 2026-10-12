@@ -51,7 +51,7 @@ export default function Home() {
          {/* Update Spotlight Section as needed */}
          <SpotlightSection>
             <h3>Spotlight</h3>
-            <Odyssey isLargeCardVisible={true} />
+            <Odyssey isLargeCardVisible={false} />
             {/* <Revolve /> */}
          </SpotlightSection>
 
