@@ -6,7 +6,7 @@ import { CalloutWrapper, Container, SmallCardRow } from "./Odyssey.styled";
 
 const LINKS = {
    CARD_1: SOCIAL_LINKS.INSTAGRAM,
-   CARD_2: "https://www.instagram.com/sfuaxisconsulting/p/DdfvzKwm5c9/?img_index=1",
+   CARD_2: "https://www.instagram.com/sfuaxisconsulting/p/DeKzzpjgVjt/",
    CARD_LARGE:
       "https://forms.cloud.microsoft/pages/responsepage.aspx?id=fmfoBInJuUeGGdg9Wl9sZ3dfmpb4AUNHquMegZ8ykp9UQURCTE9QQjFYRkRQN0RVNVpMQ1NKR0pLUSQlQCN0PWcu&route=shorturl",
 } as const;
@@ -21,7 +21,7 @@ type OdysseyProps = {
    isLargeCardVisible?: boolean;
 };
 
-export default function Odyssey({ isLargeCardVisible = true }: OdysseyProps) {
+export default function Odyssey({ isLargeCardVisible }: OdysseyProps) {
    return (
       <Container>
          <Title Header="Odyssey Mentorship Program" />
