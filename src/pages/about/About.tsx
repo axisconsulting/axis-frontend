@@ -16,14 +16,14 @@ import ImageCard from "$components/images/ImageCard/ImageCard";
 import {
    MANAGING_DIRECTORS,
    DIRECTORS,
+   CONSULTING_TEAM_LEADS,
    INTERNAL_TEAM,
-   EXTERNAL_TEAM,
+   BUSINESS_DEVELOPMENT_TEAM,
    STRATEGY_TEAM,
    MARKETING_STRATEGY_TEAM,
-   MARKETING_DESIGN_TEAM,
+   DESIGN_TEAM,
    FINANCE_TEAM,
    WEB_DEV_TEAM,
-   CONSULTING_TEAM_LEADS,
    type Member,
 } from "$constants/members";
 import { FAKE_URL } from "$constants/utils";
@@ -33,13 +33,15 @@ import { consultingTeams, featureBlocks } from "$constants/pages/about";
 function TeamRow({
    people,
    teamTitle = "",
-   teamSubtitle = "2025-2026", //* This should be updated each year manually */
+   teamSubtitle = "2026-2027", //* This should be updated each year manually */
    teamImgSrc = FAKE_URL,
+   useFeaturedImg = false,
 }: {
    people: Member[];
    teamTitle?: string;
    teamSubtitle?: string;
    teamImgSrc?: string;
+   useFeaturedImg?: boolean; // optional prop to use featured image instead of default imgUrl
 }) {
    // total cards that will render:
    const hasBanner = Boolean(teamTitle && teamSubtitle);
@@ -69,7 +71,8 @@ function TeamRow({
                      variant="profile"
                      name={member.name}
                      position={member.role}
-                     img={member.imgUrl ?? FAKE_URL}
+                     img={(useFeaturedImg && member.featuredImgUrl) || member.imgUrl || FAKE_URL}
+                     //img={member.imgUrl ?? FAKE_URL}
                      clickTo={member.linkedin || undefined}
                      size="person"
                      loading="lazy"
@@ -121,61 +124,30 @@ export default function About() {
             <TeamSectionHeaderRow>
                <h2>Executive Team</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={DIRECTORS} teamImgSrc={TEAM_MEMBERS_URLS.executive_team} />
+            <TeamRow people={DIRECTORS} useFeaturedImg={true} teamImgSrc={TEAM_MEMBERS_URLS.executive_team} />
          </TeamSection>
 
-         {/* Consulting Leads */}
+         {/* Consulting Team leads */}
          <TeamSection>
             <TeamSectionHeaderRow>
                <h2>Consulting Team Leads</h2>
             </TeamSectionHeaderRow>
-            <TeamRow people={CONSULTING_TEAM_LEADS} teamImgSrc={TEAM_MEMBERS_URLS.team_leads} />
+            <TeamRow people={CONSULTING_TEAM_LEADS} useFeaturedImg={true} teamImgSrc={TEAM_MEMBERS_URLS.consulting_team_leads} />
          </TeamSection>
 
-         {/* Consulting Teams */}
-         <TeamSection>
-            <TeamSectionHeaderRow>
-               <h2>{consultingTeams[0].name}</h2>
-            </TeamSectionHeaderRow>
-            <TeamRow
-               people={consultingTeams[0].members}
-               teamTitle={consultingTeams[0].name}
-               teamImgSrc={consultingTeams[0].teamImgSrc}
-            />
-         </TeamSection>
-
-         <TeamSection>
-            <TeamSectionHeaderRow>
-               <h2>{consultingTeams[1].name}</h2>
-            </TeamSectionHeaderRow>
-            <TeamRow
-               people={consultingTeams[1].members}
-               teamTitle={consultingTeams[1].name}
-               teamImgSrc={consultingTeams[1].teamImgSrc}
-            />
-         </TeamSection>
-
-         <TeamSection>
-            <TeamSectionHeaderRow>
-               <h2>{consultingTeams[2].name}</h2>
-            </TeamSectionHeaderRow>
-            <TeamRow
-               people={consultingTeams[2].members}
-               teamTitle={consultingTeams[2].name}
-               teamImgSrc={consultingTeams[2].teamImgSrc}
-            />
-         </TeamSection>
-
-         <TeamSection>
-            <TeamSectionHeaderRow>
-               <h2>{consultingTeams[3].name}</h2>
-            </TeamSectionHeaderRow>
-            <TeamRow
-               people={consultingTeams[3].members}
-               teamTitle={consultingTeams[3].name}
-               teamImgSrc={consultingTeams[3].teamImgSrc}
-            />
-         </TeamSection>
+         {/* Consulting Leads */}
+         {consultingTeams.map((team) => (
+            <TeamSection key={team.name}>
+               <TeamSectionHeaderRow>
+                  <h2>{team.name}</h2>
+               </TeamSectionHeaderRow>
+               <TeamRow
+                  people={team.members}
+                  teamTitle={team.name}
+                  teamImgSrc={team.teamImgSrc}
+               />
+            </TeamSection>
+         ))}
 
          {/* Internal Team */}
          <TeamSection>
@@ -189,14 +161,14 @@ export default function About() {
             />
          </TeamSection>
 
-         {/* External Team */}
+         {/* Business Development Team */}
          <TeamSection>
             <TeamSectionHeaderRow>
-               <h2>External Team</h2>
+               <h2>Business Development Team</h2>
             </TeamSectionHeaderRow>
             <TeamRow
-               people={EXTERNAL_TEAM}
-               teamTitle="External Team"
+               people={BUSINESS_DEVELOPMENT_TEAM}
+               teamTitle="Business Development Team"
                teamImgSrc={TEAM_MEMBERS_URLS.external_team}
             />
          </TeamSection>
@@ -225,14 +197,14 @@ export default function About() {
             />
          </TeamSection>
 
-         {/* Marketing Design */}
+         {/* Design */}
          <TeamSection>
             <TeamSectionHeaderRow>
-               <h2>Marketing Design</h2>
+               <h2>Design</h2>
             </TeamSectionHeaderRow>
             <TeamRow
-               people={MARKETING_DESIGN_TEAM}
-               teamTitle="Marketing Design"
+               people={DESIGN_TEAM}
+               teamTitle="Design"
                teamImgSrc={TEAM_MEMBERS_URLS.marketing_design_team}
             />
          </TeamSection>

@@ -3,28 +3,47 @@
  * Including names, roles, LinkedIn URLs, and optional profile images
  */
 
+
+import mdSam from "./test-img/managing-directors/md-sam.webp"
+import mdTan from "./test-img/managing-directors/md-tan.webp"
+
+import iSabrina from "./test-img/executives/i-sabrina.webp"
+import bdFrancine from "./test-img/executives/bd-francine.webp"
+import dInarah from "./test-img/executives/d-inarah.webp"
+import dLaraine from "./test-img/executives/d-laraine.webp"
+import eShirly from "./test-img/executives/e-shirly.webp" 
+import sJun from "./test-img/executives/s-jun.webp"
+import msKayla from "./test-img/executives/ms-kayla.webp"
+import fVincent from "./test-img/executives/f-vincent.webp"
+import wdAbraham from "./test-img/executives/wd-abraham.webp"
+
+import tlAlbel from "./test-img/team leads/TL-abel.webp"
+import tlSachkeerat from "./test-img/team leads/TL-sachkeerat.webp"
+import tlDaria from "./test-img/team leads/TL-daria.webp"
+
 export interface Member {
    name: string;
    role: string;
    linkedin: string;
    imgUrl: string;
+   featuredImgUrl?: string;
 }
 
 export interface TeamMembers {
    managingDirectors: Member[];
    directors: Member[];
    internal: Member[];
-   external: Member[];
+   bussinessDevelopment: Member[];
+   events: Member[];
    strategy: Member[];
    marketingStrategy: Member[];
-   marketingDesign: Member[];
+   design: Member[];
    finance: Member[];
    webDev: Member[];
    consultingTeamLeads: Member[];
    consultingTeam1: Member[];
    consultingTeam2: Member[];
    consultingTeam3: Member[];
-   consultingTeam4: Member[];
 }
 
 const ABOUT_BUCKET = "about-page/";
@@ -32,406 +51,410 @@ const ABOUT_BUCKET = "about-page/";
 // ================= Managing Directors =================
 export const MANAGING_DIRECTORS: Member[] = [
    {
-      name: "Camille Sanchez",
+      name: "Samuel McCallen",
       role: "Managing Director",
-      linkedin: "https://www.linkedin.com/in/camillevpsanchez/",
-      imgUrl: `${ABOUT_BUCKET}managing-directors/md-camille.webp`,
+      linkedin: "https://www.linkedin.com/in/samuel-mccallen",
+      //imgUrl: `${ABOUT_BUCKET}managing-directors/md-camille.webp`,
+      imgUrl: mdSam,
    },
    {
-      name: "Andrew Novak",
+      name: "Tan Vu",
       role: "Managing Director",
-      linkedin: "https://www.linkedin.com/in/andrew-novak831/",
-      imgUrl: `${ABOUT_BUCKET}managing-directors/md-andrew.webp`,
+      linkedin: "https://www.linkedin.com/in/tan-vu/",
+      //imgUrl: `${ABOUT_BUCKET}managing-directors/md-andrew.webp`,
+      imgUrl: mdTan,
    },
 ] as const;
 
 // ================= Internal =================
 export const INTERNAL_TEAM: Member[] = [
    {
-      name: "Hazel Liu",
-      role: "Director of Internal",
+      name: "Sabrina Wang",
+      role: "Internal Director",
       linkedin: "https://www.linkedin.com/in/hazel-liu-/",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-dir-hazel.webp`,
+      //imgUrl: `${ABOUT_BUCKET}internal-team/internal-dir-hazel.webp`,
+      featuredImgUrl: iSabrina,
+      imgUrl: iSabrina,
    },
    {
-      name: "Ishaq Ahmad",
+      name: "Aubrey Muirhead",
       role: "Internal Coordinator",
-      linkedin: "https://www.linkedin.com/in/ishaq-ahmad06/",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-ishaq.webp`,
+      linkedin: "https://www.linkedin.com/in/aubrey-muirhead-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-aubrey.webp`,
    },
    {
-      name: "Parniyan Namazi Fard",
+      name: "Kaiya Bains",
       role: "Internal Coordinator",
-      linkedin: "https://www.linkedin.com/in/parniyannamazifard/",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-parniyan.webp`,
+      linkedin: "https://www.linkedin.com/in/kaiya-bains-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-kaiya.webp`,
    },
    {
-      name: "Cole Afonso",
+      name: "Simran Nihalani",
       role: "Internal Coordinator",
-      linkedin: "https://www.linkedin.com/in/cole-afonso-a10b9533b/",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-cole.webp`,
-   },
-   {
-      name: "Kristen Ma",
-      role: "Internal Coordinator",
-      linkedin: "https://linkedin.com/in/kristen-ma-590296325",
-      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-kristen.webp`,
+      linkedin: "https://www.linkedin.com/in/simran-nihalani-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-simran.webp`,
    },
 ] as const;
 
-// ================= External =================
-export const EXTERNAL_TEAM: Member[] = [
+// ================= Business Development =================
+export const BUSINESS_DEVELOPMENT_TEAM: Member[] = [
    {
-      name: "Tan Vu",
-      role: "Director of External",
-      linkedin: "https://www.linkedin.com/in/tan-vu",
-      imgUrl: `${ABOUT_BUCKET}external-team/external-dir-tan.webp`,
+      name: "Francine Halim",
+      role: "Bussiness Development Director",
+      linkedin: "https://www.linkedin.com/in/francinehalim/",
+      //imgUrl: `${ABOUT_BUCKET}external-team/external-dir-tan.webp`,
+      featuredImgUrl: bdFrancine,
+      imgUrl: bdFrancine,
    },
    {
       name: "Lauren Lee",
-      role: "External Coordinator",
+      role: "Business Development Coordinator",
       linkedin: "https://www.linkedin.com/in/laurenlee5",
       imgUrl: `${ABOUT_BUCKET}external-team/external-coord-lauren.webp`,
    },
    {
       name: "Sophie Long",
-      role: "External Coordinator",
+      role: "Business Development Coordinator",
       linkedin: "https://www.linkedin.com/in/sophie-long-aa6a5933a/",
       imgUrl: `${ABOUT_BUCKET}external-team/external-coord-sophie.webp`,
    },
    {
       name: "Joshua Tam",
-      role: "External Coordinator",
+      role: "Business Development Coordinator",
       linkedin: "https://www.linkedin.com/in/joshua-m-tam/",
       imgUrl: `${ABOUT_BUCKET}external-team/external-coord-josh.webp`,
    },
 ] as const;
 
+// ================= Events =================
+export const EVENTS_TEAM: Member[] = [
+   {
+      name: "Shirly Zhou",
+      role: "Events Director",
+      linkedin: "https://www.linkedin.com/in/shirly-zhou/",
+      //imgUrl: `${ABOUT_BUCKET}events-team/events-dir-shirly.webp`,
+      featuredImgUrl: eShirly,
+      imgUrl: eShirly,
+   }, 
+   {
+      name: "Hasini Birlangi",
+      role: "Events Coordinator",
+      linkedin: "https://www.linkedin.com/in/hasini-birlangi/",
+      imgUrl: `${ABOUT_BUCKET}events-team/events-coord-hasini.webp`,
+   },
+   {
+      name: "Kaenan D'Cruz",
+      role: "Events Coordinator",
+      linkedin: "https://www.linkedin.com/in/kaenan-dcruz/",
+      imgUrl: `${ABOUT_BUCKET}events-team/events-coord-kaenan.webp`,
+   },
+   {
+      name: "Sophia Bruchet",
+      role: "Events Coordinator",
+      linkedin: "https://www.linkedin.com/in/sophia-bruchet/",
+      imgUrl: `${ABOUT_BUCKET}events-team/events-coord-sophia.webp`,
+   },
+   {
+      name: "Tabatha Acosta",
+      role: "Events Coordinator",
+      linkedin: "https://www.linkedin.com/in/tabatha-acosta/",
+      imgUrl: `${ABOUT_BUCKET}events-team/events-coord-tabatha.webp`,
+   }
+] as const;
+
+
+
 // ================= Strategy =================
 export const STRATEGY_TEAM: Member[] = [
    {
-      name: "Carol Wang",
-      role: "Director of Strategy",
-      linkedin: "https://www.linkedin.com/in/wangmcarol/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-dir-carol.webp`,
-   },
-   {
-      name: "Lucy Liu",
-      role: "Director of Strategy",
-      linkedin: "https://www.linkedin.com/in/lucyliuu/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-dir-lucy.webp`,
-   },
-   {
       name: "Jun Han",
-      role: "Strategy Analyst",
+      role: "Strategy Director",
       linkedin: "https://www.linkedin.com/in/yaejunhan/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-jun.webp`,
+      //imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-dir-carol.webp`,
+      featuredImgUrl: sJun,
+      imgUrl: sJun,
    },
    {
-      name: "Angela Lim",
+      name: "Audrey Khin",
       role: "Strategy Analyst",
-      linkedin: "https://www.linkedin.com/in/angelalim-",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-angela.webp`,
+      linkedin: "https://www.linkedin.com/in/audreykhin/",
+      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-audrey.webp`,
    },
    {
-      name: "Marianne Li",
+      name: "Ayumi Morita",
       role: "Strategy Analyst",
-      linkedin: "https://www.linkedin.com/in/marianne-li1311/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-marianne.webp`,
+      linkedin: "https://www.linkedin.com/in/ayumi-morita-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-ayumi.webp`,
    },
    {
-      name: "Helen Chen",
+      name: "Jade Aw-Yeong",
       role: "Strategy Analyst",
-      linkedin: "https://www.linkedin.com/in/helen-chen-65b832291/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-helen.webp`,
+      linkedin: "https://www.linkedin.com/in/jade-aw-yeong-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-jade.webp`,
    },
    {
-      name: "Shirly Zhou",
+      name: "Tyson Tang",
       role: "Strategy Analyst",
-      linkedin: "https://www.linkedin.com/in/shirly-zhou/",
-      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-shirly.webp`,
+      linkedin: "https://www.linkedin.com/in/tyson-tang-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-tyson.webp`,
    },
 ] as const;
 
 // ================= Marketing Strategy =================
 export const MARKETING_STRATEGY_TEAM: Member[] = [
    {
-      name: "Jessica Kan",
-      role: "Director of Marketing Strategy",
+      name: "Kayla Jong",
+      role: "Marketing Director",
       linkedin: "https://www.linkedin.com/in/jessicataokan",
-      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-dir-jessica.webp`,
+      //imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-dir-jessica.webp`,
+      featuredImgUrl: msKayla,
+      imgUrl: msKayla,
    },
    {
-      name: "Isabelle Lam",
-      role: "Marketing Strategy Coordinator",
-      linkedin: "https://www.linkedin.com/in/isabelle-lam-904a9b298/",
-      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-isabelle.webp`,
+      name: "Damielle Arcenal",
+      role: "Marketing Coordinator",
+      linkedin: "https://www.linkedin.com/in/damielle-arcelan-904a9b298/",
+      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-damielle.webp`,
    },
    {
-      name: "Melissa Tabrizi",
-      role: "Marketing Strategy Coordinator",
-      linkedin: "https://www.linkedin.com/in/melissa-tabrizi/",
-      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-melissa.webp`,
+      name: "Ling Ly",
+      role: "Marketing Coordinator",
+      linkedin: "https://www.linkedin.com/in/ling-ly-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-ling.webp`,
    },
 ] as const;
 
 // ================= Marketing Design =================
-export const MARKETING_DESIGN_TEAM: Member[] = [
+export const DESIGN_TEAM: Member[] = [
    {
-      name: "Jayson Lee",
-      role: "Director of Marketing Design",
-      linkedin: "https://www.linkedin.com/in/jaydglee",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-dir-jayson.webp`,
+      name: "Inarah Usmani",
+      role: "Design Director",
+      linkedin: "https://www.linkedin.com/in/inarah-usmani-1a2b3c4d5e/",
+      //imgUrl: `${ABOUT_BUCKET}design-team/design-dir-inarah.webp`,
+      featuredImgUrl: dInarah,
+      imgUrl: dInarah,
    },
    {
-      name: "Cathy Liang",
-      role: "Marketing Design Coordinator",
-      linkedin: "https://www.linkedin.com/in/cathy-liang/",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-cathy.webp`,
+      name: "Laraine Sim",
+      role: "Design Director",
+      linkedin: "https://www.linkedin.com/in/laraine-sim-1a2b3c4d5e/",
+      //imgUrl: `${ABOUT_BUCKET}design-team/design-dir-laraine.webp`,
+      featuredImgUrl: dLaraine,
+      imgUrl: dLaraine,
    },
    {
-      name: "Dylan Tse",
-      role: "Marketing Design Coordinator",
-      linkedin: "https://www.linkedin.com/in/dyltse",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-dylan.webp`,
+      name: "Angelina Lim",
+      role: "Design Coordinator",
+      linkedin: "https://www.linkedin.com/in/angelina-lim-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-angelina.webp`,
    },
    {
-      name: "August Othanavathakit",
-      role: "Visual Media Coordinator",
-      linkedin: "https://www.linkedin.com/in/augustothana",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-august.webp`,
+      name: "Rehma Adnan",
+      role: "Design Coordinator",
+      linkedin: "https://www.linkedin.com/in/rehma-adnan-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-rehma.webp`,
    },
    {
-      name: "Kal Kuan Chia",
-      role: "Marketing Design Coordinator",
-      linkedin: "https://www.linkedin.com/in/kal-kuan-chia-1a25242b8/",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-kuan.webp`,
+      name: "Sara Chung",
+      role: "Design Coordinator",
+      linkedin: "https://www.linkedin.com/in/sara-chung-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-sara.webp`,
    },
    {
-      name: "Maggie Chang",
-      role: "Marketing Design Coordinator",
-      linkedin: "https://www.linkedin.com/in/mag-chang/",
-      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-maggie.webp`,
+      name: "Sophia Tsai",
+      role: "Design Coordinator",
+      linkedin: "https://www.linkedin.com/in/sophia-tsai-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}design-team/design-coord-sophia.webp`,
    },
 ] as const;
 
 // ================= Finance =================
 export const FINANCE_TEAM: Member[] = [
    {
-      name: "Tom Bui",
-      role: "Director of Finance",
-      linkedin: "https://www.linkedin.com/in/hungtombui/",
-      imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
+      name: "Vincent Kwan",
+      role: "Finance Director",
+      linkedin: "https://www.linkedin.com/in/vincentkkwan",
+      //imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
+      featuredImgUrl: fVincent,
+      imgUrl: fVincent,
    },
 ] as const;
 
 // ================= Web Development =================
 export const WEB_DEV_TEAM: Member[] = [
    {
-      name: "Jai Malhi",
-      role: "Director of Web Development",
+      name: "Abraham Mormontoy",
+      role: "Web Development Director",
       linkedin: "https://www.linkedin.com/in/jaimalhi/",
-      imgUrl: `${ABOUT_BUCKET}web-dev-team/web-dir-jai.webp`,
+      //imgUrl: `${ABOUT_BUCKET}web-dev-team/web-dir-abraham.webp`,
+      imgUrl: wdAbraham,
    },
 ] as const;
 
-// ================= Team Ryan (Nebula) =================
-export const TEAM_NEBULA: Member[] = [
+
+// ================= Team Albel (Eucalyptus) =================
+export const TEAM_EUCALYPTUS: Member[] = [
    {
-      name: "Ryan Thaulad",
+      name: "Albel Dhanoa",
       role: "Consulting Team Lead",
       linkedin: "https://www.linkedin.com/in/ryanthaulad",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/team-lead-ryan.webp`,
-   },
-   {
-      name: "Sonakshi Rao",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/sonakshi-rao/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/sr-consultant-sonakshi.webp`,
-   },
-   {
-      name: "Nigel Mathias",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/nigel-mathias-b88095239",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-nigel.webp`,
-   },
-   {
-      name: "Claire Dubois",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/clairedubois",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-claire.webp`,
-   },
-   {
-      name: "Evan Elsaesser",
-      role: "Consultant",
-      linkedin: "https://linkedin.com/in/evan-elsaesser",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-evan.webp`,
-   },
-   {
-      name: "Victor Suwantaweechoat",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/lertpong-suwantaweechoat/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-victor.webp`,
-   },
-] as const;
-
-// ================= Team Nathan (Nova) =================
-export const TEAM_NOVA: Member[] = [
-   {
-      name: "Nathan Chu",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/nathan-chu-404a6b1b0/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/team-lead-nathan.webp`,
-   },
-   {
-      name: "Clayton Campbell",
-      role: "Sr. Consultant",
-      linkedin: "https://www.linkedin.com/in/claytonkwcampbell/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/sr-consultant-clayton.webp`,
-   },
-   {
-      name: "Matthias Chun",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/matthiaschun",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-matthias.webp`,
-   },
-   {
-      name: "Vincent Kwan",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/vincentkkwan",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-vincent.webp`,
-   },
-   {
-      name: "Nika Saeedi",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/nika-saeedi",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-nika.webp`,
-   },
-   {
-      name: "Lucy Liu",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/lucyliuu/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-lucy.webp`,
-   },
-] as const;
-
-// ================= Team Sabrina (Polaris) =================
-export const TEAM_POLARIS: Member[] = [
-   {
-      name: "Sabrina Wang",
-      role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/sabrinawang9/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/team-lead-sabrina.webp`,
-   },
-   {
-      name: "Sachkeerat Sandhu",
-      role: "Sr. Consultant",
-      linkedin: "https://www.linkedin.com/in/sachkeeratsandhu/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/sr-consultant-sachkeerat.webp`,
-   },
-   {
-      name: "Salmaan Shariff",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/salmaanshariff/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/consultant-salmaan.webp`,
-   },
-   {
-      name: "Enya Zeng",
-      role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/enyazeng/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/consultant-enya.webp`,
+      //imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/team-lead-ryan.webp`,
+      featuredImgUrl: tlAlbel,
+      imgUrl: tlAlbel,
    },
    {
       name: "Dmitri Folomeyev",
       role: "Consultant",
       linkedin: "https://www.linkedin.com/in/dfolomeyev/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/consultant-dmitri.webp`,
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-dmitri.webp`,
    },
    {
-      name: "Francine Halim",
+      name: "Alijawad Ali",
       role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/francinehalim/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-polaris-sabrina/consultant-francine.webp`,
+      linkedin: "https://www.linkedin.com/in/alijawad-ali-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-alijawad.webp`,
+   },
+   {
+      name: "Jassveen Kaur",
+      role: "Consultant",
+      linkedin: "https://linkedin.com/in/jassveen-kaur-1a2b3c4d5e",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-jassveen.webp`,
+   },
+   {
+      name: "Makeyla Truong",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/makeyla-truong-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-makeyla.webp`,
+   },
+   {
+      name: "Tyler Tan",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/tyler-tan-1a2b3c4d5e/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nebula-ryan/consultant-tyler.webp`,
    },
 ] as const;
 
-// ================= Team Sam (Eclipse) =================
-export const TEAM_ECLIPSE: Member[] = [
+
+// ================= Team Sachkeerat (Redwood) =================
+export const TEAM_REDWOOD: Member[] = [
    {
-      name: "Samuel McCallen",
+      name: "Sachkeerat Sandhu",
       role: "Consulting Team Lead",
-      linkedin: "https://www.linkedin.com/in/samuel-mccallen",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/team-lead-sam.webp`,
+      linkedin: "https://www.linkedin.com/in/sachkeerat-sandhu-404a6b1b0/",
+      //imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/team-lead-sachkeerat.webp`,
+      featuredImgUrl: tlSachkeerat,
+      imgUrl: tlSachkeerat,
    },
    {
-      name: "Albel Singh Dhanoa",
-      role: "Sr. Consultant",
-      linkedin: "https://www.linkedin.com/in/albel-dhanoa/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/sr-consultant-albel.webp`,
+      name: "Eric Pan",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/ericpan",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-eric.webp`,
    },
+   {
+      name: "Giselle Rafe",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/giselle-rafe",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-giselle.webp`,
+   },
+   {
+      name: "Wilson Yueng",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/wilson-yueng/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-wilson.webp`,
+   },
+   {
+      name: "Joshua Oladokun",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/joshua-oladokun/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-joshua.webp`,
+   },
+   {
+      name: "Preethi Chidambaran",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/preethi-chidambaran/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-nova-nathan/consultant-preethi.webp`,
+   },
+] as const;
+
+
+// ================= Team Daria (Willow) =================
+export const TEAM_WILLOW: Member[] = [
    {
       name: "Daria Zakharova",
-      role: "Consultant",
-      linkedin: "https://linkedin.com/in/dariaazakharova",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/consultant-daria.webp`,
+      role: "Consulting Team Lead",
+      linkedin: "https://www.linkedin.com/in/dariazakharova/",
+      //imgUrl: `${ABOUT_BUCKET}consulting/team-willow/team-lead-daria.webp`,
+      featuredImgUrl: tlDaria,
+      imgUrl: tlDaria,
    },
    {
-      name: "Krish Rajput",
+      name: "Seojin Yoon",
       role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/krishrajput2305",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/consultant-krish.webp`,
+      linkedin: "https://www.linkedin.com/in/seojin-yoon/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-willow/consultant-seojin.webp`,
    },
    {
-      name: "Angela Bui",
+      name: "Khue Nguyen",
       role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/angela-bui-2829182b1",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/consultant-angela.webp`,
+      linkedin: "https://www.linkedin.com/in/khue-nguyen/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-willow/consultant-khue.webp`,
    },
    {
-      name: "Edric Lagrisola",
+      name: "Max Gu",
       role: "Consultant",
-      linkedin: "https://www.linkedin.com/in/edric-lagrisola/",
-      imgUrl: `${ABOUT_BUCKET}consulting/team-eclipse-sam/consultant-edric.webp`,
+      linkedin: "https://www.linkedin.com/in/max-gu/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-willow/consultant-max.webp`,
+   },
+   {
+      name: "Winnie Wang",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/winnie-wang/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-willow/consultant-winnie.webp`,
+   },
+   {
+      name: "Phineas Tran",
+      role: "Consultant",
+      linkedin: "https://www.linkedin.com/in/phineas-tran/",
+      imgUrl: `${ABOUT_BUCKET}consulting/team-willow/consultant-phineas.webp`,
    },
 ] as const;
 
 // ================= Directors =================
 export const DIRECTORS: Member[] = [
-   INTERNAL_TEAM[0], // Hazel Liu
-   EXTERNAL_TEAM[0], // Tan Vu
-   STRATEGY_TEAM[0], // Carol Wang
-   STRATEGY_TEAM[1], // Lucy Liu
-   MARKETING_STRATEGY_TEAM[0], // Jessica Kan
-   MARKETING_DESIGN_TEAM[0], // Jayson Lee
-   FINANCE_TEAM[0], // Tom Bui
-   WEB_DEV_TEAM[0], // Jai Malhi
+   INTERNAL_TEAM[0], // Sabrina Wang
+   BUSINESS_DEVELOPMENT_TEAM[0], // Francine Halim
+   STRATEGY_TEAM[0], // Jun Han
+   MARKETING_STRATEGY_TEAM[0], // `Kayla Jong
+   DESIGN_TEAM[0], // Inarah Usmani
+   DESIGN_TEAM[1], // Laraine Sim
+   FINANCE_TEAM[0], // Vincent Kwan
+   WEB_DEV_TEAM[0], // Abraham Mormontoy
 ] as const;
 
 // ================= Consulting Team Leads =================
 export const CONSULTING_TEAM_LEADS: Member[] = [
-   TEAM_NEBULA[0], // Ryan Thaulad
-   TEAM_NEBULA[1], // Sonakshi Rao
-   TEAM_NOVA[0], // Nathan Chu
-   TEAM_POLARIS[0], // Sabrina Wang
-   TEAM_ECLIPSE[0], // Samuel McCallen
+   TEAM_EUCALYPTUS[0], // Albel Dhanoa
+   TEAM_REDWOOD[0], // Sachkeerat Sandhu
+   TEAM_WILLOW[0], // Daria Zakharova
 ] as const;
 
 // ================= All Members Export =================
 export const ALL_MEMBERS: TeamMembers = {
    managingDirectors: MANAGING_DIRECTORS,
-   directors: DIRECTORS,
-   internal: INTERNAL_TEAM,
-   external: EXTERNAL_TEAM,
-   strategy: STRATEGY_TEAM,
-   marketingStrategy: MARKETING_STRATEGY_TEAM,
-   marketingDesign: MARKETING_DESIGN_TEAM,
-   finance: FINANCE_TEAM,
-   webDev: WEB_DEV_TEAM,
+   directors: DIRECTORS, 
+   bussinessDevelopment: BUSINESS_DEVELOPMENT_TEAM, //
+   events: EVENTS_TEAM, //
+   internal: INTERNAL_TEAM, //
+   strategy: STRATEGY_TEAM, // 
+   marketingStrategy: MARKETING_STRATEGY_TEAM, //
+   design: DESIGN_TEAM, //
+   finance: FINANCE_TEAM, //
+   webDev: WEB_DEV_TEAM, // 
    consultingTeamLeads: CONSULTING_TEAM_LEADS,
-   consultingTeam1: TEAM_NEBULA,
-   consultingTeam2: TEAM_NOVA,
-   consultingTeam3: TEAM_POLARIS,
-   consultingTeam4: TEAM_ECLIPSE,
+   consultingTeam1: TEAM_EUCALYPTUS,
+   consultingTeam2: TEAM_REDWOOD,
+   consultingTeam3: TEAM_WILLOW,
 } as const;
 
 // ================= Helper Functions =================
@@ -467,10 +490,9 @@ export const getMembersByRole = (role: string): Member[] => {
 // Get all consultants
 export const getAllConsultants = (): Member[] => {
    return [
-      ...TEAM_NEBULA.filter((m) => m.role.includes("Consultant")),
-      ...TEAM_NOVA.filter((m) => m.role.includes("Consultant")),
-      ...TEAM_POLARIS.filter((m) => m.role.includes("Consultant")),
-      ...TEAM_ECLIPSE.filter((m) => m.role.includes("Consultant")),
+      ...TEAM_EUCALYPTUS.filter((m) => m.role.includes("Consultant")),
+      ...TEAM_REDWOOD.filter((m) => m.role.includes("Consultant")),
+      ...TEAM_WILLOW.filter((m) => m.role.includes("Consultant")),
    ];
 };
 

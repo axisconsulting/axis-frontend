@@ -1,5 +1,5 @@
 import { TEAM_MEMBERS_URLS } from "$constants/image-utils/image-urls";
-import { TEAM_ECLIPSE, TEAM_NEBULA, TEAM_NOVA, TEAM_POLARIS } from "$constants/members";
+import { TEAM_EUCALYPTUS, TEAM_REDWOOD, TEAM_WILLOW } from "$constants/members";
 
 // hero section content
 export const featureBlocks = [
@@ -21,12 +21,7 @@ export const featureBlocks = [
 ];
 
 export const consultingTeams = [
-   { name: "Team Nebula", members: TEAM_NEBULA, teamImgSrc: TEAM_MEMBERS_URLS.team_nebula_ryan },
-   { name: "Team Nova", members: TEAM_NOVA, teamImgSrc: TEAM_MEMBERS_URLS.team_nova_nathan },
-   {
-      name: "Team Polaris",
-      members: TEAM_POLARIS,
-      teamImgSrc: TEAM_MEMBERS_URLS.team_polaris_sabrina,
-   },
-   { name: "Team Eclipse", members: TEAM_ECLIPSE, teamImgSrc: TEAM_MEMBERS_URLS.team_eclipse_sam },
+   { name: "Team Eucalyptus", members: TEAM_EUCALYPTUS, teamImgSrc: TEAM_MEMBERS_URLS.team_eucalyptus_albel },
+   { name: "Team Redwood", members: TEAM_REDWOOD, teamImgSrc: TEAM_MEMBERS_URLS.team_redwood_sachkeerat },
+   { name: "Team Willow", members: TEAM_WILLOW, teamImgSrc: TEAM_MEMBERS_URLS.team_willow_daria },
 ];
