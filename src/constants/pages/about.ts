@@ -11,12 +11,12 @@ export const featureBlocks = [
    {
       header: "Our Mission",
       body: "To support undergraduate students in understanding and preparing for careers in consulting through experiential learning opportunities",
-      img: TEAM_MEMBERS_URLS.executive_team,
+      img: TEAM_MEMBERS_URLS.org_wide_vertical,
    },
    {
       header: "Our Vision",
       body: "Empowering undergraduate students to excel in consulting careers through hands-on learning and real-world client engagements",
-      img: TEAM_MEMBERS_URLS.md_funny,
+      img: TEAM_MEMBERS_URLS.executive_team,
    },
 ];
 
