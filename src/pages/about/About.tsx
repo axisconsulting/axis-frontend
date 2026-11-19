@@ -21,6 +21,7 @@ import {
    BUSINESS_DEVELOPMENT_TEAM,
    STRATEGY_TEAM,
    MARKETING_STRATEGY_TEAM,
+   EVENTS_TEAM,
    DESIGN_TEAM,
    FINANCE_TEAM,
    WEB_DEV_TEAM,
@@ -134,7 +135,6 @@ export default function About() {
             </TeamSectionHeaderRow>
             <TeamRow people={CONSULTING_TEAM_LEADS} useFeaturedImg={true} teamImgSrc={TEAM_MEMBERS_URLS.consulting_team_leads} />
          </TeamSection>
-
          {/* Consulting Leads */}
          {consultingTeams.map((team) => (
             <TeamSection key={team.name}>
@@ -169,7 +169,7 @@ export default function About() {
             <TeamRow
                people={BUSINESS_DEVELOPMENT_TEAM}
                teamTitle="Business Development Team"
-               teamImgSrc={TEAM_MEMBERS_URLS.external_team}
+               teamImgSrc={TEAM_MEMBERS_URLS.business_development_team}
             />
          </TeamSection>
 
@@ -194,6 +194,18 @@ export default function About() {
                people={MARKETING_STRATEGY_TEAM}
                teamTitle="Marketing Strategy"
                teamImgSrc={TEAM_MEMBERS_URLS.marketing_strategy_team}
+            />
+         </TeamSection>
+
+         {/* Events */}
+         <TeamSection>
+            <TeamSectionHeaderRow>
+               <h2>Events</h2>
+            </TeamSectionHeaderRow>
+            <TeamRow
+               people={EVENTS_TEAM}
+               teamTitle="Events"
+               teamImgSrc={TEAM_MEMBERS_URLS.events_team}
             />
          </TeamSection>
 
