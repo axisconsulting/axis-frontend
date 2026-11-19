@@ -55,7 +55,9 @@ const ImageCard = (props: ImageCardProps) => {
    const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
 
    const hasLink = Boolean((clickTo ?? "").trim().length);
-   const src = assetUrl(img);
+   // If the image is local
+   const isLocal = img.startsWith("/");
+   const src = isLocal ? img : assetUrl(img);
 
    // When the image path changes, we want the loader again.
    useEffect(() => {
