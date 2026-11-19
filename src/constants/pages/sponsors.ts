@@ -2,7 +2,7 @@
 
 // URLs for all home page image assets using R2 path
 export const SPONSOR_URL = {
-   work_with_us: "generic/operations-all.webp",
+   work_with_us: "generic/org-wide-horizontal.webp",
 } as const;
 
 // Sponsor companies (for logo marquee)

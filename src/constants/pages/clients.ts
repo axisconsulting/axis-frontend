@@ -3,7 +3,7 @@ const CLIENT_BUCKET = "clients-page/";
 
 // URLs for all home page image assets using R2 path
 export const CLIENT_URL = {
-   work_with_us: "generic/consultants-all.webp",
+   work_with_us: "generic/org-wide-horizontal.webp",
 } as const;
 
 export const CLIENT_LOGOS = [

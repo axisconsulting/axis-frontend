@@ -6,7 +6,7 @@ import { withAlpha } from "$styles/colors";
 export const Wrapper = styled.div`
    border: 1px solid ${({ theme }) => withAlpha(theme.palette.STARDUST_GRAY, 0.2)};
    position: relative;
-   height: 50vh;
+   height: 60vh;
    overflow: hidden;
    border-radius: 0.375rem;
    text-align: center;
