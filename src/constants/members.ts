@@ -105,19 +105,19 @@ export const TEAM_REDWOOD: Member[] = [
    {
       name: "Giselle Rafe",
       role: "Consultant",
-      linkedin: "www.linkedin.com/in/gisellerafe",
+      linkedin: "https://www.linkedin.com/in/gisellerafe/",
       imgUrl: `${ABOUT_BUCKET}consulting/team-redwood-sachkeerat/consultant-giselle.webp`,
    },
    {
       name: "Wilson Yueng",
       role: "Consultant",
-      linkedin: "www.linkedin.com/in/wilsonyueng",
+      linkedin: "https://www.linkedin.com/in/wilsonyueng/",
       imgUrl: `${ABOUT_BUCKET}consulting/team-redwood-sachkeerat/consultant-wilson.webp`,
    },
    {
       name: "Joshua Oladokun",
       role: "Consultant",
-      linkedin: "www.linkedin.com/in/joshua-oladokun-47aab0303",
+      linkedin: "https://www.linkedin.com/in/joshua-oladokun-47aab0303",
       imgUrl: `${ABOUT_BUCKET}consulting/team-redwood-sachkeerat/consultant-joshua.webp`,
    },
    {
@@ -182,7 +182,7 @@ export const INTERNAL_TEAM: Member[] = [
    {
       name: "Aubrey Muirhead",
       role: "Internal Coordinator",
-      linkedin: "https://www.linkedin.com/in/aubrey-muirhead-1a2b3c4d5e/",
+      linkedin: "https://www.linkedin.com/in/aubrey-muirhead-a568b0218/",
       imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-aubrey.webp`,
    },
    {
@@ -194,7 +194,7 @@ export const INTERNAL_TEAM: Member[] = [
    {
       name: "Simran Nihalani",
       role: "Internal Coordinator",
-      linkedin: "www.linkedin.com/in/simran-pnihalani",
+      linkedin: "https://www.linkedin.com/in/simran-pnihalani/",
       imgUrl: `${ABOUT_BUCKET}internal-team/internal-coord-simran.webp`,
    },
 ] as const;
@@ -259,7 +259,7 @@ export const STRATEGY_TEAM: Member[] = [
    {
       name: "Tyson Tang",
       role: "Strategy Analyst",
-      linkedin: "www.linkedin.com/in/tysontang2",
+      linkedin: "https://www.linkedin.com/in/tysontang2",
       imgUrl: `${ABOUT_BUCKET}strategy-team/strategy-coord-tyson.webp`,
    },
 ] as const;
@@ -288,14 +288,14 @@ export const EVENTS_TEAM: Member[] = [
    {
       name: "Sophia Bruchet",
       role: "Events Coordinator",
-      linkedin: "www.linkedin.com/in/sophie-bruchet",
+      linkedin: "https://www.linkedin.com/in/sophie-bruchet/",
       imgUrl: `${ABOUT_BUCKET}events-team/events-coord-sophie.webp`,
    
    },
    {
       name: "Tabatha Acosta",
       role: "Events Coordinator",
-      linkedin: "www.linkedin.com/in/tabatha-acosta-villasenor-68bb34244",
+      linkedin: "https://www.linkedin.com/in/tabatha-acosta-villasenor-68bb34244",
       imgUrl: `${ABOUT_BUCKET}events-team/events-coord-tabatha.webp`,
    }
 ] as const;
@@ -305,20 +305,20 @@ export const MARKETING_STRATEGY_TEAM: Member[] = [
    {
       name: "Kayla Jong",
       role: "Marketing Director",
-      linkedin: "www.linkedin.com/in/kaylajong",
+      linkedin: "https://www.linkedin.com/in/kaylajong/",
       featuredImgUrl: `${ABOUT_BUCKET}executives/marketing-strategy-kayla.webp`,
       imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-dir-kayla.webp`,
    },
    {
       name: "Danielle Arcenal",
       role: "Marketing Coordinator",
-      linkedin: "www.linkedin.com/in/danielle-arcenal",
+      linkedin: "https://www.linkedin.com/in/danielle-arcenal/",
       imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-danielle.webp`,
    },
    {
       name: "Ling Ly",
       role: "Marketing Coordinator",
-      linkedin: "www.linkedin.com/in/ling-lyy",
+      linkedin: "https://www.linkedin.com/in/ling-lyy",
       imgUrl: `${ABOUT_BUCKET}marketing-team/marketing-coord-ling.webp`,
    },
 ] as const;
@@ -328,7 +328,7 @@ export const DESIGN_TEAM: Member[] = [
    {
       name: "Inarah Usmani",
       role: "Design Director",
-      linkedin: "www.linkedin.com/in/inarahusmani ",
+      linkedin: "https://www.linkedin.com/in/inarahusmani/",
       featuredImgUrl: `${ABOUT_BUCKET}executives/design-inarah.webp`,
       imgUrl: `${ABOUT_BUCKET}design-team/design-director-inarah.webp`,
    },
@@ -348,13 +348,13 @@ export const DESIGN_TEAM: Member[] = [
    {
       name: "Rehma Adnan",
       role: "Design Coordinator",
-      linkedin: "www.linkedin.com/in/rehma-adnan",
+      linkedin: "https://www.linkedin.com/in/rehma-adnan/",
       imgUrl: `${ABOUT_BUCKET}design-team/design-coordinator-rehma.webp`,
    },
    {
       name: "Sara Chung",
       role: "Design Coordinator",
-      linkedin: "www.linkedin.com/in/saraknchung",
+      linkedin: "https://www.linkedin.com/in/saraknchung",
       imgUrl: `${ABOUT_BUCKET}design-team/design-coordinator-sara.webp`,
    },
    {
@@ -371,7 +371,6 @@ export const FINANCE_TEAM: Member[] = [
       name: "Vincent Kwan",
       role: "Finance Director",
       linkedin: "https://www.linkedin.com/in/vincentkkwan",
-      //imgUrl: `${ABOUT_BUCKET}finance-team/finance-dir-tom.webp`,
       featuredImgUrl: `${ABOUT_BUCKET}executives/finance-vincent.webp`,
       imgUrl: `${ABOUT_BUCKET}executives/finance-vincent.webp`,
    },

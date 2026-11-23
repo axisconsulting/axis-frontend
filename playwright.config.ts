@@ -1,5 +1,14 @@
 import { defineConfig, devices } from "@playwright/test";
 
+try {
+   process.loadEnvFile();
+} catch {
+   console.error("No .env file found")
+}
+
+// Set BASE_URL to test a deployed site (e.g. production) instead of a local build
+const BASE_URL = process.env.BASE_URL;
+
 export default defineConfig({
    testDir: "./tests", // Where your tests live
    outputDir: "test-results", // Where artifacts (screenshots, videos, traces) are saved
@@ -20,16 +29,18 @@ export default defineConfig({
    expect: { timeout: 5_000 },
 
    // Start your app before tests and wait for it
-   webServer: {
-      command: "bun run build && bun run preview",
-      url: "http://localhost:4173", // vite preview default port
-      reuseExistingServer: !process.env.CI, // don’t restart if already running (local)
-      timeout: 90_000,
-   },
+   webServer: BASE_URL
+      ? undefined
+      : {
+           command: "bun run build && bun run preview",
+           url: "http://localhost:4173", // vite preview default port
+           reuseExistingServer: !process.env.CI, // don’t restart if already running (local)
+           timeout: 90_000,
+        },
 
    // Default “browser context” settings for all tests
    use: {
-      baseURL: "http://localhost:4173",
+      baseURL: BASE_URL ?? "http://localhost:4173",
       screenshot: "only-on-failure",
       video: "retain-on-failure",
       trace: "on-first-retry", // record a trace if a test retries

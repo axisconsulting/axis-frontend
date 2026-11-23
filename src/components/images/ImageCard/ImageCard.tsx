@@ -54,7 +54,11 @@ const ImageCard = (props: ImageCardProps) => {
 
    const [imageState, setImageState] = useState<ImageState>(ImageState.LOADING);
 
-   const hasLink = Boolean((clickTo ?? "").trim().length);
+   // Links written without the protocol (e.g. "www.linkedin.com/in/name") would otherwise
+   // be treated by <Link> as a route on our own site.
+   const trimmedLink = (clickTo ?? "").trim();
+   const href = trimmedLink.startsWith("www.") ? `https://${trimmedLink}` : trimmedLink;
+   const hasLink = Boolean(href.length);
    // If the image is local
    const isLocal = img.startsWith("/");
    const src = isLocal ? img : assetUrl(img);
@@ -162,7 +166,7 @@ const ImageCard = (props: ImageCardProps) => {
 
    return (
       <CardOuter $shrink={isTeamBanner}>
-         <Link to={clickTo ?? ""} target="_blank" rel="noopener noreferrer">
+         <Link to={href} target="_blank" rel="noopener noreferrer">
             {inner}
          </Link>
       </CardOuter>
