@@ -9,6 +9,8 @@
       "lint": "eslint .",
       "preview": "vite preview",
       "type-check": "tsc --noEmit",
+      "test:images": "playwright test tests/images.spec.ts",
+      "test:linkedin": "playwright test tests/linkedin.spec.ts",
       "test:e2e": "playwright test",
       "test:e2e:ui": "playwright test --ui",
       "test:e2e:headed": "playwright test --headed",
@@ -28,7 +30,7 @@
    "devDependencies": {
       "@eslint/js": "9.35.0",
       "@playwright/test": "1.55.0",
-      "@types/node": "24.5.2",
+      "@types/node": "^26.6.6",
       "@types/react": "19.1.13",
       "@types/react-dom": "19.1.9",
       "@vitejs/plugin-react": "5.2.0",

@@ -1,0 +1,54 @@
+name: Images & LinkedIn links
+
+on:
+   pull_request:
+   schedule:
+      - cron: "0 15 * * *" # every day at 15:00 UTC, against the live site
+   workflow_dispatch:
+
+jobs:
+   # Blocks broken images / links before they're merged
+   pull-request:
+      if: github.event_name == 'pull_request'
+      runs-on: ubuntu-24.04 # Playwright 1.55 does not support ubuntu-latest (26.04)
+      steps:
+         - uses: actions/checkout@v4
+         - uses: oven-sh/setup-bun@v2
+         - run: bun install --frozen-lockfile
+         - run: bunx playwright install --with-deps chromium
+         - run: bunx playwright test tests/images.spec.ts tests/linkedin.spec.ts
+
+   # Catches images that break on Cloudflare after deploy. LinkedIn links only change
+   # with the code, so the pull-request job already covers them.
+   # Opens ONE issue per outage (no repeat messages while it's still open).
+   production:
+      if: github.event_name != 'pull_request'
+      runs-on: ubuntu-24.04 # Playwright 1.55 does not support ubuntu-latest (26.04)
+      permissions:
+         issues: write
+      steps:
+         - uses: actions/checkout@v4
+         - uses: oven-sh/setup-bun@v2
+         - run: bun install --frozen-lockfile
+         - run: bunx playwright install --with-deps chromium
+
+         - id: test
+           continue-on-error: true
+           run: bunx playwright test tests/images.spec.ts
+           env:
+              BASE_URL: https://www.sfuaxisconsulting.com
+
+         - name: Open an issue if one isn't already open
+           if: steps.test.outcome == 'failure'
+           env:
+              GH_TOKEN: ${{ github.token }}
+              GH_REPO: ${{ github.repository }}
+              TITLE: Broken images on the live site
+              RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+           run: |
+              open=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq length)
+              if [ "$open" = "0" ]; then
+                 gh issue create --title "$TITLE" --body "The daily check of the live site failed. See which images broke here: $RUN_URL
+
+              Close this issue once it's fixed. A new one will only be opened if it breaks again."
+              fi
