@@ -30,13 +30,14 @@ const Sponsors: FC = () => {
 
          {/* Main client highlight cards */}
          <SponsorsListSection>
+            {/*
             <CompanyBlock
                title="EY (Ernst & Young)"
                body="A global professional services firm focused on 'Building a better working world' through its integrated services in assurance, consulting, tax, and strategy and transactions."
                imageSrc={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.logoSrc}
                imageLink={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.website}
                altText={SPONSORS_COMPANY_LOGOS_BY_KEY.ey.name}
-            />
+            />*/}
             <CompanyBlock
                title="Deloitte"
                body="A global professional services network delivering audit, consulting, tax, and financial advisory services, with a stated purpose to make an impact that matters for clients, people, and society."
